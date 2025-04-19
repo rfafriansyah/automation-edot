@@ -4,7 +4,11 @@
   "main": "index.js",
   "scripts": {
     "desktop-esuite": "npx playwright test --config ./web/desktop/esuite/playwright.config.ts web/desktop/esuite/scenarios",
-    "desktop-esuite:ui": "npm run desktop-esuite -- --ui"
+    "desktop-esuite:ui": "npm run desktop-esuite -- --ui",
+    "desktop-esuite:headed": "npm run desktop-esuite -- --headed",
+    "desktop-hermes": "npx playwright test --config ./web/desktop/hermes/playwright.config.ts web/desktop/hermes/scenarios",
+    "desktop-hermes:ui": "npm run desktop-hermes -- --ui",
+    "desktop-hermes:headed": "npm run desktop-hermes -- --headed"
   },
   "author": "",
   "license": "ISC",
