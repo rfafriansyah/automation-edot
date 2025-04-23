@@ -29,7 +29,7 @@ export class RegisterHermesPage {
 
   readonly buttonFillTheSameDataRecords: Locator
   readonly checkboxPolicyAndTNC: Locator
-
+  readonly toastStatus: Locator
 
   readonly txtBranchName: Locator
 
@@ -65,6 +65,8 @@ export class RegisterHermesPage {
 
     this.buttonFillTheSameDataRecords = page.getByRole('button', { name: 'Fill in with the same data' })
     this.checkboxPolicyAndTNC = page.locator('#select-all')
+
+    this.toastStatus = page.getByRole('status')
   }
 
   async filltxtEmail(input: any) {
@@ -151,5 +153,10 @@ export class RegisterHermesPage {
   }
   async checkcheckboxPolicyAndTNC() {
     await this.checkboxPolicyAndTNC.check()
+  }
+
+  async verifytoastStatus() {
+    await this.toastStatus.waitFor({ state: 'visible' })
+    await expect(this.toastStatus).toHaveText('Success Register Company')
   }
 }

@@ -1,7 +1,7 @@
 import { test } from "../pageObjects/Base.page";
 import { payloadLogin, payloadCreateIndonesia } from '../../../../helper/payloadHermes'
 
-let email = `23aprilrhama117@yopmail.com`
+let email = `23aprlrhm0002@yopmail.com`
 let fullName = `Nama Full Name Testing`
 let password = `Rhama@123`
 
@@ -42,18 +42,14 @@ test.describe.serial("Register Hermes - Positive", () => {
     await registerHermesPage.selectdrpdwnNumberOfEmployee()
     await registerHermesPage.clickbuttonRegisterAccount()
 
-
-
     // OPSI ===>>> NANTI HAPUS
-    await page.waitForTimeout(10000)
-    await page.goto(`https://hermes-dashboard.edot-stg.com/`)
+    // await page.waitForTimeout(10000)
+    // await page.goto(`https://hermes-dashboard.edot-stg.com/`)
     // await loginPage.clickbuttonEmailUsername()
     // await loginPage.filltxtEmailUsername(email)
     // await loginPage.clickbuttonLogin()
     // await loginPage.filltxtPassword(password)
     // await loginPage.clickbuttonLogin()
-
-
 
     await registerHermesPage.filltxtCompanyName(`Company Name Testing`)
     await registerHermesPage.filltxtStreetAddress(`Street Address Testing`)
@@ -65,7 +61,6 @@ test.describe.serial("Register Hermes - Positive", () => {
     await registerHermesPage.clickbuttonFillTheSameDataRecords()
     await registerHermesPage.checkcheckboxPolicyAndTNC()
     await registerHermesPage.clickbuttonRegister()
-    await page.pause()
-    await page.waitForTimeout(10000)
+    await registerHermesPage.verifytoastStatus()
   })
 });

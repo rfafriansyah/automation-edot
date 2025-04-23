@@ -8,7 +8,13 @@
     "desktop-esuite:headed": "npm run desktop-esuite -- --headed",
     "desktop-hermes": "npx playwright test --config ./web/desktop/hermes/playwright.config.ts web/desktop/hermes/scenarios",
     "desktop-hermes:ui": "npm run desktop-hermes -- --ui",
-    "desktop-hermes:headed": "npm run desktop-hermes -- --headed"
+    "desktop-hermes:headed": "npm run desktop-hermes -- --headed",
+    "desktop-zeus": "npx playwright test --config ./web/desktop/zeus/playwright.config.ts web/desktop/zeus/scenarios",
+    "desktop-zeus:ui": "npm run desktop-zeus -- --ui",
+    "desktop-zeus:headed": "npm run desktop-zeus -- --headed",
+    "desktop-apollo": "npx playwright test --config ./web/desktop/apollo/playwright.config.ts web/desktop/apollo/scenarios",
+    "desktop-apollo:ui": "npm run desktop-apollo -- --ui",
+    "desktop-apollo:headed": "npm run desktop-apollo -- --headed"
   },
   "author": "",
   "license": "ISC",
