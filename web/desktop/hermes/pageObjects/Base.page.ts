@@ -4,6 +4,7 @@ import { NavbarPage } from "./Navbar.page";
 import { CompaniesPage } from "./Companies.page";
 import { RegisterCompanyPage } from "./RegisterCompany.page";
 import { ManageCompanyPage } from "./ManageCompany.page";
+import { RegisterHermesPage } from "./RegisterHermes.page";
 
 type MyFixtures = {
   loginPage: LoginPage
@@ -11,6 +12,7 @@ type MyFixtures = {
   companiesPage: CompaniesPage
   registerCompanyPage: RegisterCompanyPage
   manageCompanyPage: ManageCompanyPage
+  registerHermesPage: RegisterHermesPage
 };
 
 export const test = base.extend<MyFixtures>({
@@ -28,6 +30,9 @@ export const test = base.extend<MyFixtures>({
   },
   manageCompanyPage: async ({ page }, use) => {
     await use(new ManageCompanyPage(page));
+  },
+  registerHermesPage: async ({ page }, use) => {
+    await use(new RegisterHermesPage(page));
   },
 });
 

@@ -32,7 +32,7 @@ test.describe.serial("Create Company User on Hermes - Positive", () => {
     await companiesPage.clickbuttonManageLast()
   });
 
-  test.only("Create User Company User HQ", async ({ page, manageCompanyPage }) => {
+  test("Create User Company User HQ", async ({ page, manageCompanyPage }) => {
 
     await manageCompanyPage.clickmenuCompanyUser()
     await manageCompanyPage.clickbuttonAddUser()

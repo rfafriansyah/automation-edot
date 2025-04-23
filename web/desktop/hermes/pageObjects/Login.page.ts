@@ -6,6 +6,8 @@ export class LoginPage {
   readonly txtEmailUsername: Locator
   readonly buttonLogin: Locator
   readonly txtPassword: Locator
+  readonly buttonCreateAccount: Locator
+  readonly buttonNext: Locator
 
   constructor(page: Page) {
     this.page = page;
@@ -13,6 +15,8 @@ export class LoginPage {
     this.txtEmailUsername = page.getByRole('textbox', { name: 'Input Email or Username' })
     this.buttonLogin = page.getByRole('button', { name: 'Log In' })
     this.txtPassword = page.getByRole('textbox', { name: 'Password' })
+    this.buttonCreateAccount = page.getByRole('button', { name: 'Create Account' })
+    this.buttonNext = page.getByRole('button', { name: 'Next' })
   }
 
   async open() {
@@ -34,5 +38,11 @@ export class LoginPage {
   async filltxtPassword(input: any) {
     await this.txtPassword.fill(input)
   }
+  async clickbuttonCreateAccount() {
+    await this.buttonCreateAccount.click()
+  }
+  async clickbuttonNext() {
+    await this.buttonNext.click()
+  } 
 
 }
