@@ -1,7 +1,7 @@
 import { test } from "../pageObjects/Base.page";
 import { payloadLogin, payloadCreateIndonesia } from '../../../../helper/payloadHermes'
 
-let email = `23aprlrhm0002@yopmail.com`
+let email = `smoketestrhama23april04@yopmail.com`
 let fullName = `Nama Full Name Testing`
 let password = `Rhama@123`
 
@@ -10,13 +10,13 @@ let phone = `8134344444`
 
 
 
-test.describe.serial("Register Hermes - Positive", () => {
+test.describe("Register Hermes - Positive", () => {
   test.beforeEach(async ({ page, loginPage, }) => {
 
     await loginPage.open();
   });
 
-  test.only("User melakukan register", async ({ page, loginPage, registerHermesPage }) => {
+  test("User melakukan register", async ({ page, loginPage, registerHermesPage }) => {
 
     await loginPage.clickbuttonCreateAccount()
     await registerHermesPage.filltxtEmail(email)
@@ -62,5 +62,6 @@ test.describe.serial("Register Hermes - Positive", () => {
     await registerHermesPage.checkcheckboxPolicyAndTNC()
     await registerHermesPage.clickbuttonRegister()
     await registerHermesPage.verifytoastStatus()
+    await page.waitForTimeout(10000)
   })
 });

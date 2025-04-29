@@ -8,37 +8,37 @@ export class EworkPage {
   readonly menuDashboard: Locator;
 
   // Menu Aktivitas Salesman
-  readonly menuAktivitasSalesman: Locator;
+  readonly menuSalesmanActivity: Locator;
 
   // Menu Rencana Panggilan
-  readonly menuRencanaPanggilan: Locator;
+  readonly menuCallPlan: Locator;
 
   // Menu Aktivitas Pelanggan
-  readonly menuAktivitasPelanggan: Locator;
+  readonly menuCustomerActivity: Locator;
 
   // Menu Konfigurasi
-  readonly menuKonfigurasi: Locator;
+  readonly menuConfiguration: Locator;
 
 
   constructor(page: Page) {
     this.page = page;
     this.headingEwork = page.getByRole('heading', { name: 'Ework' })
 
-    this.menuDashboard = page.getByRole('button', { name: 'Dasbor' })
-    this.menuAktivitasSalesman = page.getByRole('button', { name: 'Aktivitas Salesman' })
-    this.menuRencanaPanggilan = page.getByRole('button', { name: 'Rencana Panggilan' })
-    this.menuAktivitasPelanggan = page.getByRole('button', { name: 'Aktivitas Pelanggan' })
-    this.menuKonfigurasi = page.getByRole('button', { name: 'Konfigurasi' })
+    this.menuDashboard = page.getByRole('button', { name: 'Dashboard' })
+    this.menuSalesmanActivity = page.getByRole('button', { name: 'Salesman Activity' })
+    this.menuCallPlan = page.getByRole('button', { name: 'Call Plan' })
+    this.menuCustomerActivity = page.getByRole('button', { name: 'Customer Activity' })
+    this.menuConfiguration = page.getByRole('button', { name: 'Configuration' })
 
   }
 
   async validateEworkPage() {
     await expect(this.headingEwork).toBeVisible()
     await expect(this.menuDashboard).toBeVisible()
-    await expect(this.menuAktivitasSalesman).toBeVisible()
-    await expect(this.menuRencanaPanggilan).toBeVisible()
-    await expect(this.menuAktivitasPelanggan).toBeVisible()
-    await expect(this.menuKonfigurasi).toBeVisible()
+    await expect(this.menuSalesmanActivity).toBeVisible()
+    await expect(this.menuCallPlan).toBeVisible()
+    await expect(this.menuCustomerActivity).toBeVisible()
+    await expect(this.menuConfiguration).toBeVisible()
   }
 
 }

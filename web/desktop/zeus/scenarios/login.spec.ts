@@ -2,8 +2,8 @@ import { test } from "../pageObjects/Base.page";
 import { payloadLogin } from '../../../../helper/payloadHermes'
 
 
-let username = `qaproduction1974`
-let password = `Smoketest1@`
+let username = `smoketestrhama23april04@yopmail.com`
+let password = `Rhama@123`
 
 test.describe.serial("Login Page Zeus - Positive", () => {
   test.beforeEach(async ({ page, loginPage, }) => {

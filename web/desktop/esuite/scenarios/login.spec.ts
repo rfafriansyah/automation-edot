@@ -1,9 +1,10 @@
+import { setDefaultResultOrder } from "dns";
 import { test } from "../pageObjects/Base.page";
 
 const credentials = {
-  companyId: "3399099",
-  username: "it.qa",
-  password: "it.QA2025",
+  companyId: "5072005",
+  username: "smoketestrhama23april04@yopmail.com",
+  password: "Rhama@123",
 }
 
 test.describe("Home Page Edot - Positive", () => {

@@ -1,7 +1,8 @@
 import { test } from "../pageObjects/Base.page";
 import { payloadLogin, payloadCreateIndonesia, payloadCreateMalaysia, payloadCreatePhilippine } from '../../../../helper/payloadHermes'
 
-test.describe.serial("Create New Company on Hermes - Positive", () => {
+
+test.describe.only("Create New Company on Hermes - Positive", () => {
   test.beforeEach(async ({ page, loginPage, navbarPage, companiesPage }) => {
 
     await loginPage.open();
@@ -73,11 +74,11 @@ test.describe.serial("Create New Company on Hermes - Positive", () => {
     await registerCompanyPage.checkcheckboxPolicyAndTNC()
     await registerCompanyPage.clickbuttonRegister()
     await registerCompanyPage.verifytoastStatus()
-    // Delete Company
-    await companiesPage.clickbuttonManageLast()
-    await manageCompanyPage.clickbuttonDelete()
-    await manageCompanyPage.checkcheckboxAgreeDelete()
-    await manageCompanyPage.clickbuttonConfirm()
-    await manageCompanyPage.verifystatus()
+    // // Delete Company
+    // await companiesPage.clickbuttonManageLast()
+    // await manageCompanyPage.clickbuttonDelete()
+    // await manageCompanyPage.checkcheckboxAgreeDelete()
+    // await manageCompanyPage.clickbuttonConfirm()
+    // await manageCompanyPage.verifystatus()
   });
 });

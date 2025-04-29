@@ -6,9 +6,11 @@
     "desktop-esuite": "npx playwright test --config ./web/desktop/esuite/playwright.config.ts web/desktop/esuite/scenarios",
     "desktop-esuite:ui": "npm run desktop-esuite -- --ui",
     "desktop-esuite:headed": "npm run desktop-esuite -- --headed",
-    "desktop-hermes": "npx playwright test --config ./web/desktop/hermes/playwright.config.ts web/desktop/hermes/scenarios",
-    "desktop-hermes:ui": "npm run desktop-hermes -- --ui",
-    "desktop-hermes:headed": "npm run desktop-hermes -- --headed",
+
+    "desktop-hermes:dev": "npx playwright test --config ./web/desktop/hermes/hermes-dev.config.ts web/desktop/hermes/scenarios",
+    "desktop-hermes:stg": "npx playwright test --config ./web/desktop/hermes/hermes-stg.config.ts web/desktop/hermes/scenarios",
+    "desktop-hermes:prod": "npx playwright test --config ./web/desktop/hermes/hermes-prod.config.ts web/desktop/hermes/scenarios",
+    
     "desktop-zeus": "npx playwright test --config ./web/desktop/zeus/playwright.config.ts web/desktop/zeus/scenarios",
     "desktop-zeus:ui": "npm run desktop-zeus -- --ui",
     "desktop-zeus:headed": "npm run desktop-zeus -- --headed",

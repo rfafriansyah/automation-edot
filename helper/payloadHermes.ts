@@ -1,8 +1,8 @@
 const payloadLogin = () => {
   return {
-    "username": "qaproduction1974",
+    "username": "smoketestrhama23april04@yopmail.com",
     "email": "richardmahendra@yopmail.co.id",
-    "password": "Smoketest1@"
+    "password": "Rhama@123"
   }
 }
 
