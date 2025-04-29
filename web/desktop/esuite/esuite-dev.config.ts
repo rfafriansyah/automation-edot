@@ -34,9 +34,7 @@ export default defineConfig({
   /* Shared settings for all the projects below. See https://playwright.dev/docs/api/class-testoptions. */
   use: {
     /* Base URL to use in actions like `await page.goto('/')`. */
-    // baseURL: "https://company-platform-esuite.edot-dev.com/", //Dev
-    // baseURL: "https://company-platform.edot-stg.com/", //Staging
-    baseURL: "https://trial.edot.id", // Production
+    baseURL: "https://company-platform-esuite.edot-dev.com/", //Dev
 
 
     /* Collect trace when retrying the failed test. See https://playwright.dev/docs/trace-viewer */
