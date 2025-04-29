@@ -6,14 +6,12 @@
     "desktop-esuite:dev": "npx playwright test --config ./web/desktop/esuite/esuite-dev.config.ts web/desktop/esuite/scenarios",
     "desktop-esuite:stg": "npx playwright test --config ./web/desktop/esuite/esuite-stg.config.ts web/desktop/esuite/scenarios",
     "desktop-esuite:prod": "npx playwright test --config ./web/desktop/esuite/esuite-prod.config.ts web/desktop/esuite/scenarios",
-
     "desktop-hermes:dev": "npx playwright test --config ./web/desktop/hermes/hermes-dev.config.ts web/desktop/hermes/scenarios",
     "desktop-hermes:stg": "npx playwright test --config ./web/desktop/hermes/hermes-stg.config.ts web/desktop/hermes/scenarios",
     "desktop-hermes:prod": "npx playwright test --config ./web/desktop/hermes/hermes-prod.config.ts web/desktop/hermes/scenarios",
-    
-    "desktop-zeus": "npx playwright test --config ./web/desktop/zeus/playwright.config.ts web/desktop/zeus/scenarios",
-    "desktop-zeus:ui": "npm run desktop-zeus -- --ui",
-    "desktop-zeus:headed": "npm run desktop-zeus -- --headed",
+    "desktop-zeus:dev": "npx playwright test --config ./web/desktop/zeus/zeus-dev.config.ts web/desktop/zeus/scenarios",
+    "desktop-zeus:stg": "npx playwright test --config ./web/desktop/zeus/zeus-stg.config.ts web/desktop/zeus/scenarios",
+    "desktop-zeus:prod": "npx playwright test --config ./web/desktop/zeus/zeus-prod.config.ts web/desktop/zeus/scenarios",
     "desktop-apollo": "npx playwright test --config ./web/desktop/apollo/playwright.config.ts web/desktop/apollo/scenarios",
     "desktop-apollo:ui": "npm run desktop-apollo -- --ui",
     "desktop-apollo:headed": "npm run desktop-apollo -- --headed"
