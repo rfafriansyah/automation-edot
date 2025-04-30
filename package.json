@@ -6,19 +6,15 @@
     "desktop-esuite:dev": "npx playwright test --config ./web/desktop/esuite/esuite-dev.config.ts web/desktop/esuite/scenarios",
     "desktop-esuite:stg": "npx playwright test --config ./web/desktop/esuite/esuite-stg.config.ts web/desktop/esuite/scenarios",
     "desktop-esuite:prod": "npx playwright test --config ./web/desktop/esuite/esuite-prod.config.ts web/desktop/esuite/scenarios",
-
     "desktop-hermes:dev": "npx playwright test --config ./web/desktop/hermes/hermes-dev.config.ts web/desktop/hermes/scenarios",
     "desktop-hermes:stg": "npx playwright test --config ./web/desktop/hermes/hermes-stg.config.ts web/desktop/hermes/scenarios",
     "desktop-hermes:prod": "npx playwright test --config ./web/desktop/hermes/hermes-prod.config.ts web/desktop/hermes/scenarios",
-
     "desktop-zeus:dev": "npx playwright test --config ./web/desktop/zeus/zeus-dev.config.ts web/desktop/zeus/scenarios",
     "desktop-zeus:stg": "npx playwright test --config ./web/desktop/zeus/zeus-stg.config.ts web/desktop/zeus/scenarios",
     "desktop-zeus:prod": "npx playwright test --config ./web/desktop/zeus/zeus-prod.config.ts web/desktop/zeus/scenarios",
-
     "desktop-apollo:dev": "npx playwright test --config ./web/desktop/apollo/apollo-dev.config.ts web/desktop/apollo/scenarios",
     "desktop-apollo:stg": "npx playwright test --config ./web/desktop/apollo/apollo-stg.config.ts web/desktop/apollo/scenarios",
     "desktop-apollo:prod": "npx playwright test --config ./web/desktop/apollo/apollo-prod.config.ts web/desktop/apollo/scenarios",
-
     "desktop-dashboard:dev": "npx playwright test --config ./web/desktop/dashboard/dashboard-dev.config.ts web/desktop/dashboard/scenarios"
   },
   "author": "",
@@ -27,7 +23,9 @@
   "devDependencies": {
     "@playwright/test": "^1.51.1",
     "@types/node": "^22.13.14",
+    "jest": "^29.7.0",
     "playwright": "^1.51.1",
+    "supertest": "^7.1.0",
     "typescript": "^5.8.2"
   }
 }
