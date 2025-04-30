@@ -14,10 +14,12 @@
     "desktop-zeus:dev": "npx playwright test --config ./web/desktop/zeus/zeus-dev.config.ts web/desktop/zeus/scenarios",
     "desktop-zeus:stg": "npx playwright test --config ./web/desktop/zeus/zeus-stg.config.ts web/desktop/zeus/scenarios",
     "desktop-zeus:prod": "npx playwright test --config ./web/desktop/zeus/zeus-prod.config.ts web/desktop/zeus/scenarios",
-    
+
     "desktop-apollo:dev": "npx playwright test --config ./web/desktop/apollo/apollo-dev.config.ts web/desktop/apollo/scenarios",
     "desktop-apollo:stg": "npx playwright test --config ./web/desktop/apollo/apollo-stg.config.ts web/desktop/apollo/scenarios",
-    "desktop-apollo:prod": "npx playwright test --config ./web/desktop/apollo/apollo-prod.config.ts web/desktop/apollo/scenarios"
+    "desktop-apollo:prod": "npx playwright test --config ./web/desktop/apollo/apollo-prod.config.ts web/desktop/apollo/scenarios",
+
+    "desktop-dashboard:dev": "npx playwright test --config ./web/desktop/dashboard/dashboard-dev.config.ts web/desktop/dashboard/scenarios"
   },
   "author": "",
   "license": "ISC",
