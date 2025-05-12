@@ -6,8 +6,8 @@ let username = `qaproduction1974`
 let password = `Smoketest1@`
 
 test.describe.serial("Login Page Hermes - Positive", () => {
+  
   test.beforeEach(async ({ page, loginPage, }) => {
-
     await loginPage.open();
   });
 
