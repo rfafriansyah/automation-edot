@@ -2,7 +2,7 @@ import { test } from "../../pageObjects/Base.page";
 
 const credentials = {
   companyId: "3399227",
-  username: "3399227_estadm4",
+  username: "3399227_estadm1",
   password: "Rhama@123",
 };
 

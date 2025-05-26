@@ -2,8 +2,8 @@ import { test } from "../../pageObjects/Base.page";
 
 const credentials = {
   companyId: "3399227",
-  username: "3399227_estadm4",
-  password: "Rhama@123",
+  username: "regresfico1007",
+  password: "Testing@123",
 };
 
 test.describe("RnP Esuite", () => {
