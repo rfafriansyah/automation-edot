@@ -1,10 +1,20 @@
 import { test as base } from "@playwright/test";
 import { LoginPage } from "./Login.page";
 import { EworkPage } from "./Ework.page";
+import { SalesPage } from "./Sales.page";
+import { InventoryPage } from "./Inventory.page";
+import { FinancePage } from "./Finance.page";
+import { MarketingPage } from "./Marketing.page";
+import { HRPage } from "./HR.page";
 
 type MyFixtures = {
   loginPage: LoginPage;
   eworkPage: EworkPage;
+  salesPage: SalesPage;
+  inventoryPage: InventoryPage;
+  financePage: FinancePage;
+  marketingPage: MarketingPage;
+  hrPage: HRPage;
 };
 
 export const test = base.extend<MyFixtures>({
@@ -13,6 +23,21 @@ export const test = base.extend<MyFixtures>({
   },
   eworkPage: async ({ page }, use) => {
     await use(new EworkPage(page));
+  },
+  salesPage: async ({ page }, use) => {
+    await use(new SalesPage(page));
+  },
+  inventoryPage: async ({ page }, use) => {
+    await use(new InventoryPage(page));
+  },
+  financePage: async ({ page }, use) => {
+    await use(new FinancePage(page));
+  },
+  marketingPage: async ({ page }, use) => {
+    await use(new MarketingPage(page));
+  },
+  hrPage: async ({ page }, use) => {
+    await use(new HRPage(page));
   },
 });
 

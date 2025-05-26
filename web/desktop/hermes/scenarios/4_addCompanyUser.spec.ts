@@ -3,7 +3,7 @@ import {
   payloadLogin,
   payloadCreateIndonesia,
   payloadGeneralInfo,
-} from "../../../../helper/payloadHermes";
+} from "../../../../helper/hermes/payloadHermes";
 
 test.describe.serial("Create Company User on Hermes - Positive", () => {
   test.beforeEach(

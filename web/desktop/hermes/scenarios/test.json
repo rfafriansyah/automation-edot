@@ -1,0 +1,1114 @@
+{
+    "status": 200,
+    "message": "ok",
+    "data": [
+        {
+            "id": "680f3917e53dfe8f2c560a37",
+            "branch_id": "BRCH-00007",
+            "external_code": "",
+            "account_center_company_id": "3399131",
+            "name": "LengSong",
+            "status": "active",
+            "reference_id": "",
+            "show_on_pos": false,
+            "show_on_sfa": false,
+            "show_on_mitra": false,
+            "country": {
+                "name": "",
+                "code": ""
+            },
+            "basic_info": {
+                "parent": {
+                    "id": "6773a30f02799bcc09c3aa8d",
+                    "name": "PCG 31",
+                    "external_id": "3398888"
+                },
+                "external_code": "",
+                "sales_organization": {
+                    "id": "",
+                    "name": ""
+                },
+                "timezone": {
+                    "id": "6639f8486218d49a92a1d1fd",
+                    "code": "TZ-0494",
+                    "value": "Asia/Jakarta",
+                    "description": "West Indonesia Time",
+                    "offset_in_hour": 7
+                },
+                "working_day": {
+                    "start": {
+                        "day": 0,
+                        "name": "",
+                        "hour": ""
+                    },
+                    "end": {
+                        "day": 0,
+                        "name": "",
+                        "hour": ""
+                    }
+                }
+            },
+            "address": {
+                "country": {
+                    "code": "ID",
+                    "name": "Indonesia"
+                },
+                "province": {
+                    "code": "V11",
+                    "name": "ACEH"
+                },
+                "state": {},
+                "city": {
+                    "code": "ID",
+                    "name": "Indonesia"
+                },
+                "district": {
+                    "code": "V110608",
+                    "name": "PEUKAN BADA"
+                },
+                "zone": {
+                    "code": "V11060824",
+                    "name": "PAYA TIENG"
+                },
+                "location": {},
+                "postal_code": "23351",
+                "geo": {
+                    "lat": "435435",
+                    "long": "345435"
+                },
+                "street_address": "Jl Indo",
+                "administrative_level": [
+                    {
+                        "id": "66388b7f236dfcd5a4000000",
+                        "name": "ACEH",
+                        "code": "V11",
+                        "type": "province",
+                        "level": "0"
+                    },
+                    {
+                        "id": "66388b7f236dfcd5a4000749",
+                        "name": "KAB ACEH BESAR",
+                        "code": "V1108",
+                        "type": "city",
+                        "level": "1"
+                    },
+                    {
+                        "id": "66388b7f236dfcd5a4000856",
+                        "name": "PEUKAN BADA",
+                        "code": "V110608",
+                        "type": "district",
+                        "level": "2"
+                    },
+                    {
+                        "id": "66388b7f236dfcd5a400086e",
+                        "name": "PAYA TIENG",
+                        "code": "V11060824",
+                        "type": "sub_district",
+                        "level": "3"
+                    },
+                    {
+                        "id": "",
+                        "name": "",
+                        "code": "23351",
+                        "type": "",
+                        "level": ""
+                    }
+                ]
+            },
+            "coverage": {
+                "district": [],
+                "zone": [],
+                "tags": [],
+                "city": [],
+                "radius": {
+                    "radius": 0,
+                    "unit": {
+                        "id": "",
+                        "name": "",
+                        "format": ""
+                    }
+                }
+            },
+            "pos_setting": {
+                "general_setting": {
+                    "tax": {
+                        "code": "",
+                        "name": ""
+                    },
+                    "additional_fee": {
+                        "code": "",
+                        "name": ""
+                    },
+                    "default_journals_order": {
+                        "code": "",
+                        "name": ""
+                    },
+                    "default_journals_invoice": {
+                        "code": "",
+                        "name": ""
+                    },
+                    "default_temporary_account": {
+                        "code": "",
+                        "name": ""
+                    }
+                },
+                "station_information": {
+                    "total_terminal_pos": 0,
+                    "total_terminal_qds": 0,
+                    "total_terminal_kds": 0
+                },
+                "sales_type": [],
+                "shift_management": {
+                    "name": "",
+                    "start_hour": "",
+                    "end_hour": ""
+                },
+                "attendance_management": {
+                    "clock_in": false,
+                    "clock_out": false
+                }
+            },
+            "ework_setting": {
+                "attendance_configuration": null,
+                "visit_configuration": null,
+                "selfie_requirement": "MANDATORY_SELFIE_START_END"
+            },
+            "station_management": {
+                "receipt": {
+                    "logo": "",
+                    "logo_size": "",
+                    "sales_number": false,
+                    "rounding": false,
+                    "sales_type": false,
+                    "queue_number": false,
+                    "tax": false,
+                    "payment_info": false,
+                    "time": false,
+                    "additional_fee": false,
+                    "pax": false,
+                    "header": "",
+                    "footer": ""
+                },
+                "kitchen_label": {
+                    "order_price": false,
+                    "count_on_item": false,
+                    "subtotal": false,
+                    "product_categories": null
+                },
+                "order_label": {
+                    "order_note": false,
+                    "order_price": false
+                }
+            },
+            "apply_as_store": false,
+            "has_store_on_channel": false,
+            "created_at": "2025-04-28T08:15:18.836Z",
+            "created_by": "10875038",
+            "updated_at": "2025-04-28T08:15:18.836Z",
+            "updated_by": "10875038",
+            "parent_branch": {
+                "id": "",
+                "name": "",
+                "external_id": "3398888"
+            },
+            "is_created_company": false,
+            "is_headquarter": false,
+            "accounting": {
+                "profit_center": {
+                    "id": "6809ece2cec66f347c2d461c",
+                    "name": "NGANJUK",
+                    "code": "P01G041014"
+                },
+                "customer_invoice_discount_account": {
+                    "id": "68078541cec66f347cc15949",
+                    "name": "Sales Discount",
+                    "code": "42000070"
+                },
+                "vendor_bills_discount_account": {
+                    "id": "68078546cec66f347cc160d8",
+                    "name": "Cash Discount Loss",
+                    "code": "99900003"
+                }
+            },
+            "regions": []
+        },
+        {
+            "id": "6809958f888a38307cb10638",
+            "branch_id": "BRCH-00006",
+            "external_code": "",
+            "account_center_company_id": "3399130",
+            "name": "Maulana Branch [DO Not Use]",
+            "status": "active",
+            "reference_id": "",
+            "show_on_pos": false,
+            "show_on_sfa": false,
+            "show_on_mitra": false,
+            "country": {
+                "name": "",
+                "code": ""
+            },
+            "basic_info": {
+                "parent": {
+                    "id": "6773a30f02799bcc09c3aa8d",
+                    "name": "PCG 31",
+                    "external_id": "3398888"
+                },
+                "external_code": "",
+                "sales_organization": {
+                    "id": "",
+                    "name": ""
+                },
+                "timezone": {
+                    "id": "6639f8486218d49a92a1d1fd",
+                    "code": "TZ-0494",
+                    "value": "Asia/Jakarta",
+                    "description": "West Indonesia Time",
+                    "offset_in_hour": 7
+                },
+                "working_day": {
+                    "start": {
+                        "day": 0,
+                        "name": "",
+                        "hour": ""
+                    },
+                    "end": {
+                        "day": 0,
+                        "name": "",
+                        "hour": ""
+                    }
+                }
+            },
+            "address": {
+                "country": {
+                    "code": "ID",
+                    "name": "Indonesia"
+                },
+                "province": {
+                    "code": "V32",
+                    "name": "JAWA BARAT"
+                },
+                "state": {},
+                "city": {
+                    "code": "ID",
+                    "name": "Indonesia"
+                },
+                "district": {
+                    "code": "V327302",
+                    "name": "COBLONG"
+                },
+                "zone": {
+                    "code": "V32730203",
+                    "name": "SADANGSERANG"
+                },
+                "location": {},
+                "postal_code": "40133",
+                "geo": {
+                    "lat": "321",
+                    "long": "123"
+                },
+                "street_address": "Street 1",
+                "administrative_level": [
+                    {
+                        "id": "66388b83236dfcd5a4006c13",
+                        "name": "JAWA BARAT",
+                        "code": "V32",
+                        "type": "province",
+                        "level": "0"
+                    },
+                    {
+                        "id": "66388b84236dfcd5a4008403",
+                        "name": "KOTA BANDUNG",
+                        "code": "V3273",
+                        "type": "city",
+                        "level": "1"
+                    },
+                    {
+                        "id": "66388b84236dfcd5a4008409",
+                        "name": "COBLONG",
+                        "code": "V327302",
+                        "type": "district",
+                        "level": "2"
+                    },
+                    {
+                        "id": "66388b84236dfcd5a400840c",
+                        "name": "SADANGSERANG",
+                        "code": "V32730203",
+                        "type": "sub_district",
+                        "level": "3"
+                    },
+                    {
+                        "id": "",
+                        "name": "",
+                        "code": "40133",
+                        "type": "",
+                        "level": ""
+                    }
+                ]
+            },
+            "coverage": {
+                "district": [],
+                "zone": [],
+                "tags": [],
+                "city": [],
+                "radius": {
+                    "radius": 0,
+                    "unit": {
+                        "id": "",
+                        "name": "",
+                        "format": ""
+                    }
+                }
+            },
+            "pos_setting": {
+                "general_setting": {
+                    "tax": {
+                        "code": "",
+                        "name": ""
+                    },
+                    "additional_fee": {
+                        "code": "",
+                        "name": ""
+                    },
+                    "default_journals_order": {
+                        "code": "",
+                        "name": ""
+                    },
+                    "default_journals_invoice": {
+                        "code": "",
+                        "name": ""
+                    },
+                    "default_temporary_account": {
+                        "code": "",
+                        "name": ""
+                    }
+                },
+                "station_information": {
+                    "total_terminal_pos": 0,
+                    "total_terminal_qds": 0,
+                    "total_terminal_kds": 0
+                },
+                "sales_type": [],
+                "shift_management": {
+                    "name": "",
+                    "start_hour": "",
+                    "end_hour": ""
+                },
+                "attendance_management": {
+                    "clock_in": false,
+                    "clock_out": false
+                }
+            },
+            "ework_setting": {
+                "attendance_configuration": null,
+                "visit_configuration": null,
+                "selfie_requirement": "MANDATORY_SELFIE_START_END"
+            },
+            "station_management": {
+                "receipt": {
+                    "logo": "",
+                    "logo_size": "",
+                    "sales_number": false,
+                    "rounding": false,
+                    "sales_type": false,
+                    "queue_number": false,
+                    "tax": false,
+                    "payment_info": false,
+                    "time": false,
+                    "additional_fee": false,
+                    "pax": false,
+                    "header": "",
+                    "footer": ""
+                },
+                "kitchen_label": {
+                    "order_price": false,
+                    "count_on_item": false,
+                    "subtotal": false,
+                    "product_categories": null
+                },
+                "order_label": {
+                    "order_note": false,
+                    "order_price": false
+                }
+            },
+            "apply_as_store": false,
+            "has_store_on_channel": false,
+            "created_at": "2025-04-24T01:36:14.641Z",
+            "created_by": "10875033",
+            "updated_at": "2025-05-15T08:24:48.548Z",
+            "updated_by": "10875033",
+            "parent_branch": {
+                "id": "",
+                "name": "",
+                "external_id": "3398888"
+            },
+            "is_created_company": false,
+            "is_headquarter": false,
+            "accounting": {
+                "profit_center": {
+                    "id": "68085d91b68b941a417f434f",
+                    "name": "Maulana Profit",
+                    "code": "1234567890"
+                },
+                "customer_invoice_discount_account": {
+                    "id": "68078541cec66f347cc15949",
+                    "name": "Sales Discount",
+                    "code": "42000070"
+                },
+                "vendor_bills_discount_account": {
+                    "id": "68078541cec66f347cc1590a",
+                    "name": "Sales Refund",
+                    "code": "42000060"
+                }
+            },
+            "regions": []
+        },
+        {
+            "id": "68074ff0d5a381e906ba1e22",
+            "branch_id": "BRCH-00005",
+            "external_code": "",
+            "account_center_company_id": "3399109",
+            "name": "BRANCH ARA",
+            "status": "active",
+            "reference_id": "",
+            "show_on_pos": false,
+            "show_on_sfa": false,
+            "show_on_mitra": false,
+            "country": {
+                "name": "",
+                "code": ""
+            },
+            "basic_info": {
+                "parent": {
+                    "id": "6773a30f02799bcc09c3aa8d",
+                    "name": "PCG 31",
+                    "external_id": "3398888"
+                },
+                "external_code": "",
+                "sales_organization": {
+                    "id": "",
+                    "name": ""
+                },
+                "timezone": {
+                    "id": "6639f8486218d49a92a1d1fd",
+                    "code": "TZ-0494",
+                    "value": "Asia/Jakarta",
+                    "description": "West Indonesia Time",
+                    "offset_in_hour": 7
+                },
+                "working_day": {
+                    "start": {
+                        "day": 0,
+                        "name": "",
+                        "hour": ""
+                    },
+                    "end": {
+                        "day": 0,
+                        "name": "",
+                        "hour": ""
+                    }
+                }
+            },
+            "address": {
+                "country": {
+                    "code": "ID",
+                    "name": "Indonesia"
+                },
+                "province": {
+                    "code": "V16",
+                    "name": "SUMATERA SELATAN"
+                },
+                "state": {},
+                "city": {
+                    "code": "ID",
+                    "name": "Indonesia"
+                },
+                "district": {
+                    "code": "V160605",
+                    "name": "SANGA DESA"
+                },
+                "zone": {
+                    "code": "V16060518",
+                    "name": "PANAI"
+                },
+                "location": {},
+                "postal_code": "30759",
+                "geo": {
+                    "lat": "3634634",
+                    "long": "3454365"
+                },
+                "street_address": "Jl Indo",
+                "administrative_level": [
+                    {
+                        "id": "66388b82236dfcd5a40047e2",
+                        "name": "SUMATERA SELATAN",
+                        "code": "V16",
+                        "type": "province",
+                        "level": "0"
+                    },
+                    {
+                        "id": "66388b82236dfcd5a4004d67",
+                        "name": "KAB MUSI BANYUASIN",
+                        "code": "V1606",
+                        "type": "city",
+                        "level": "1"
+                    },
+                    {
+                        "id": "66388b82236dfcd5a4004da3",
+                        "name": "SANGA DESA",
+                        "code": "V160605",
+                        "type": "district",
+                        "level": "2"
+                    },
+                    {
+                        "id": "66388b82236dfcd5a4004db5",
+                        "name": "PANAI",
+                        "code": "V16060518",
+                        "type": "sub_district",
+                        "level": "3"
+                    },
+                    {
+                        "id": "",
+                        "name": "",
+                        "code": "30759",
+                        "type": "",
+                        "level": ""
+                    }
+                ]
+            },
+            "coverage": {
+                "district": [],
+                "zone": [],
+                "tags": [],
+                "city": [],
+                "radius": {
+                    "radius": 0,
+                    "unit": {
+                        "id": "",
+                        "name": "",
+                        "format": ""
+                    }
+                }
+            },
+            "pos_setting": {
+                "general_setting": {
+                    "tax": {
+                        "code": "",
+                        "name": ""
+                    },
+                    "additional_fee": {
+                        "code": "",
+                        "name": ""
+                    },
+                    "default_journals_order": {
+                        "code": "",
+                        "name": ""
+                    },
+                    "default_journals_invoice": {
+                        "code": "",
+                        "name": ""
+                    },
+                    "default_temporary_account": {
+                        "code": "",
+                        "name": ""
+                    }
+                },
+                "station_information": {
+                    "total_terminal_pos": 0,
+                    "total_terminal_qds": 0,
+                    "total_terminal_kds": 0
+                },
+                "sales_type": [],
+                "shift_management": {
+                    "name": "",
+                    "start_hour": "",
+                    "end_hour": ""
+                },
+                "attendance_management": {
+                    "clock_in": false,
+                    "clock_out": false
+                }
+            },
+            "ework_setting": {
+                "attendance_configuration": null,
+                "visit_configuration": null,
+                "selfie_requirement": "MANDATORY_SELFIE_START_END"
+            },
+            "station_management": {
+                "receipt": {
+                    "logo": "",
+                    "logo_size": "",
+                    "sales_number": false,
+                    "rounding": false,
+                    "sales_type": false,
+                    "queue_number": false,
+                    "tax": false,
+                    "payment_info": false,
+                    "time": false,
+                    "additional_fee": false,
+                    "pax": false,
+                    "header": "",
+                    "footer": ""
+                },
+                "kitchen_label": {
+                    "order_price": false,
+                    "count_on_item": false,
+                    "subtotal": false,
+                    "product_categories": null
+                },
+                "order_label": {
+                    "order_note": false,
+                    "order_price": false
+                }
+            },
+            "apply_as_store": false,
+            "has_store_on_channel": false,
+            "created_at": "2025-04-22T08:14:39.913Z",
+            "created_by": "10875033",
+            "updated_at": "2025-04-23T07:36:44.826Z",
+            "updated_by": "10875033",
+            "parent_branch": {
+                "id": "",
+                "name": "",
+                "external_id": "3398888"
+            },
+            "is_created_company": false,
+            "is_headquarter": false,
+            "accounting": {
+                "profit_center": {
+                    "id": "680749047eaf2bde784458ba",
+                    "name": "InventoryProfit",
+                    "code": "INI001"
+                },
+                "customer_invoice_discount_account": {
+                    "id": "",
+                    "name": "",
+                    "code": ""
+                },
+                "vendor_bills_discount_account": {
+                    "id": "",
+                    "name": "",
+                    "code": ""
+                }
+            },
+            "regions": []
+        },
+        {
+            "id": "680741f0d5a381e906ba1e21",
+            "branch_id": "BRCH-00004",
+            "external_code": "",
+            "account_center_company_id": "3399108",
+            "name": "Tasya Profit [DO NOT USE]",
+            "status": "active",
+            "reference_id": "",
+            "show_on_pos": false,
+            "show_on_sfa": false,
+            "show_on_mitra": false,
+            "country": {
+                "name": "",
+                "code": ""
+            },
+            "basic_info": {
+                "parent": {
+                    "id": "6773a30f02799bcc09c3aa8d",
+                    "name": "PCG 31",
+                    "external_id": "3398888"
+                },
+                "external_code": "",
+                "sales_organization": {
+                    "id": "",
+                    "name": ""
+                },
+                "timezone": {
+                    "id": "6639f8486218d49a92a1d1fa",
+                    "code": "TZ-0491",
+                    "value": "Asia/Bangkok",
+                    "description": "Indochina Time",
+                    "offset_in_hour": 7
+                },
+                "working_day": {
+                    "start": {
+                        "day": 0,
+                        "name": "",
+                        "hour": ""
+                    },
+                    "end": {
+                        "day": 0,
+                        "name": "",
+                        "hour": ""
+                    }
+                }
+            },
+            "address": {
+                "country": {
+                    "code": "ID",
+                    "name": "Indonesia"
+                },
+                "province": {
+                    "code": "V18",
+                    "name": "LAMPUNG"
+                },
+                "state": {},
+                "city": {
+                    "code": "ID",
+                    "name": "Indonesia"
+                },
+                "district": {
+                    "code": "V180518",
+                    "name": "RAWA JITU TIMUR"
+                },
+                "zone": {
+                    "code": "V18051804",
+                    "name": "BUMI DIPASENA ABADI"
+                },
+                "location": {},
+                "postal_code": "34590",
+                "geo": {
+                    "lat": "232",
+                    "long": "3232"
+                },
+                "street_address": "Jln ",
+                "administrative_level": [
+                    {
+                        "id": "66388b82236dfcd5a4005c02",
+                        "name": "LAMPUNG",
+                        "code": "V18",
+                        "type": "province",
+                        "level": "0"
+                    },
+                    {
+                        "id": "66388b83236dfcd5a4006014",
+                        "name": "KAB TULANG BAWANG",
+                        "code": "V1808",
+                        "type": "city",
+                        "level": "1"
+                    },
+                    {
+                        "id": "66388b83236dfcd5a400605b",
+                        "name": "RAWA JITU TIMUR",
+                        "code": "V180518",
+                        "type": "district",
+                        "level": "2"
+                    },
+                    {
+                        "id": "66388b83236dfcd5a400605f",
+                        "name": "BUMI DIPASENA ABADI",
+                        "code": "V18051804",
+                        "type": "sub_district",
+                        "level": "3"
+                    },
+                    {
+                        "id": "",
+                        "name": "",
+                        "code": "34590",
+                        "type": "",
+                        "level": ""
+                    }
+                ]
+            },
+            "coverage": {
+                "district": [],
+                "zone": [],
+                "tags": [],
+                "city": [],
+                "radius": {
+                    "radius": 0,
+                    "unit": {
+                        "id": "",
+                        "name": "",
+                        "format": ""
+                    }
+                }
+            },
+            "pos_setting": {
+                "general_setting": {
+                    "tax": {
+                        "code": "",
+                        "name": ""
+                    },
+                    "additional_fee": {
+                        "code": "",
+                        "name": ""
+                    },
+                    "default_journals_order": {
+                        "code": "",
+                        "name": ""
+                    },
+                    "default_journals_invoice": {
+                        "code": "",
+                        "name": ""
+                    },
+                    "default_temporary_account": {
+                        "code": "",
+                        "name": ""
+                    }
+                },
+                "station_information": {
+                    "total_terminal_pos": 0,
+                    "total_terminal_qds": 0,
+                    "total_terminal_kds": 0
+                },
+                "sales_type": [],
+                "shift_management": {
+                    "name": "",
+                    "start_hour": "",
+                    "end_hour": ""
+                },
+                "attendance_management": {
+                    "clock_in": false,
+                    "clock_out": false
+                }
+            },
+            "ework_setting": {
+                "attendance_configuration": null,
+                "visit_configuration": null,
+                "selfie_requirement": "MANDATORY_SELFIE_START_END"
+            },
+            "station_management": {
+                "receipt": {
+                    "logo": "",
+                    "logo_size": "",
+                    "sales_number": false,
+                    "rounding": false,
+                    "sales_type": false,
+                    "queue_number": false,
+                    "tax": false,
+                    "payment_info": false,
+                    "time": false,
+                    "additional_fee": false,
+                    "pax": false,
+                    "header": "",
+                    "footer": ""
+                },
+                "kitchen_label": {
+                    "order_price": false,
+                    "count_on_item": false,
+                    "subtotal": false,
+                    "product_categories": null
+                },
+                "order_label": {
+                    "order_note": false,
+                    "order_price": false
+                }
+            },
+            "apply_as_store": false,
+            "has_store_on_channel": false,
+            "created_at": "2025-04-22T07:14:55.263Z",
+            "created_by": "10875033",
+            "updated_at": "2025-05-15T08:25:12.308Z",
+            "updated_by": "10875033",
+            "parent_branch": {
+                "id": "",
+                "name": "",
+                "external_id": "3398888"
+            },
+            "is_created_company": false,
+            "is_headquarter": false,
+            "accounting": {
+                "profit_center": {
+                    "id": "68074211f0ea68bb8b7464dc",
+                    "name": "Tasya [DO NOT USE]",
+                    "code": "00889977"
+                },
+                "customer_invoice_discount_account": {
+                    "id": "68078541cec66f347cc158ef",
+                    "name": "Sales",
+                    "code": "41000010"
+                },
+                "vendor_bills_discount_account": {
+                    "id": "68078541cec66f347cc1590a",
+                    "name": "Sales Refund",
+                    "code": "42000060"
+                }
+            },
+            "regions": []
+        },
+        {
+            "id": "6773a30f02799bcc09c3aac5",
+            "branch_id": "BRCH-00001",
+            "external_code": "",
+            "account_center_company_id": "3398889",
+            "name": "Headquarter",
+            "status": "active",
+            "reference_id": "",
+            "show_on_pos": false,
+            "show_on_sfa": false,
+            "show_on_mitra": false,
+            "country": {
+                "name": "",
+                "code": ""
+            },
+            "basic_info": {
+                "parent": {
+                    "id": "6773a30f02799bcc09c3aa8d",
+                    "name": "PCG 31",
+                    "external_id": "3398888"
+                },
+                "external_code": "",
+                "sales_organization": {
+                    "id": "",
+                    "name": ""
+                },
+                "timezone": {
+                    "id": "",
+                    "code": "",
+                    "value": "",
+                    "description": "",
+                    "offset_in_hour": 0
+                },
+                "working_day": {
+                    "start": {
+                        "day": 0,
+                        "name": "",
+                        "hour": ""
+                    },
+                    "end": {
+                        "day": 0,
+                        "name": "",
+                        "hour": ""
+                    }
+                }
+            },
+            "address": {
+                "country": {},
+                "province": {},
+                "state": {},
+                "city": {},
+                "district": {},
+                "zone": {},
+                "location": {},
+                "postal_code": "",
+                "geo": {
+                    "lat": "",
+                    "long": ""
+                },
+                "street_address": "jl. oke",
+                "administrative_level": []
+            },
+            "coverage": {
+                "district": [],
+                "zone": [],
+                "tags": null,
+                "city": [],
+                "radius": {
+                    "radius": 0,
+                    "unit": {
+                        "id": "",
+                        "name": "",
+                        "format": ""
+                    }
+                }
+            },
+            "pos_setting": {
+                "general_setting": {
+                    "tax": {
+                        "code": "",
+                        "name": ""
+                    },
+                    "additional_fee": {
+                        "code": "",
+                        "name": ""
+                    },
+                    "default_journals_order": {
+                        "code": "",
+                        "name": ""
+                    },
+                    "default_journals_invoice": {
+                        "code": "",
+                        "name": ""
+                    },
+                    "default_temporary_account": {
+                        "code": "",
+                        "name": ""
+                    }
+                },
+                "station_information": {
+                    "total_terminal_pos": 0,
+                    "total_terminal_qds": 0,
+                    "total_terminal_kds": 0
+                },
+                "sales_type": null,
+                "shift_management": {
+                    "name": "",
+                    "start_hour": "",
+                    "end_hour": ""
+                },
+                "attendance_management": {
+                    "clock_in": false,
+                    "clock_out": false
+                }
+            },
+            "ework_setting": {
+                "attendance_configuration": null,
+                "visit_configuration": null,
+                "selfie_requirement": ""
+            },
+            "station_management": {
+                "receipt": {
+                    "logo": "",
+                    "logo_size": "",
+                    "sales_number": false,
+                    "rounding": false,
+                    "sales_type": false,
+                    "queue_number": false,
+                    "tax": false,
+                    "payment_info": false,
+                    "time": false,
+                    "additional_fee": false,
+                    "pax": false,
+                    "header": "",
+                    "footer": ""
+                },
+                "kitchen_label": {
+                    "order_price": false,
+                    "count_on_item": false,
+                    "subtotal": false,
+                    "product_categories": null
+                },
+                "order_label": {
+                    "order_note": false,
+                    "order_price": false
+                }
+            },
+            "apply_as_store": false,
+            "has_store_on_channel": false,
+            "created_at": "2024-12-31T07:53:51.963Z",
+            "created_by": "SYSTEM",
+            "updated_at": "2024-12-31T07:53:51.963Z",
+            "updated_by": "SYSTEM",
+            "parent_branch": {
+                "id": "",
+                "name": "",
+                "external_id": ""
+            },
+            "is_created_company": false,
+            "is_headquarter": true,
+            "accounting": {
+                "profit_center": {
+                    "id": "",
+                    "name": "",
+                    "code": ""
+                },
+                "customer_invoice_discount_account": {
+                    "id": "",
+                    "name": "",
+                    "code": ""
+                },
+                "vendor_bills_discount_account": {
+                    "id": "",
+                    "name": "",
+                    "code": ""
+                }
+            },
+            "regions": []
+        }
+    ],
+    "pagination": {
+        "total": 5,
+        "limit": 99999,
+        "page": 0,
+        "offset": 0,
+        "current_page": 1,
+        "last_page": 1,
+        "total_page": 0
+    }
+}   

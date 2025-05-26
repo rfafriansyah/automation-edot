@@ -1,8 +1,8 @@
 const payloadLogin = () => {
   return {
-    "username": "smoketestrhama23april04@yopmail.com",
-    "email": "richardmahendra@yopmail.co.id",
-    "password": "Rhama@123"
+    "username": "it.qa",
+    "email": "it.qa@edot.id",
+    "password": "it.QA2025"
   }
 }
 
@@ -14,7 +14,7 @@ const payloadCreateIndonesia = () => {
     'addressIndo': 'Jalan. Testing No. 123',
     'countryIndo': 'Indonesia',
     'dataIndonesia': {
-      'province': 'DKI JAKARTA',
+      'province': 'DKI Daerah Khusus Ibukota JAKARTA',
       'city': 'JAKARTA PUSAT',
       'district': 'CEMPAKA PUTIH',
       'subdistrict': 'CEMPAKA PUTIH BARAT'

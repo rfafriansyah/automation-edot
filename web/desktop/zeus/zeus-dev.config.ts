@@ -11,6 +11,7 @@ import { defineConfig, devices } from "@playwright/test";
 /**
  * See https://playwright.dev/docs/test-configuration.
  */
+const isHeaded = process.env.HEADED === "true";
 export default defineConfig({
   timeout: 3 * 30000,
   testDir: "./scenarios",
@@ -24,13 +25,14 @@ export default defineConfig({
   workers: process.env.CI ? 1 : 3,
   /* Reporter to use. See https://playwright.dev/docs/test-reporters */
   reporter: [
-    ['html', { open: 'always' }], // Or 'always'
+    ["html", { open: "always" }], // Or 'always'
     // ... other reporters you might have
   ],
   expect: {
     timeout: 10 * 1000, // Default timeout for expect assertions (in milliseconds)
   },
   /* Shared settings for all the projects below. See https://playwright.dev/docs/api/class-testoptions. */
+
   use: {
     /* Base URL to use in actions like `await page.goto('/')`. */
     baseURL: "https://zeus.edot-dev.com/", // Dev
@@ -38,7 +40,7 @@ export default defineConfig({
     /* Collect trace when retrying the failed test. See https://playwright.dev/docs/trace-viewer */
     trace: "on",
     video: "on",
-
+    // headless: !isHeaded,
   },
 
   /* Configure projects for major browsers */
