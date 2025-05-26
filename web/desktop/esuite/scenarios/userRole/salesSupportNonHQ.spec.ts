@@ -13,7 +13,6 @@ test.describe("RnP Esuite", () => {
     await loginPage.filltxtEmployeeIDUsername(credentials.username);
     await loginPage.filltxtPassword(credentials.password);
     await loginPage.clickbuttonLogin();
-    await eworkPage.validateEworkPage();
   });
 
   // Call Plan

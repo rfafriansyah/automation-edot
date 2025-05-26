@@ -253,7 +253,7 @@ test.describe("RnP Esuite", () => {
   }) => {
     await inventoryPage.clickmoduleInventory();
     await inventoryPage.clickproductGroup();
-    await inventoryPage.validateBeAbleAccess();
+    await inventoryPage.validateRestriction();
   });
   // Stock Management
   test("Memastikan Esuite Admin non-HQ dapat mengakses Stocks @inventory @rhama.fahri", async ({
@@ -507,7 +507,7 @@ test.describe("RnP Esuite", () => {
   }) => {
     await marketingPage.clickmoduleMarketing();
     await marketingPage.clickbenefit();
-    await marketingPage.validateBeAbleAccess();
+    await marketingPage.validateRestriction();
   });
   test("Memastikan Esuite Admin non-HQ dapat mengakses Benefit Type @marketing @rhama.fahri", async ({
     page,
