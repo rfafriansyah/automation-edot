@@ -1,18 +1,18 @@
+import { salesSupportHQExisting } from "../../../../../helper/credentials/staging";
 import { test } from "../../pageObjects/Base.page";
 
-const credentials = {
-  companyId: "3399227",
-  username: "3399227_slssprt1",
-  password: "Rhama@123",
-};
+const companyId = salesSupportHQExisting.companyId;
+const username = salesSupportHQExisting.username;
+const password = salesSupportHQExisting.password;
 
 test.describe("RnP Esuite", () => {
   test.beforeEach(async ({ page, loginPage, eworkPage }) => {
     await loginPage.open();
-    await loginPage.filltxtCompanyID(credentials.companyId);
-    await loginPage.filltxtEmployeeIDUsername(credentials.username);
-    await loginPage.filltxtPassword(credentials.password);
+    await loginPage.filltxtCompanyID(companyId);
+    await loginPage.filltxtEmployeeIDUsername(username);
+    await loginPage.filltxtPassword(password);
     await loginPage.clickbuttonLogin();
+    await eworkPage.validateEworkPage();
   });
 
   // Call Plan

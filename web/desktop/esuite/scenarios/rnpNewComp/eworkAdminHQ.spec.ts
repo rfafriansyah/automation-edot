@@ -1,17 +1,16 @@
+import { eworkAdminHQExisting } from "../../../../../helper/credentials/staging";
 import { test } from "../../pageObjects/Base.page";
 
-const credentials = {
-  companyId: "3399227",
-  username: "3399227_ewkadm3",
-  password: "Rhama@123",
-};
+const companyId = eworkAdminHQExisting.companyId;
+const username = eworkAdminHQExisting.username;
+const password = eworkAdminHQExisting.password;
 
 test.describe("RnP Esuite", () => {
   test.beforeEach(async ({ page, loginPage, eworkPage }) => {
     await loginPage.open();
-    await loginPage.filltxtCompanyID(credentials.companyId);
-    await loginPage.filltxtEmployeeIDUsername(credentials.username);
-    await loginPage.filltxtPassword(credentials.password);
+    await loginPage.filltxtCompanyID(companyId);
+    await loginPage.filltxtEmployeeIDUsername(username);
+    await loginPage.filltxtPassword(password);
     await loginPage.clickbuttonLogin();
     await eworkPage.validateEworkPage();
   });
@@ -56,7 +55,7 @@ test.describe("RnP Esuite", () => {
     eworkPage,
   }) => {
     await eworkPage.clicksalesmanDivision();
-    await eworkPage.validateRestriction();
+    await eworkPage.validateBeAbleAccess();
   });
 
   test("Memastikan Esuite Admin HQ dapat mengakses Salesman Visit @ework @rhama.fahri", async ({
@@ -86,7 +85,7 @@ test.describe("RnP Esuite", () => {
     eworkPage,
   }) => {
     await eworkPage.clicksurveyReport();
-    await eworkPage.validateRestriction();
+    await eworkPage.validateBeAbleAccess();
   });
 
   test("Memastikan Esuite Admin HQ dapat mengakses Stock Report @ework @rhama.fahri", async ({

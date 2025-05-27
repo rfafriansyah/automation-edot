@@ -1,17 +1,16 @@
+import { eworkAdminHQExisting } from "../../../../../helper/credentials/staging";
 import { test } from "../../pageObjects/Base.page";
 
-const credentials = {
-  companyId: "3399227",
-  username: "3399227_ewkadm1",
-  password: "Rhama@123",
-};
+const companyId = eworkAdminHQExisting.companyId;
+const username = eworkAdminHQExisting.username;
+const password = eworkAdminHQExisting.password;
 
 test.describe("RnP Esuite", () => {
   test.beforeEach(async ({ page, loginPage, eworkPage }) => {
     await loginPage.open();
-    await loginPage.filltxtCompanyID(credentials.companyId);
-    await loginPage.filltxtEmployeeIDUsername(credentials.username);
-    await loginPage.filltxtPassword(credentials.password);
+    await loginPage.filltxtCompanyID(companyId);
+    await loginPage.filltxtEmployeeIDUsername(username);
+    await loginPage.filltxtPassword(password);
     await loginPage.clickbuttonLogin();
     await eworkPage.validateEworkPage();
   });

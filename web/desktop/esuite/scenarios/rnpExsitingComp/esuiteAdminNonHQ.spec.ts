@@ -1,22 +1,21 @@
+import { esuiteAdminNonHQExisting } from "../../../../../helper/credentials/staging";
 import { test } from "../../pageObjects/Base.page";
 
-const credentials = {
-  companyId: "3399227",
-  username: "regresfico1007",
-  password: "Testing@123",
-};
+const companyId = esuiteAdminNonHQExisting.companyId;
+const username = esuiteAdminNonHQExisting.username;
+const password = esuiteAdminNonHQExisting.password;
 
 test.describe("RnP Esuite", () => {
   test.beforeEach(async ({ page, loginPage, eworkPage }) => {
     await loginPage.open();
-    await loginPage.filltxtCompanyID(credentials.companyId);
-    await loginPage.filltxtEmployeeIDUsername(credentials.username);
-    await loginPage.filltxtPassword(credentials.password);
+    await loginPage.filltxtCompanyID(companyId);
+    await loginPage.filltxtEmployeeIDUsername(username);
+    await loginPage.filltxtPassword(password);
     await loginPage.clickbuttonLogin();
     await eworkPage.validateEworkPage();
   });
 
-  test("Memastikan Owner dapat mengakses Overview Dashboard @ework @rhama.fahri", async ({
+  test("Memastikan Esuite Admin non-HQ dapat mengakses Overview Dashboard @ework @rhama.fahri", async ({
     eworkPage,
   }) => {
     await eworkPage.validateEworkPage();
@@ -24,42 +23,42 @@ test.describe("RnP Esuite", () => {
 
   // Ework
   // Salesman Activity
-  test("Memastikan Owner dapat mengakses Target & Achievement @ework @rhama.fahri", async ({
+  test("Memastikan Esuite Admin non-HQ dapat mengakses Target & Achievement @ework @rhama.fahri", async ({
     eworkPage,
   }) => {
     await eworkPage.clicktargetAndAchievement();
     await eworkPage.validateBeAbleAccess();
   });
 
-  test("Memastikan Owner dapat mengakses Target Outlet @ework @rhama.fahri", async ({
+  test("Memastikan Esuite Admin non-HQ dapat mengakses Target Outlet @ework @rhama.fahri", async ({
     eworkPage,
   }) => {
     await eworkPage.clicktargetOutlet();
     await eworkPage.validateBeAbleAccess();
   });
 
-  test("Memastikan Owner dapat mengakses Attendance @ework @rhama.fahri", async ({
+  test("Memastikan Esuite Admin non-HQ dapat mengakses Attendance @ework @rhama.fahri", async ({
     eworkPage,
   }) => {
     await eworkPage.clickattendance();
     await eworkPage.validateBeAbleAccess();
   });
 
-  test("Memastikan Owner dapat mengakses Live Tracking @ework @rhama.fahri", async ({
+  test("Memastikan Esuite Admin non-HQ dapat mengakses Live Tracking @ework @rhama.fahri", async ({
     eworkPage,
   }) => {
     await eworkPage.clickliveTracking();
     await eworkPage.validateBeAbleAccess();
   });
 
-  test("Memastikan Owner dapat mengakses Salesman Division @ework @rhama.fahri", async ({
+  test("Memastikan Esuite Admin non-HQ dapat mengakses Salesman Division @ework @rhama.fahri", async ({
     eworkPage,
   }) => {
     await eworkPage.clicksalesmanDivision();
-    await eworkPage.validateBeAbleAccess();
+    await eworkPage.validateRestriction();
   });
 
-  test("Memastikan Owner dapat mengakses Salesman Visit @ework @rhama.fahri", async ({
+  test("Memastikan Esuite Admin non-HQ dapat mengakses Salesman Visit @ework @rhama.fahri", async ({
     eworkPage,
   }) => {
     await eworkPage.clicksalesmanVisit();
@@ -67,14 +66,14 @@ test.describe("RnP Esuite", () => {
   });
 
   // Call Plan
-  test("Memastikan Owner dapat mengakses Call Plan Pattern @ework @rhama.fahri", async ({
+  test("Memastikan Esuite Admin non-HQ dapat mengakses Call Plan Pattern @ework @rhama.fahri", async ({
     eworkPage,
   }) => {
     await eworkPage.clickcallPlanPattern();
     await eworkPage.validateBeAbleAccess();
   });
 
-  test("Memastikan Owner dapat mengakses Call Plan List @ework @rhama.fahri", async ({
+  test("Memastikan Esuite Admin non-HQ dapat mengakses Call Plan List @ework @rhama.fahri", async ({
     eworkPage,
   }) => {
     await eworkPage.clickcallPlanList();
@@ -82,35 +81,35 @@ test.describe("RnP Esuite", () => {
   });
 
   // Customer Activity
-  test("Memastikan Owner dapat mengakses Survey Report @ework @rhama.fahri", async ({
+  test("Memastikan Esuite Admin non-HQ dapat mengakses Survey Report @ework @rhama.fahri", async ({
     eworkPage,
   }) => {
     await eworkPage.clicksurveyReport();
-    await eworkPage.validateBeAbleAccess();
+    await eworkPage.validateRestriction();
   });
 
-  test("Memastikan Owner dapat mengakses Stock Report @ework @rhama.fahri", async ({
+  test("Memastikan Esuite Admin non-HQ dapat mengakses Stock Report @ework @rhama.fahri", async ({
     eworkPage,
   }) => {
     await eworkPage.clickstockReport();
     await eworkPage.validateBeAbleAccess();
   });
 
-  test("Memastikan Owner dapat mengakses Competitor Report @ework @rhama.fahri", async ({
+  test("Memastikan Esuite Admin non-HQ dapat mengakses Competitor Report @ework @rhama.fahri", async ({
     eworkPage,
   }) => {
     await eworkPage.clickcompetitorReport();
     await eworkPage.validateBeAbleAccess();
   });
 
-  test("Memastikan Owner dapat mengakses Planogram Report @ework @rhama.fahri", async ({
+  test("Memastikan Esuite Admin non-HQ dapat mengakses Planogram Report @ework @rhama.fahri", async ({
     eworkPage,
   }) => {
     await eworkPage.clickplanogramReport();
     await eworkPage.validateBeAbleAccess();
   });
 
-  test("Memastikan Owner dapat mengakses Annoucement @ework @rhama.fahri", async ({
+  test("Memastikan Esuite Admin non-HQ dapat mengakses Annoucement @ework @rhama.fahri", async ({
     eworkPage,
   }) => {
     await eworkPage.clickannouncement();
@@ -118,14 +117,14 @@ test.describe("RnP Esuite", () => {
   });
 
   // Configuration
-  test("Memastikan Owner dapat mengakses Brand Competitor @ework @rhama.fahri", async ({
+  test("Memastikan Esuite Admin non-HQ dapat mengakses Brand Competitor @ework @rhama.fahri", async ({
     eworkPage,
   }) => {
     await eworkPage.clickbrandCompetitor();
     await eworkPage.validateBeAbleAccess();
   });
 
-  test("Memastikan Owner dapat mengakses Detail Mechanism @ework @rhama.fahri", async ({
+  test("Memastikan Esuite Admin non-HQ dapat mengakses Detail Mechanism @ework @rhama.fahri", async ({
     eworkPage,
   }) => {
     await eworkPage.clickdetailMechanism();
@@ -134,7 +133,7 @@ test.describe("RnP Esuite", () => {
 
   // Module Sales
   // Access Dashboard
-  test("Memastikan Owner dapat mengakses Overview Dashboard @sales @sales @rhama.fahri", async ({
+  test("Memastikan Esuite Admin non-HQ dapat mengakses Overview Dashboard @sales @sales @rhama.fahri", async ({
     page,
     salesPage,
   }) => {
@@ -143,7 +142,7 @@ test.describe("RnP Esuite", () => {
   });
 
   // Order Management
-  test("Memastikan Owner dapat mengakses Quotation @sales @rhama.fahri", async ({
+  test("Memastikan Esuite Admin non-HQ dapat mengakses Quotation @sales @rhama.fahri", async ({
     page,
     salesPage,
   }) => {
@@ -151,7 +150,7 @@ test.describe("RnP Esuite", () => {
     await salesPage.clickquotation();
     await salesPage.validateBeAbleAccess();
   });
-  test("Memastikan Owner dapat mengakses Sales Order @sales @rhama.fahri", async ({
+  test("Memastikan Esuite Admin non-HQ dapat mengakses Sales Order @sales @rhama.fahri", async ({
     page,
     salesPage,
   }) => {
@@ -161,7 +160,7 @@ test.describe("RnP Esuite", () => {
   });
 
   // Customers
-  test("Memastikan Owner dapat mengakses - Customers @sales @rhama.fahri", async ({
+  test("Memastikan Esuite Admin non-HQ dapat mengakses - Customers @sales @rhama.fahri", async ({
     page,
     salesPage,
   }) => {
@@ -169,17 +168,17 @@ test.describe("RnP Esuite", () => {
     await salesPage.clickcustomers();
     await salesPage.validateBeAbleAccess();
   });
-  test("Memastikan Owner dapat mengakses - Customer Group @sales @rhama.fahri", async ({
+  test("Memastikan Esuite Admin non-HQ dapat mengakses - Customer Group @sales @rhama.fahri", async ({
     page,
     salesPage,
   }) => {
     await salesPage.clickmoduleSales();
     await salesPage.clickcustomerGroup();
-    await salesPage.validateBeAbleAccess();
+    await salesPage.validateRestriction();
   });
 
   // Stock Moves
-  test("Memastikan Owner dapat mengakses Branch @sales @rhama.fahri", async ({
+  test("Memastikan Esuite Admin non-HQ dapat mengakses Branch @sales @rhama.fahri", async ({
     page,
     salesPage,
   }) => {
@@ -187,7 +186,7 @@ test.describe("RnP Esuite", () => {
     await salesPage.clickbranch();
     await salesPage.validateBeAbleAccess();
   });
-  test("Memastikan Owner dapat mengakses Region @sales @rhama.fahri", async ({
+  test("Memastikan Esuite Admin non-HQ dapat mengakses Region @sales @rhama.fahri", async ({
     page,
     salesPage,
   }) => {
@@ -197,66 +196,66 @@ test.describe("RnP Esuite", () => {
   });
 
   // Configuration
-  test("Memastikan Owner dapat mengakses Pricelist @sales @rhama.fahri", async ({
+  test("Memastikan Esuite Admin non-HQ dapat mengakses Pricelist @sales @rhama.fahri", async ({
     page,
     salesPage,
   }) => {
     await salesPage.clickmoduleSales();
     await salesPage.clickpricelist();
-    await salesPage.validateBeAbleAccess();
+    await salesPage.validateRestriction();
   });
 
   // Module Inventory
   // Product
-  test("Memastikan Owner dapat mengakses Products @inventory @rhama.fahri", async ({
+  test("Memastikan Esuite Admin non-HQ dapat mengakses Products @inventory @rhama.fahri", async ({
     page,
     inventoryPage,
   }) => {
     await inventoryPage.clickmoduleInventory();
-    await inventoryPage.validateBeAbleAccess();
+    await inventoryPage.validateRestriction();
   });
-  test("Memastikan Owner dapat mengakses Product Variant @inventory @rhama.fahri", async ({
+  test("Memastikan Esuite Admin non-HQ dapat mengakses Product Variant @inventory @rhama.fahri", async ({
     page,
     inventoryPage,
   }) => {
     await inventoryPage.clickmoduleInventory();
     await inventoryPage.clickproductVariant();
-    await inventoryPage.validateBeAbleAccess();
+    await inventoryPage.validateRestriction();
   });
-  test("Memastikan Owner dapat mengakses Product Combo @inventory @rhama.fahri", async ({
+  test("Memastikan Esuite Admin non-HQ dapat mengakses Product Combo @inventory @rhama.fahri", async ({
     page,
     inventoryPage,
   }) => {
     await inventoryPage.clickmoduleInventory();
     await inventoryPage.clickproductCombo();
-    await inventoryPage.validateBeAbleAccess();
+    await inventoryPage.validateRestriction();
   });
-  test("Memastikan Owner dapat mengakses Product Category @inventory @rhama.fahri", async ({
+  test("Memastikan Esuite Admin non-HQ dapat mengakses Product Category @inventory @rhama.fahri", async ({
     page,
     inventoryPage,
   }) => {
     await inventoryPage.clickmoduleInventory();
     await inventoryPage.clickproductCategory();
-    await inventoryPage.validateBeAbleAccess();
+    await inventoryPage.validateRestriction();
   });
-  test("Memastikan Owner dapat mengakses Product Brand @inventory @rhama.fahri", async ({
+  test("Memastikan Esuite Admin non-HQ dapat mengakses Product Brand @inventory @rhama.fahri", async ({
     page,
     inventoryPage,
   }) => {
     await inventoryPage.clickmoduleInventory();
     await inventoryPage.clickproductBrand();
-    await inventoryPage.validateBeAbleAccess();
+    await inventoryPage.validateRestriction();
   });
-  test("Memastikan Owner dapat mengakses Product Group @inventory @rhama.fahri", async ({
+  test("Memastikan Esuite Admin non-HQ dapat mengakses Product Group @inventory @rhama.fahri", async ({
     page,
     inventoryPage,
   }) => {
     await inventoryPage.clickmoduleInventory();
     await inventoryPage.clickproductGroup();
-    await inventoryPage.validateBeAbleAccess();
+    await inventoryPage.validateRestriction();
   });
   // Stock Management
-  test("Memastikan Owner dapat mengakses Stocks @inventory @rhama.fahri", async ({
+  test("Memastikan Esuite Admin non-HQ dapat mengakses Stocks @inventory @rhama.fahri", async ({
     page,
     inventoryPage,
   }) => {
@@ -264,7 +263,7 @@ test.describe("RnP Esuite", () => {
     await inventoryPage.clickstocks();
     await inventoryPage.validateBeAbleAccess();
   });
-  test("Memastikan Owner dapat mengakses Stocks Adjustment @inventory @rhama.fahri", async ({
+  test("Memastikan Esuite Admin non-HQ dapat mengakses Stocks Adjustment @inventory @rhama.fahri", async ({
     page,
     inventoryPage,
   }) => {
@@ -272,7 +271,7 @@ test.describe("RnP Esuite", () => {
     await inventoryPage.clickstocksAdjustment();
     await inventoryPage.validateBeAbleAccess();
   });
-  test("Memastikan Owner dapat mengakses Moves History @inventory @rhama.fahri", async ({
+  test("Memastikan Esuite Admin non-HQ dapat mengakses Moves History @inventory @rhama.fahri", async ({
     page,
     inventoryPage,
   }) => {
@@ -281,7 +280,7 @@ test.describe("RnP Esuite", () => {
     await inventoryPage.validateBeAbleAccess();
   });
   // Stock Moves
-  test("Memastikan Owner dapat mengakses Good Receipt @inventory @rhama.fahri", async ({
+  test("Memastikan Esuite Admin non-HQ dapat mengakses Good Receipt @inventory @rhama.fahri", async ({
     page,
     inventoryPage,
   }) => {
@@ -289,7 +288,7 @@ test.describe("RnP Esuite", () => {
     await inventoryPage.clickgoodReceipt();
     await inventoryPage.validateBeAbleAccess();
   });
-  test("Memastikan Owner dapat mengakses Deliveries @inventory @rhama.fahri", async ({
+  test("Memastikan Esuite Admin non-HQ dapat mengakses Deliveries @inventory @rhama.fahri", async ({
     page,
     inventoryPage,
   }) => {
@@ -297,7 +296,7 @@ test.describe("RnP Esuite", () => {
     await inventoryPage.clickdeliveries();
     await inventoryPage.validateBeAbleAccess();
   });
-  test("Memastikan Owner dapat mengakses Internal Transfer @inventory @rhama.fahri", async ({
+  test("Memastikan Esuite Admin non-HQ dapat mengakses Internal Transfer @inventory @rhama.fahri", async ({
     page,
     inventoryPage,
   }) => {
@@ -306,49 +305,49 @@ test.describe("RnP Esuite", () => {
     await inventoryPage.validateBeAbleAccess();
   });
   // Configuration
-  test("Memastikan Owner dapat mengakses Location @inventory @rhama.fahri", async ({
+  test("Memastikan Esuite Admin non-HQ dapat mengakses Location @inventory @rhama.fahri", async ({
     page,
     inventoryPage,
   }) => {
     await inventoryPage.clickmoduleInventory();
     await inventoryPage.clicklocation();
-    await inventoryPage.validateBeAbleAccess();
+    await inventoryPage.validateRestriction();
   });
-  test("Memastikan Owner dapat mengakses Warehouse @inventory @rhama.fahri", async ({
+  test("Memastikan Esuite Admin non-HQ dapat mengakses Warehouse @inventory @rhama.fahri", async ({
     page,
     inventoryPage,
   }) => {
     await inventoryPage.clickmoduleInventory();
     await inventoryPage.clickwarehouse();
-    await inventoryPage.validateBeAbleAccess();
+    await inventoryPage.validateRestriction();
   });
-  test("Memastikan Owner dapat mengakses UoM Category @inventory @rhama.fahri", async ({
+  test("Memastikan Esuite Admin non-HQ dapat mengakses UoM Category @inventory @rhama.fahri", async ({
     page,
     inventoryPage,
   }) => {
     await inventoryPage.clickmoduleInventory();
     await inventoryPage.clickuomCategory();
-    await inventoryPage.validateBeAbleAccess();
+    await inventoryPage.validateRestriction();
   });
-  test("Memastikan Owner dapat mengakses Unit of Measure @inventory @rhama.fahri", async ({
+  test("Memastikan Esuite Admin non-HQ dapat mengakses Unit of Measure @inventory @rhama.fahri", async ({
     page,
     inventoryPage,
   }) => {
     await inventoryPage.clickmoduleInventory();
     await inventoryPage.clickunitOfMeasure();
-    await inventoryPage.validateBeAbleAccess();
+    await inventoryPage.validateRestriction();
   });
 
   // Module Finance
   // Finance
-  test("Memastikan Owner dapat mengakses Invoices @finance @finance @rhama.fahri", async ({
+  test("Memastikan Esuite Admin non-HQ dapat mengakses Invoices @finance @finance @rhama.fahri", async ({
     page,
     financePage,
   }) => {
     await financePage.clickmoduleFinance();
     await financePage.validateBeAbleAccess();
   });
-  test("Memastikan Owner dapat mengakses Bills @finance @rhama.fahri", async ({
+  test("Memastikan Esuite Admin non-HQ dapat mengakses Bills @finance @rhama.fahri", async ({
     page,
     financePage,
   }) => {
@@ -356,7 +355,7 @@ test.describe("RnP Esuite", () => {
     await financePage.clickbills();
     await financePage.validateBeAbleAccess();
   });
-  test("Memastikan Owner dapat mengakses Register Payment @finance @rhama.fahri", async ({
+  test("Memastikan Esuite Admin non-HQ dapat mengakses Register Payment @finance @rhama.fahri", async ({
     page,
     financePage,
   }) => {
@@ -364,7 +363,7 @@ test.describe("RnP Esuite", () => {
     await financePage.clickregisterPayments();
     await financePage.validateBeAbleAccess();
   });
-  test("Memastikan Owner dapat mengakses Vendors @finance @rhama.fahri", async ({
+  test("Memastikan Esuite Admin non-HQ dapat mengakses Vendors @finance @rhama.fahri", async ({
     page,
     financePage,
   }) => {
@@ -373,7 +372,7 @@ test.describe("RnP Esuite", () => {
     await financePage.validateBeAbleAccess();
   });
   // Tax
-  test("Memastikan Owner dapat mengakses Taxes @finance @rhama.fahri", async ({
+  test("Memastikan Esuite Admin non-HQ dapat mengakses Taxes @finance @rhama.fahri", async ({
     page,
     financePage,
   }) => {
@@ -382,7 +381,7 @@ test.describe("RnP Esuite", () => {
     await financePage.validateBeAbleAccess();
   });
   // Credit Limit
-  test("Memastikan Owner dapat mengakses Approval @finance @rhama.fahri", async ({
+  test("Memastikan Esuite Admin non-HQ dapat mengakses Approval @finance @rhama.fahri", async ({
     page,
     financePage,
   }) => {
@@ -390,7 +389,7 @@ test.describe("RnP Esuite", () => {
     await financePage.clickapproval();
     await financePage.validateBeAbleAccess();
   });
-  test("Memastikan Owner dapat mengakses Mutation @finance @rhama.fahri", async ({
+  test("Memastikan Esuite Admin non-HQ dapat mengakses Mutation @finance @rhama.fahri", async ({
     page,
     financePage,
   }) => {
@@ -399,7 +398,7 @@ test.describe("RnP Esuite", () => {
     await financePage.validateBeAbleAccess();
   });
   // Configuration
-  test("Memastikan Owner dapat mengakses Payment Method @finance @rhama.fahri", async ({
+  test("Memastikan Esuite Admin non-HQ dapat mengakses Payment Method @finance @rhama.fahri", async ({
     page,
     financePage,
   }) => {
@@ -407,7 +406,7 @@ test.describe("RnP Esuite", () => {
     await financePage.clickpaymentMethod();
     await financePage.validateBeAbleAccess();
   });
-  test("Memastikan Owner dapat mengakses Credit Limit @finance @rhama.fahri", async ({
+  test("Memastikan Esuite Admin non-HQ dapat mengakses Credit Limit @finance @rhama.fahri", async ({
     page,
     financePage,
   }) => {
@@ -415,7 +414,7 @@ test.describe("RnP Esuite", () => {
     await financePage.clickcreditLimit();
     await financePage.validateBeAbleAccess();
   });
-  test("Memastikan Owner dapat mengakses Payment Provider @finance @rhama.fahri", async ({
+  test("Memastikan Esuite Admin non-HQ dapat mengakses Payment Provider @finance @rhama.fahri", async ({
     page,
     financePage,
   }) => {
@@ -426,15 +425,15 @@ test.describe("RnP Esuite", () => {
 
   // Module Marketing
   // Dashboard
-  test("Memastikan Owner dapat mengakses Dashboard @marketing @rhama.fahri", async ({
+  test("Memastikan Esuite Admin non-HQ dapat mengakses Dashboard @marketing @rhama.fahri", async ({
     page,
     marketingPage,
   }) => {
     await marketingPage.clickmoduleMarketing();
-    await marketingPage.validateBeAbleAccess();
+    await marketingPage.validateRestriction();
   });
   // Promotions
-  test("Memastikan Owner dapat mengakses Promotions @marketing @rhama.fahri", async ({
+  test("Memastikan Esuite Admin non-HQ dapat mengakses Promotions @marketing @rhama.fahri", async ({
     page,
     marketingPage,
   }) => {
@@ -442,7 +441,7 @@ test.describe("RnP Esuite", () => {
     await marketingPage.clickpromotions();
     await marketingPage.validateBeAbleAccess();
   });
-  test("Memastikan Owner dapat mengakses Promo Simulations @marketing @rhama.fahri", async ({
+  test("Memastikan Esuite Admin non-HQ dapat mengakses Promo Simulations @marketing @rhama.fahri", async ({
     page,
     marketingPage,
   }) => {
@@ -451,7 +450,7 @@ test.describe("RnP Esuite", () => {
     await marketingPage.validateBeAbleAccess();
   });
   // Campaign
-  test("Memastikan Owner dapat mengakses Campaign @marketing @rhama.fahri", async ({
+  test("Memastikan Esuite Admin non-HQ dapat mengakses Campaign @marketing @rhama.fahri", async ({
     page,
     marketingPage,
   }) => {
@@ -460,7 +459,7 @@ test.describe("RnP Esuite", () => {
     await marketingPage.validateBeAbleAccess();
   });
   // SKU Focus
-  test("Memastikan Owner dapat mengakses SKU Recommendations @marketing @rhama.fahri", async ({
+  test("Memastikan Esuite Admin non-HQ dapat mengakses SKU Recommendations @marketing @rhama.fahri", async ({
     page,
     marketingPage,
   }) => {
@@ -468,7 +467,7 @@ test.describe("RnP Esuite", () => {
     await marketingPage.clickskuRecommendation();
     await marketingPage.validateBeAbleAccess();
   });
-  test("Memastikan Owner dapat mengakses Product Tags @marketing @rhama.fahri", async ({
+  test("Memastikan Esuite Admin non-HQ dapat mengakses Product Tags @marketing @rhama.fahri", async ({
     page,
     marketingPage,
   }) => {
@@ -477,7 +476,7 @@ test.describe("RnP Esuite", () => {
     await marketingPage.validateBeAbleAccess();
   });
   // Configuration
-  test("Memastikan Owner dapat mengakses Campaign Type @marketing @rhama.fahri", async ({
+  test("Memastikan Esuite Admin non-HQ dapat mengakses Campaign Type @marketing @rhama.fahri", async ({
     page,
     marketingPage,
   }) => {
@@ -485,7 +484,7 @@ test.describe("RnP Esuite", () => {
     await marketingPage.clickcampaignType();
     await marketingPage.validateBeAbleAccess();
   });
-  test("Memastikan Owner dapat mengakses Promotion Type @marketing @rhama.fahri", async ({
+  test("Memastikan Esuite Admin non-HQ dapat mengakses Promotion Type @marketing @rhama.fahri", async ({
     page,
     marketingPage,
   }) => {
@@ -493,7 +492,7 @@ test.describe("RnP Esuite", () => {
     await marketingPage.clickpromotionType();
     await marketingPage.validateBeAbleAccess();
   });
-  test("Memastikan Owner dapat mengakses Notifications @marketing @rhama.fahri", async ({
+  test("Memastikan Esuite Admin non-HQ dapat mengakses Notifications @marketing @rhama.fahri", async ({
     page,
     marketingPage,
   }) => {
@@ -501,33 +500,33 @@ test.describe("RnP Esuite", () => {
     await marketingPage.clicknotification();
     await marketingPage.validateBeAbleAccess();
   });
-  test("Memastikan Owner dapat mengakses Benefit @marketing @rhama.fahri", async ({
+  test("Memastikan Esuite Admin non-HQ dapat mengakses Benefit @marketing @rhama.fahri", async ({
     page,
     marketingPage,
   }) => {
     await marketingPage.clickmoduleMarketing();
     await marketingPage.clickbenefit();
-    await marketingPage.validateBeAbleAccess();
+    await marketingPage.validateRestriction();
   });
-  test("Memastikan Owner dapat mengakses Benefit Type @marketing @rhama.fahri", async ({
+  test("Memastikan Esuite Admin non-HQ dapat mengakses Benefit Type @marketing @rhama.fahri", async ({
     page,
     marketingPage,
   }) => {
     await marketingPage.clickmoduleMarketing();
     await marketingPage.clickbenefitType();
-    await marketingPage.validateBeAbleAccess();
+    await marketingPage.validateRestriction();
   });
 
   // Module HR
   // Employee
-  test("Memastikan Owner dapat mengakses Employees @hr @hr @rhama.fahri", async ({
+  test("Memastikan Esuite Admin non-HQ dapat mengakses Employees @hr @hr @rhama.fahri", async ({
     page,
     hrPage,
   }) => {
     await hrPage.clickmoduleHRPage();
-    await hrPage.validateBeAbleAccess();
+    await hrPage.validateRestriction();
   });
-  test("Memastikan Owner dapat mengakses Attendance @hr @rhama.fahri", async ({
+  test("Memastikan Esuite Admin non-HQ dapat mengakses Attendance @hr @rhama.fahri", async ({
     page,
     hrPage,
   }) => {
@@ -535,7 +534,7 @@ test.describe("RnP Esuite", () => {
     await hrPage.clickattendance();
     await hrPage.validateBeAbleAccess();
   });
-  test("Memastikan Owner dapat mengakses Scheduler @hr @rhama.fahri", async ({
+  test("Memastikan Esuite Admin non-HQ dapat mengakses Scheduler @hr @rhama.fahri", async ({
     page,
     hrPage,
   }) => {
@@ -544,36 +543,36 @@ test.describe("RnP Esuite", () => {
     await hrPage.validateBeAbleAccess();
   });
   // Configuration
-  test("Memastikan Owner dapat mengakses Departement @hr @rhama.fahri", async ({
+  test("Memastikan Esuite Admin non-HQ dapat mengakses Departement @hr @rhama.fahri", async ({
     page,
     hrPage,
   }) => {
     await hrPage.clickmoduleHRPage();
     await hrPage.clickdepartment();
-    await hrPage.validateBeAbleAccess();
+    await hrPage.validateRestriction();
   });
-  test("Memastikan Owner dapat mengakses Job Position @hr @rhama.fahri", async ({
+  test("Memastikan Esuite Admin non-HQ dapat mengakses Job Position @hr @rhama.fahri", async ({
     page,
     hrPage,
   }) => {
     await hrPage.clickmoduleHRPage();
     await hrPage.clickjobPosition();
-    await hrPage.validateBeAbleAccess();
+    await hrPage.validateRestriction();
   });
-  test("Memastikan Owner dapat mengakses Shift @hr @rhama.fahri", async ({
+  test("Memastikan Esuite Admin non-HQ dapat mengakses Shift @hr @rhama.fahri", async ({
     page,
     hrPage,
   }) => {
     await hrPage.clickmoduleHRPage();
     await hrPage.clickshift();
-    await hrPage.validateBeAbleAccess();
+    await hrPage.validateRestriction();
   });
-  test("Memastikan Owner dapat mengakses Holiday @hr @rhama.fahri", async ({
+  test("Memastikan Esuite Admin non-HQ dapat mengakses Holiday @hr @rhama.fahri", async ({
     page,
     hrPage,
   }) => {
     await hrPage.clickmoduleHRPage();
     await hrPage.clickholiday();
-    await hrPage.validateBeAbleAccess();
+    await hrPage.validateRestriction();
   });
 });
