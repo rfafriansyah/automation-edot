@@ -5,7 +5,7 @@ const companyId = esuiteAdminNonHQExisting.companyId;
 const username = esuiteAdminNonHQExisting.username;
 const password = esuiteAdminNonHQExisting.password;
 
-test.describe("RnP Esuite", () => {
+test.describe("RnP Single Branch - Esuite", () => {
   test.beforeEach(async ({ page, loginPage, eworkPage }) => {
     await loginPage.open();
     await loginPage.filltxtCompanyID(companyId);
