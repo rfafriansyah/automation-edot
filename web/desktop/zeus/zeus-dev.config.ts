@@ -35,7 +35,7 @@ export default defineConfig({
 
   use: {
     /* Base URL to use in actions like `await page.goto('/')`. */
-    baseURL: "https://zeus.edot-dev.com/", // Dev
+    baseURL: process.env.ZEUS_DEV, // Dev
 
     /* Collect trace when retrying the failed test. See https://playwright.dev/docs/trace-viewer */
     trace: "on",
