@@ -1,0 +1,18 @@
+{
+  "compilerOptions": {
+    // ... opsi lainnya ...
+    "baseUrl": ".", // Atau folder root project Anda, misal: "src"
+    "paths": {
+      "@project-automation/*": ["src/*"] // Sesuaikan path ini dengan struktur folder Anda
+      // Jika folder test dan web berada di dalam folder src
+      // Contoh: @project-automation/test/web/web.ts akan di-resolve ke src/test/web/web.ts
+    },
+    "moduleResolution": "node" // Pastikan ini diatur ke "node" atau "bundler"
+    // ... opsi lainnya ...
+  },
+  "include": [
+    "src/**/*.ts", // Pastikan file .ts Anda di-include
+    "test/**/*.ts" // Jika test files ada di folder terpisah
+  ],
+  "exclude": ["node_modules", "dist"]
+}
