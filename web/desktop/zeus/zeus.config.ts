@@ -1,4 +1,16 @@
 import { defineConfig, devices } from "@playwright/test";
+import { env } from "../../../helper/environtment";
+require("dotenv").config();
+
+let envBaseURL: any;
+
+if (env == "DEV") {
+  envBaseURL = process.env.ZEUS_DEV;
+} else if (env == "STG") {
+  envBaseURL = process.env.ZEUS_STG;
+} else if (env == "PROD") {
+  envBaseURL = process.env.ZEUS_PROD;
+}
 
 /**
  * Read environment variables from file.
@@ -35,7 +47,7 @@ export default defineConfig({
 
   use: {
     /* Base URL to use in actions like `await page.goto('/')`. */
-    baseURL: process.env.ZEUS_DEV, // Dev
+    baseURL: envBaseURL, // Dev
 
     /* Collect trace when retrying the failed test. See https://playwright.dev/docs/trace-viewer */
     trace: "on",

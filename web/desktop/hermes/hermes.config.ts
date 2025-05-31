@@ -1,5 +1,16 @@
 import { defineConfig, devices } from "@playwright/test";
+import { env } from "../../../helper/environtment";
 require("dotenv").config();
+
+let envBaseURL: any;
+
+if (env == "DEV") {
+  envBaseURL = process.env.HERMES_DEV;
+} else if (env == "STG") {
+  envBaseURL = process.env.HERMES_STG;
+} else if (env == "PROD") {
+  envBaseURL = process.env.HERMES_PROD;
+}
 
 /**
  * Read environment variables from file.
@@ -34,7 +45,8 @@ export default defineConfig({
   /* Shared settings for all the projects below. See https://playwright.dev/docs/api/class-testoptions. */
   use: {
     /* Base URL to use in actions like `await page.goto('/')`. */
-    baseURL: process.env.HERMES_DEV, // Dev
+
+    baseURL: envBaseURL, // Dev
     // baseURL: "https://hermes-dashboard.edot-stg.com/", // Stg
 
     /* Collect trace when retrying the failed test. See https://playwright.dev/docs/trace-viewer */
