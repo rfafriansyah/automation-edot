@@ -1,5 +1,5 @@
+import { credentialsLogin } from "../../../../helper/hermes/credentials";
 import { test } from "../pageObjects/Base.page";
-import { payloadLogin } from "../../../../helper/hermes/payloadHermes";
 
 test.describe.serial("Delete Company Hermes - Positive", () => {
   test("User melakukan hapus perusahaan", async ({
@@ -11,9 +11,9 @@ test.describe.serial("Delete Company Hermes - Positive", () => {
   }) => {
     await loginPage.open();
     await loginPage.clickbuttonEmailUsername();
-    await loginPage.filltxtEmailUsername(payloadLogin().username);
+    await loginPage.filltxtEmailUsername(credentialsLogin().username);
     await loginPage.clickbuttonLogin();
-    await loginPage.filltxtPassword(payloadLogin().password);
+    await loginPage.filltxtPassword(credentialsLogin().password);
     await loginPage.clickbuttonLogin();
     await navbarPage.clickbuttonCompanies();
     await companiesPage.clickbuttonManageLast();

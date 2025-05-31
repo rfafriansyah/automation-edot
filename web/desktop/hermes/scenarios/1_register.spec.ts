@@ -1,8 +1,5 @@
 import { test } from "../pageObjects/Base.page";
-import {
-  payloadLogin,
-  payloadCreateIndonesia,
-} from "../../../../helper/hermes/payloadHermes";
+import { payloadCreateIndonesia } from "../../../../helper/hermes/payloadHermes";
 
 let email = `smoketestrhama23april04@yopmail.com`;
 let fullName = `Nama Full Name Testing`;

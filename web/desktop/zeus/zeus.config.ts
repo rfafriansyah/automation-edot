@@ -1,5 +1,5 @@
 import { defineConfig, devices } from "@playwright/test";
-import { env } from "../../../helper/environtment";
+import { env } from "../../../environtment";
 require("dotenv").config();
 
 let envBaseURL: any;

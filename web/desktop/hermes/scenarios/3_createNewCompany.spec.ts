@@ -1,18 +1,18 @@
 import { test } from "../pageObjects/Base.page";
 import {
-  payloadLogin,
   payloadCreateIndonesia,
   payloadCreateMalaysia,
   payloadCreatePhilippine,
 } from "../../../../helper/hermes/payloadHermes";
+import { credentialsLogin } from "../../../../helper/hermes/credentials";
 
 test.describe("Create New Company on Hermes - Positive", () => {
   test.beforeEach(async ({ page, loginPage, navbarPage, companiesPage }) => {
     await loginPage.open();
     await loginPage.clickbuttonEmailUsername();
-    await loginPage.filltxtEmailUsername(payloadLogin().username);
+    await loginPage.filltxtEmailUsername(credentialsLogin().username);
     await loginPage.clickbuttonLogin();
-    await loginPage.filltxtPassword(payloadLogin().password);
+    await loginPage.filltxtPassword(credentialsLogin().password);
     await loginPage.clickbuttonLogin();
     await navbarPage.clickbuttonCompanies();
     await companiesPage.clickbuttonAddCompany();

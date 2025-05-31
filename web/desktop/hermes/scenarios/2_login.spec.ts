@@ -1,5 +1,5 @@
 import { test } from "../pageObjects/Base.page";
-import { payloadLogin } from "../../../../helper/hermes/payloadHermes";
+import { credentialsLogin } from "../../../../helper/hermes/credentials";
 
 test.describe.serial("Login Page Hermes - Positive", () => {
   test.beforeEach(async ({ page, loginPage }) => {
@@ -11,18 +11,18 @@ test.describe.serial("Login Page Hermes - Positive", () => {
     page,
     loginPage,
   }) => {
-    await loginPage.filltxtEmailUsername(payloadLogin().username);
+    await loginPage.filltxtEmailUsername(credentialsLogin().username);
     await loginPage.clickbuttonLogin();
-    await loginPage.filltxtPassword(payloadLogin().password);
+    await loginPage.filltxtPassword(credentialsLogin().password);
   });
 
   test("User melakukan login menggunakan email", async ({
     page,
     loginPage,
   }) => {
-    await loginPage.filltxtEmailUsername(payloadLogin().email);
+    await loginPage.filltxtEmailUsername(credentialsLogin().email);
     await loginPage.clickbuttonLogin();
-    await loginPage.filltxtPassword(payloadLogin().password);
+    await loginPage.filltxtPassword(credentialsLogin().password);
   });
 
   test.afterEach(async ({ page, loginPage, navbarPage }) => {
