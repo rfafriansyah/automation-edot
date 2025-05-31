@@ -1,16 +1,12 @@
-import { esuiteAdminHQExisting } from "../../../../../helper/credentials/staging";
+import { esuiteAdminHQNew } from "../../../../../helper/esuite/credentials";
 import { test } from "../../pageObjects/Base.page";
-
-const companyId = esuiteAdminHQExisting.companyId;
-const username = esuiteAdminHQExisting.username;
-const password = esuiteAdminHQExisting.password;
 
 test.describe("RnP Esuite", () => {
   test.beforeEach(async ({ page, loginPage, eworkPage }) => {
     await loginPage.open();
-    await loginPage.filltxtCompanyID(companyId);
-    await loginPage.filltxtEmployeeIDUsername(username);
-    await loginPage.filltxtPassword(password);
+    await loginPage.filltxtCompanyID(esuiteAdminHQNew.companyId);
+    await loginPage.filltxtEmployeeIDUsername(esuiteAdminHQNew.username);
+    await loginPage.filltxtPassword(esuiteAdminHQNew.password);
     await loginPage.clickbuttonLogin();
     await eworkPage.validateEworkPage();
   });
@@ -24,31 +20,39 @@ test.describe("RnP Esuite", () => {
   // Ework
   // Salesman Activity
   test("Memastikan Esuite Admin HQ dapat mengakses Target & Achievement @ework @rhama.fahri", async ({
+    page,
     eworkPage,
   }) => {
     await eworkPage.clicktargetAndAchievement();
     await eworkPage.validateBeAbleAccess();
+    await eworkPage.validatelistFilterBranchTargetAchievement();
   });
 
   test("Memastikan Esuite Admin HQ dapat mengakses Target Outlet @ework @rhama.fahri", async ({
+    page,
     eworkPage,
   }) => {
     await eworkPage.clicktargetOutlet();
     await eworkPage.validateBeAbleAccess();
+    await eworkPage.validatelistFilterBranchTargetOutlet();
   });
 
   test("Memastikan Esuite Admin HQ dapat mengakses Attendance @ework @rhama.fahri", async ({
+    page,
     eworkPage,
   }) => {
     await eworkPage.clickattendance();
     await eworkPage.validateBeAbleAccess();
+    await eworkPage.validatelistFilterBranchAttendance();
   });
 
   test("Memastikan Esuite Admin HQ dapat mengakses Live Tracking @ework @rhama.fahri", async ({
+    page,
     eworkPage,
   }) => {
     await eworkPage.clickliveTracking();
     await eworkPage.validateBeAbleAccess();
+    await eworkPage.validatelistFilterBranchLiveTracking();
   });
 
   test("Memastikan Esuite Admin HQ dapat mengakses Salesman Division @ework @rhama.fahri", async ({
@@ -59,25 +63,31 @@ test.describe("RnP Esuite", () => {
   });
 
   test("Memastikan Esuite Admin HQ dapat mengakses Salesman Visit @ework @rhama.fahri", async ({
+    page,
     eworkPage,
   }) => {
     await eworkPage.clicksalesmanVisit();
     await eworkPage.validateBeAbleAccess();
+    await eworkPage.validatelistFilterBranchSalesmanVisit();
   });
 
   // Call Plan
   test("Memastikan Esuite Admin HQ dapat mengakses Call Plan Pattern @ework @rhama.fahri", async ({
+    page,
     eworkPage,
   }) => {
     await eworkPage.clickcallPlanPattern();
     await eworkPage.validateBeAbleAccess();
+    await eworkPage.validatelistFilterBranchCallPlanPattern();
   });
 
   test("Memastikan Esuite Admin HQ dapat mengakses Call Plan List @ework @rhama.fahri", async ({
+    page,
     eworkPage,
   }) => {
     await eworkPage.clickcallPlanList();
     await eworkPage.validateBeAbleAccess();
+    await eworkPage.validatelistFilterBranchCallPlanList();
   });
 
   // Customer Activity

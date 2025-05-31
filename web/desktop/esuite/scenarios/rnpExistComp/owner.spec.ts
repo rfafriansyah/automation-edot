@@ -1,16 +1,12 @@
-import { ownerExisting } from "../../../../../helper/credentials/staging";
+import { ownerExisting } from "../../../../../helper/esuite/credentials";
 import { test } from "../../pageObjects/Base.page";
-
-const companyId = ownerExisting.companyId;
-const username = ownerExisting.username;
-const password = ownerExisting.password;
 
 test.describe("RnP Esuite", () => {
   test.beforeEach(async ({ page, loginPage, eworkPage }) => {
     await loginPage.open();
-    await loginPage.filltxtCompanyID(companyId);
-    await loginPage.filltxtEmployeeIDUsername(username);
-    await loginPage.filltxtPassword(password);
+    await loginPage.filltxtCompanyID(ownerExisting.companyId);
+    await loginPage.filltxtEmployeeIDUsername(ownerExisting.username);
+    await loginPage.filltxtPassword(ownerExisting.password);
     await loginPage.clickbuttonLogin();
     await eworkPage.validateEworkPage();
   });

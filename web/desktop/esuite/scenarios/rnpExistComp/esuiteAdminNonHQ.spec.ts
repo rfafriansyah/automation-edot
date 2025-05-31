@@ -1,16 +1,14 @@
-import { esuiteAdminNonHQExisting } from "../../../../../helper/credentials/staging";
+import { esuiteAdminNonHQExisting } from "../../../../../helper/esuite/credentials";
 import { test } from "../../pageObjects/Base.page";
 
-const companyId = esuiteAdminNonHQExisting.companyId;
-const username = esuiteAdminNonHQExisting.username;
-const password = esuiteAdminNonHQExisting.password;
-
-test.describe("RnP Single Branch - Esuite", () => {
+test.describe("RnP Esuite", () => {
   test.beforeEach(async ({ page, loginPage, eworkPage }) => {
     await loginPage.open();
-    await loginPage.filltxtCompanyID(companyId);
-    await loginPage.filltxtEmployeeIDUsername(username);
-    await loginPage.filltxtPassword(password);
+    await loginPage.filltxtCompanyID(esuiteAdminNonHQExisting.companyId);
+    await loginPage.filltxtEmployeeIDUsername(
+      esuiteAdminNonHQExisting.username
+    );
+    await loginPage.filltxtPassword(esuiteAdminNonHQExisting.password);
     await loginPage.clickbuttonLogin();
     await eworkPage.validateEworkPage();
   });

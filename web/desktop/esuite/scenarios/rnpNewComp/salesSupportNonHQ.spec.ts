@@ -1,20 +1,15 @@
+import { salesSupportHQNew } from "../../../../../helper/esuite/credentials";
 import { test } from "../../pageObjects/Base.page";
-
-const credentials = {
-  companyId: "3399227",
-  username: "3399227_slssprt3",
-  password: "Rhama@123",
-};
 
 test.describe("RnP Esuite", () => {
   test.beforeEach(async ({ page, loginPage, eworkPage }) => {
     await loginPage.open();
-    await loginPage.filltxtCompanyID(credentials.companyId);
-    await loginPage.filltxtEmployeeIDUsername(credentials.username);
-    await loginPage.filltxtPassword(credentials.password);
+    await loginPage.filltxtCompanyID(salesSupportHQNew.companyId);
+    await loginPage.filltxtEmployeeIDUsername(salesSupportHQNew.username);
+    await loginPage.filltxtPassword(salesSupportHQNew.password);
     await loginPage.clickbuttonLogin();
+    await eworkPage.validateEworkPage();
   });
-
   // Call Plan
   test("Memastikan Esuite Admin HQ dapat mengakses Call Plan Pattern @ework @rhama.fahri", async ({
     eworkPage,
