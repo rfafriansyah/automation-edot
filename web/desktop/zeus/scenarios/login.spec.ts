@@ -1,5 +1,5 @@
 import { test } from "../pageObjects/Base.page";
-import { payloadLogin } from "../../../../helper/hermes/payloadHermes";
+import { credentialsLogin } from "../../../../helper/zeus/credentials";
 
 let username = `it.qa`;
 let password = `it.QA2025`;
@@ -15,9 +15,9 @@ test.describe.serial("Login Page Zeus - Positive", () => {
     homePage,
   }) => {
     await loginPage.clickbuttonEmailUsername();
-    await loginPage.filltxtEmailUsername(username);
+    await loginPage.filltxtEmailUsername(credentialsLogin().username);
     await loginPage.clickbuttonLogin();
-    await loginPage.filltxtPassword(password);
+    await loginPage.filltxtPassword(credentialsLogin().password);
     await loginPage.clickbuttonLogin();
     await homePage.validateHomePage();
     await page.waitForTimeout(2000);
