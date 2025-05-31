@@ -24,7 +24,7 @@ export default defineConfig({
   workers: process.env.CI ? 1 : 3,
   /* Reporter to use. See https://playwright.dev/docs/test-reporters */
   reporter: [
-    ['html', { open: 'always' }], // Or 'always'
+    ["html", { open: "always" }], // Or 'always'
     // ... other reporters you might have
   ],
   expect: {
@@ -33,11 +33,11 @@ export default defineConfig({
   /* Shared settings for all the projects below. See https://playwright.dev/docs/api/class-testoptions. */
   use: {
     /* Base URL to use in actions like `await page.goto('/')`. */
-    baseURL: "https://hermes-dashboard.edot-stg.com/", // Stg
+    baseURL: process.env.HERMES_STG, // Stg
 
     /* Collect trace when retrying the failed test. See https://playwright.dev/docs/trace-viewer */
     trace: "on",
-    video: "on"
+    video: "on",
   },
 
   /* Configure projects for major browsers */
