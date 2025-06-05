@@ -1,10 +1,18 @@
 import { test as base } from "@playwright/test";
 import { LoginPage } from "./Login.page";
 import { HomePage } from "./Home.page";
+import { NavbarPage } from "./Navbar.page";
+import { UserSegmentPage } from "./UserSegment.page";
+import { MessageTemplatePage } from "./MessageTemplate.page";
+import { PushMessagePage } from "./pushMessage.page";
 
 type MyFixtures = {
   loginPage: LoginPage;
-  homePage: HomePage
+  homePage: HomePage;
+  navbarPage: NavbarPage;
+  userSegmentPage: UserSegmentPage;
+  messageTemplatePage: MessageTemplatePage;
+  pushMessagePage: PushMessagePage;
 };
 
 export const test = base.extend<MyFixtures>({
@@ -13,6 +21,18 @@ export const test = base.extend<MyFixtures>({
   },
   homePage: async ({ page }, use) => {
     await use(new HomePage(page));
+  },
+  navbarPage: async ({ page }, use) => {
+    await use(new NavbarPage(page));
+  },
+  userSegmentPage: async ({ page }, use) => {
+    await use(new UserSegmentPage(page));
+  },
+  messageTemplatePage: async ({ page }, use) => {
+    await use(new MessageTemplatePage(page));
+  },
+  pushMessagePage: async ({ page }, use) => {
+    await use(new PushMessagePage(page));
   },
 });
 
