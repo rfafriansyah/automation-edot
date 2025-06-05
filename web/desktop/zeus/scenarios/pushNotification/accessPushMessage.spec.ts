@@ -14,22 +14,10 @@ test.describe.serial("Access Message Push Notification - Positive", () => {
     await navbarPage.clicksubmenuPushMessage();
   });
 
-  test.only("User be able access Push Notification List", async ({
+  test("User be able access Push Message List", async ({
     page,
     pushMessagePage,
   }) => {
-    await pushMessagePage.clickbuttonAddNew();
-    await pushMessagePage.filltxtPushMessageName(
-      createPushMessage.pushMessageName
-    );
-    await pushMessagePage.selectdropdownUserSegment(
-      createPushMessage.userSegments
-    );
-    await pushMessagePage.selectdropdownPlatform(createPushMessage.platform);
-    await pushMessagePage.selectdropdownTemplate(createPushMessage.template);
-    await pushMessagePage.filltxtDate(createPushMessage.date);
-    await pushMessagePage.filltxtTime(createPushMessage.time);
-    await page.pause();
-    await page.waitForTimeout(10000);
+    await page.waitForTimeout(5000);
   });
 });

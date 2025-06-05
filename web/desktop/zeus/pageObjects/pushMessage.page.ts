@@ -1,4 +1,5 @@
 import { Locator, Page, expect } from "@playwright/test";
+import { accessSync } from "fs";
 
 export class PushMessagePage {
   readonly page: Page;
@@ -12,6 +13,10 @@ export class PushMessagePage {
   readonly txtDate: Locator;
   readonly txtTime: Locator;
 
+  readonly buttonSaveDraft: Locator;
+  readonly buttonReviewPublish: Locator;
+  readonly buttonConfirmPublish: Locator;
+
   constructor(page: Page) {
     this.page = page;
 
@@ -24,6 +29,13 @@ export class PushMessagePage {
     this.dropdownTemplate = page.getByPlaceholder("Choose Template");
     this.txtDate = page.locator("div").filter({ hasText: /^Date$/ });
     this.txtTime = page.locator("div").filter({ hasText: /^Time$/ });
+    this.buttonSaveDraft = page.getByRole("button", { name: "Save as Draft" });
+    this.buttonReviewPublish = page.getByRole("button", {
+      name: "Review & Publish",
+    });
+    this.buttonConfirmPublish = page.getByRole("button", {
+      name: "Confirm & Publish",
+    });
   }
 
   async clickbuttonAddNew() {
@@ -61,10 +73,24 @@ export class PushMessagePage {
     await this.page
       .getByRole("button", { name: time.hour, exact: true })
       .click();
-    await this.page.pause();
-    // await this.page.getByRole("button", { name: time.hour }).click();
-    // await this.page.pause();
-    // await this.page.getByRole("button", { name: time.minute }).click();
-    // await this.page.getByRole("button", { name: time.day }).click();
+    await this.page.getByRole("button", { name: time.minute }).click();
+    await this.page.getByRole("button", { name: time.day }).click();
+    await this.page.getByRole("button", { name: "Set" }).click();
+  }
+
+  async clickbuttonSaveDraft() {
+    await this.buttonSaveDraft.click();
+  }
+
+  async clickbuttonReviewPublish() {
+    await this.buttonReviewPublish.click();
+  }
+
+  async clickbuttonConfirmPublish() {
+    await this.buttonConfirmPublish.click();
+  }
+
+  async validateToastSuccess() {
+    await expect(this.page.getByText("Successfully created")).toBeVisible();
   }
 }
