@@ -33,5 +33,8 @@ test.describe.serial("Segment Users - Positive", () => {
     // Delete User Segment
     await userSegmentPage.checkSegment();
     await userSegmentPage.clickbuttonDelete();
+    await toastComponents.validateToastSuccessDeleted(
+      toastMessage.successDeleted
+    );
   });
 });

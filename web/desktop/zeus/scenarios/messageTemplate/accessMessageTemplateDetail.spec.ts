@@ -13,12 +13,12 @@ test.describe.serial("Access Message Template - Positive", () => {
     await navbarPage.clicksubmenuMessageTemplate();
   });
 
-  test("User be able access Message Template List", async ({
+  test("User be able access Message Template Detail", async ({
     page,
-    loginPage,
-    homePage,
-    navbarPage,
+    messageTemplatePage,
   }) => {
-    await page.waitForTimeout(2000);
+    await messageTemplatePage.clickbuttonViewDetailRow1();
+    await messageTemplatePage.validateDetailPage();
+    await page.waitForTimeout(5000);
   });
 });

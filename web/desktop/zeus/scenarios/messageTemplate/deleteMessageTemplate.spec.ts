@@ -5,7 +5,7 @@ import {
   toastMessage,
 } from "../../../../../helper/zeus/payload";
 
-test.describe.serial("Create Message Template - Positive", () => {
+test.describe.serial("Message Template - Positive", () => {
   test.beforeEach(async ({ page, loginPage, homePage, navbarPage }) => {
     await page.goto("./");
     await loginPage.clickbuttonEmailUsername();
@@ -17,11 +17,12 @@ test.describe.serial("Create Message Template - Positive", () => {
     await navbarPage.clicksubmenuMessageTemplate();
   });
 
-  test("User be able to create message template", async ({
+  test("User be able to Delete message template", async ({
     page,
     messageTemplatePage,
     toastComponents,
   }) => {
+    // // Create Template Message
     await messageTemplatePage.clickbuttonAddNew();
     await messageTemplatePage.filltxtTemplateName(
       createMessageTemplate.messageName
@@ -33,7 +34,16 @@ test.describe.serial("Create Message Template - Positive", () => {
     await messageTemplatePage.filltxtMessage(createMessageTemplate.message);
     await messageTemplatePage.clickbuttonSubmit();
     await toastComponents.validateToastSuccessCreated(
-      toastComponents.validateToastSuccessCreated
+      toastMessage.successCreated
     );
+
+    // Delete Template Message
+    await messageTemplatePage.checkcheckboxRow1();
+    await messageTemplatePage.clickbuttonDelete();
+    await messageTemplatePage.clickbuttonConfirm();
+    await toastComponents.validateToastSuccessDeleted(
+      toastMessage.successDeleted
+    );
+    await page.waitForTimeout(5000);
   });
 });

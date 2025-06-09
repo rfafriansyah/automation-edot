@@ -12,8 +12,8 @@ export class ToastComponents {
     await expect(this.page.getByText(toastMessage)).toBeVisible();
   }
 
-  async validateToastDuplicate() {
-    await expect(this.page.getByText("Successfully created")).toBeVisible();
+  async validateToastSuccessDeleted(toastMessage: any) {
+    await expect(this.page.getByText(toastMessage)).toBeVisible();
   }
 
   async validateToastSuccessUpload(toastMessage: any) {
