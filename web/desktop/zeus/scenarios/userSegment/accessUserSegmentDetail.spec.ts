@@ -20,12 +20,13 @@ test.describe.serial("Segment Users - Positive", () => {
   test("User be able to access Detail User Segment", async ({
     page,
     userSegmentPage,
+    toastComponents,
   }) => {
     // Create User Segment
     await userSegmentPage.clickbuttonAddNew();
     await userSegmentPage.filltxtSegmentName(createSegment.segmentName);
     await userSegmentPage.clickbuttonSaveData();
-    await userSegmentPage.validateToastSuccessCreated(
+    await toastComponents.validateToastSuccessCreated(
       toastMessage.successCreated
     );
 

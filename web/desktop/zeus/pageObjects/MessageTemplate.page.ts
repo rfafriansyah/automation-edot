@@ -47,8 +47,4 @@ export class MessageTemplatePage {
   async clickbuttonSubmit() {
     await this.buttonSubmit.click();
   }
-
-  async validateToastSuccess() {
-    await expect(this.page.getByText("Successfully created")).toBeVisible();
-  }
 }

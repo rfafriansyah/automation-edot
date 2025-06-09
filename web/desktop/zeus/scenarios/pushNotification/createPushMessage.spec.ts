@@ -1,6 +1,9 @@
 import { test } from "../../pageObjects/Base.page";
 import { credentialsLogin } from "../../../../../helper/zeus/credentials";
-import { createPushMessage } from "../../../../../helper/zeus/payload";
+import {
+  createPushMessage,
+  toastMessage,
+} from "../../../../../helper/zeus/payload";
 
 test.describe.serial("Create Push Message - Positive", () => {
   test.beforeEach(async ({ page, loginPage, homePage, navbarPage }) => {
@@ -36,6 +39,7 @@ test.describe.serial("Create Push Message - Positive", () => {
   test("User be able to Create Push Message as Schedule", async ({
     page,
     pushMessagePage,
+    toastComponents,
   }) => {
     await pushMessagePage.clickbuttonAddNew();
     await pushMessagePage.filltxtPushMessageName(
@@ -50,7 +54,9 @@ test.describe.serial("Create Push Message - Positive", () => {
     await pushMessagePage.filltxtTime(createPushMessage.time);
     await pushMessagePage.clickbuttonReviewPublish();
     await pushMessagePage.clickbuttonConfirmPublish();
-    await pushMessagePage.validateToastSuccessCreated();
+    await toastComponents.validateToastSuccessCreated(
+      toastMessage.successCreated
+    );
     await page.waitForTimeout(5000);
   });
 });

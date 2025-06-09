@@ -84,17 +84,4 @@ export class UserSegmentPage {
     await fileChooser.setFiles(fileSegmentUsers);
     await this.page.getByRole("button", { name: "Submit" }).click();
   }
-
-  // Validate Toast
-  async validateToastSuccessCreated(toastMessage: any) {
-    await expect(this.page.getByText(toastMessage)).toBeVisible();
-  }
-
-  async validateToastDuplicate() {
-    await expect(this.page.getByText("Successfully created")).toBeVisible();
-  }
-
-  async validateToastSuccessUpload(toastMessage: any) {
-    await expect(this.page.getByText(toastMessage)).toBeVisible();
-  }
 }

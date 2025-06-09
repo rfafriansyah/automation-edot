@@ -21,12 +21,13 @@ test.describe.serial("Segment Users - Positive", () => {
   test("User be able to Create Segment Users", async ({
     page,
     userSegmentPage,
+    toastComponents,
   }) => {
     // Create User Segment
     await userSegmentPage.clickbuttonAddNew();
     await userSegmentPage.filltxtSegmentName(createSegment.segmentName);
     await userSegmentPage.clickbuttonSaveData();
-    await userSegmentPage.validateToastSuccessCreated(
+    await toastComponents.validateToastSuccessCreated(
       toastMessage.successCreated
     );
 
@@ -34,7 +35,7 @@ test.describe.serial("Segment Users - Positive", () => {
     await userSegmentPage.clickbuttonViewDetail1();
     await userSegmentPage.clickbuttonImportData();
     await userSegmentPage.clickbuttonUploadNewFile(fileSegmentUsers);
-    await userSegmentPage.validateToastSuccessUpload(
+    await toastComponents.validateToastSuccessUpload(
       toastMessage.successUpload
     );
     await page.waitForTimeout(15000);

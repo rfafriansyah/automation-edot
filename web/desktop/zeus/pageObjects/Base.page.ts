@@ -5,6 +5,7 @@ import { NavbarPage } from "./Navbar.page";
 import { UserSegmentPage } from "./UserSegment.page";
 import { MessageTemplatePage } from "./MessageTemplate.page";
 import { PushMessagePage } from "./pushMessage.page";
+import { ToastComponents } from "./components/toast.page";
 
 type MyFixtures = {
   loginPage: LoginPage;
@@ -13,6 +14,7 @@ type MyFixtures = {
   userSegmentPage: UserSegmentPage;
   messageTemplatePage: MessageTemplatePage;
   pushMessagePage: PushMessagePage;
+  toastComponents: ToastComponents;
 };
 
 export const test = base.extend<MyFixtures>({
@@ -33,6 +35,9 @@ export const test = base.extend<MyFixtures>({
   },
   pushMessagePage: async ({ page }, use) => {
     await use(new PushMessagePage(page));
+  },
+  toastComponents: async ({ page }, use) => {
+    await use(new ToastComponents(page));
   },
 });
 

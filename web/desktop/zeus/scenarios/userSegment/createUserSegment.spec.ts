@@ -20,11 +20,12 @@ test.describe.serial("Create User Segment - Positive", () => {
   test("User be able to create User Segment (Fill Segment Name)", async ({
     page,
     userSegmentPage,
+    toastComponents,
   }) => {
     await userSegmentPage.clickbuttonAddNew();
     await userSegmentPage.filltxtSegmentName(createSegment.segmentName);
     await userSegmentPage.clickbuttonSaveData();
-    await userSegmentPage.validateToastSuccessCreated(
+    await toastComponents.validateToastSuccessCreated(
       toastMessage.successCreated
     );
   });
@@ -32,27 +33,29 @@ test.describe.serial("Create User Segment - Positive", () => {
   test("User be able to create User Segment (Fill Segment Name & Description)", async ({
     page,
     userSegmentPage,
+    toastComponents,
   }) => {
     await userSegmentPage.clickbuttonAddNew();
     await page.waitForTimeout(5000);
 
-    // await userSegmentPage.filltxtSegmentName(createSegment.segmentName);
-    // await userSegmentPage.clickbuttonSaveData();
-    // await userSegmentPage.validateToastSuccessCreated(
-    //   toastMessage.successCreated
-    // );
+    await userSegmentPage.filltxtSegmentName(createSegment.segmentName);
+    await userSegmentPage.clickbuttonSaveData();
+    await toastComponents.validateToastSuccessCreated(
+      toastMessage.successCreated
+    );
   });
 
   test("User be able to create User Segment TEST (Fill Segment Name)", async ({
     page,
     userSegmentPage,
+    toastComponents,
   }) => {
     await userSegmentPage.clickbuttonAddNew();
     await page.waitForTimeout(5000);
-    // await userSegmentPage.filltxtSegmentName(createSegment.segmentName);
-    // await userSegmentPage.clickbuttonSaveData();
-    // await userSegmentPage.validateToastSuccessCreated(
-    //   toastMessage.successCreated
-    // );
+    await userSegmentPage.filltxtSegmentName(createSegment.segmentName);
+    await userSegmentPage.clickbuttonSaveData();
+    await toastComponents.validateToastSuccessCreated(
+      toastMessage.successCreated
+    );
   });
 });

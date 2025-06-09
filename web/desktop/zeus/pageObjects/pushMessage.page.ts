@@ -89,8 +89,4 @@ export class PushMessagePage {
   async clickbuttonConfirmPublish() {
     await this.buttonConfirmPublish.click();
   }
-
-  async validateToastSuccess() {
-    await expect(this.page.getByText("Successfully created")).toBeVisible();
-  }
 }
