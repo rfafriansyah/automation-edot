@@ -50,7 +50,7 @@ test.describe.serial("Create Push Message - Positive", () => {
     await pushMessagePage.filltxtTime(createPushMessage.time);
     await pushMessagePage.clickbuttonReviewPublish();
     await pushMessagePage.clickbuttonConfirmPublish();
-    await pushMessagePage.validateToastSuccess();
+    await pushMessagePage.validateToastSuccessCreated();
     await page.waitForTimeout(5000);
   });
 });

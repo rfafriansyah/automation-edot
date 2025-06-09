@@ -28,7 +28,7 @@ test.describe.serial("Create Message Template - Positive", () => {
     await messageTemplatePage.filltxtUrl(createMessageTemplate.url);
     await messageTemplatePage.filltxtMessage(createMessageTemplate.message);
     await messageTemplatePage.clickbuttonSubmit();
-    await messageTemplatePage.validateToastSuccess();
+    await messageTemplatePage.validateToastSuccessCreated();
     await page.waitForTimeout(5000);
   });
 });
