@@ -14,10 +14,11 @@ test.describe.serial("Access Message Push Notification - Positive", () => {
     await navbarPage.clicksubmenuPushMessage();
   });
 
-  test("User be able access Push Message List", async ({
+  test("User be able access Push Message Details", async ({
     page,
     pushMessagePage,
   }) => {
+    await pushMessagePage.clickbuttonViewDetailRow1();
     await page.waitForTimeout(5000);
   });
 });
