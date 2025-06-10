@@ -27,6 +27,8 @@ const isHeaded = process.env.HEADED === "true";
 export default defineConfig({
   timeout: 3 * 30000,
   testDir: "./scenarios",
+
+  repeatEach: 120, // Repeat Test
   /* Run tests in files in parallel */
   fullyParallel: true,
   /* Fail the build on CI if you accidentally left test.only in the source code. */
@@ -34,7 +36,7 @@ export default defineConfig({
   /* Retry on CI only */
   retries: process.env.CI ? 2 : 0,
   /* Opt out of parallel tests on CI. */
-  workers: process.env.CI ? 1 : 2,
+  workers: process.env.CI ? 1 : 3,
   /* Reporter to use. See https://playwright.dev/docs/test-reporters */
   reporter: [
     ["html", { open: "always" }], // Or 'always'

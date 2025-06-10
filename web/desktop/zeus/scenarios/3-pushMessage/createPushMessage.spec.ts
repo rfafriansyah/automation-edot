@@ -6,22 +6,24 @@ import {
 } from "../../../../../helper/zeus/payload";
 
 test.describe.serial("Create Push Message - Positive", () => {
-  test.beforeEach(async ({ page, loginPage, homePage, navbarPage }) => {
-    await page.goto("./");
-    await loginPage.clickbuttonEmailUsername();
-    await loginPage.filltxtEmailUsername(credentialsLogin().username);
-    await loginPage.clickbuttonLogin();
-    await loginPage.filltxtPassword(credentialsLogin().password);
-    await loginPage.clickbuttonLogin();
-    await homePage.validateHomePage();
-    await navbarPage.clicksubmenuPushMessage();
-  });
+  test.beforeEach(
+    async ({ page, loginPage, homePage, navbarPage, pushMessagePage }) => {
+      await page.goto("./");
+      await loginPage.clickbuttonEmailUsername();
+      await loginPage.filltxtEmailUsername(credentialsLogin().username);
+      await loginPage.clickbuttonLogin();
+      await loginPage.filltxtPassword(credentialsLogin().password);
+      await loginPage.clickbuttonLogin();
+      await homePage.validateHomePage();
+      await navbarPage.clicksubmenuPushMessage();
+      await pushMessagePage.clickbuttonAddNew();
+    }
+  );
 
   test("User be able to Create Push Message as Draft", async ({
     page,
     pushMessagePage,
   }) => {
-    await pushMessagePage.clickbuttonAddNew();
     await pushMessagePage.filltxtPushMessageName(
       createPushMessage.pushMessageName
     );
@@ -33,15 +35,13 @@ test.describe.serial("Create Push Message - Positive", () => {
     await pushMessagePage.filltxtDate(createPushMessage.date);
     await pushMessagePage.filltxtTime(createPushMessage.time);
     await pushMessagePage.clickbuttonSaveDraft();
-    await page.waitForTimeout(5000);
   });
 
-  test("User be able to Create Push Message as Schedule", async ({
+  test.only("User be able to Create Push Message as Schedule", async ({
     page,
     pushMessagePage,
     toastComponents,
   }) => {
-    await pushMessagePage.clickbuttonAddNew();
     await pushMessagePage.filltxtPushMessageName(
       createPushMessage.pushMessageName
     );
@@ -57,6 +57,5 @@ test.describe.serial("Create Push Message - Positive", () => {
     await toastComponents.validateToastSuccessCreated(
       toastMessage.successCreated
     );
-    await page.waitForTimeout(5000);
   });
 });
