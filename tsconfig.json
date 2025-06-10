@@ -1,5 +1,8 @@
 {
   "compilerOptions": {
+    "esModuleInterop": true,
+    "module": "CommonJS",
+    "target": "ES6",
     // ... opsi lainnya ...
     "baseUrl": ".", // Atau folder root project Anda, misal: "src"
     "paths": {
