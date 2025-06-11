@@ -8,7 +8,8 @@
     "zeus-desktop": "npx playwright test --config ./web/desktop/zeus/zeus.config.ts web/desktop/zeus/scenarios",
     "apollo-desktop": "npx playwright test --config ./web/desktop/apollo/apollo.config.ts web/desktop/apollo/scenarios",
     "dashboard-desktop": "npx playwright test --config ./web/desktop/dashboard/dashboard.config.ts web/desktop/dashboard/scenarios",
-    "cronus-api": "jest cronus-login/__test__/login-positive.test.ts"
+    "cronus-api": "jest cronus-login/__test__/login-positive.test.ts",
+    "notification-api": "jest --config ./api/jest.config.ts --selectProjects notification-engine"
   },
   "author": "",
   "license": "ISC",
