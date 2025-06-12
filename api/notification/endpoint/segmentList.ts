@@ -62,15 +62,24 @@ export const createMessageTemplate = (token: any, bodyReq: any) =>
     .set("content-type", "application/json")
     .set("authorization", `Bearer ${token}`)
     .send(bodyReq);
-// GET List Template
+// GET List Template Message
 export const getMessageTemplateList = (params: any, token: any) =>
   url
     .get(`/api/v1/notification-templates?limit=${params}`)
     .set("content-type", "application/json")
     .set("authorization", `Bearer ${token}`);
-// GET Detail Template
-export const getMessageTemplateDetail = (limit: any, ids: any, token: any) =>
+// GET Detail Template Message
+export const getMessageTemplateDetail = (params: any, token: any) =>
   url
-    .get(`/api/v1/notification-templates?limit=${limit}&ids=${ids}`)
+    .get(
+      `/api/v1/notification-templates?limit=${params.limit}&ids=${params.ids}`
+    )
     .set("content-type", "application/json")
     .set("authorization", `Bearer ${token}`);
+// EDIT Template Message
+export const editTemplateMessage = (params: any, token: any, bodyReq: any) =>
+  url
+    .put(`/api/v1/notification-templates/${params}`)
+    .set("content-type", "application/json")
+    .set("authorization", `Bearer ${token}`)
+    .send(bodyReq);
