@@ -53,3 +53,11 @@ export const deleteUsersSegment = (ids: any, token: any, reqBody: any) =>
     .set("content-type", "application/json")
     .set("authorization", `Bearer ${token}`)
     .send(reqBody);
+
+// MESSAGE TEMPLATE
+export const createMessageTemplate = (token: any, bodyReq: any) =>
+  url
+    .post(`/api/v1/notification-templates`)
+    .set("content-type", "application/json")
+    .set("authorization", `Bearer ${token}`)
+    .send(bodyReq);
