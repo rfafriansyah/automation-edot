@@ -1,7 +1,7 @@
 import dotenv from "dotenv";
 dotenv.config();
 import { loadTokenFromJsonFile } from "../../../../helper/cronus-login/tokenStorage";
-import { createSegment } from "../endpoint/segmentList";
+import { createSegment } from "../../endpoint/segmentList";
 
 describe("User Create Segment", () => {
   test("POST Segmentation", async () => {

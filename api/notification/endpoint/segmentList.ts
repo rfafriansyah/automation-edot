@@ -10,7 +10,7 @@ export const createSegment = (token: any, payload: any) =>
   url
     .post("/api/v1/segmentation")
     .set("content-type", "application/json")
-    .auth("authorization", `Bearer ${token}`)
+    .set("authorization", `Bearer ${token}`)
     .send(payload);
 
 // GET List Segmentation
