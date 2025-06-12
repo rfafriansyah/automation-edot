@@ -89,3 +89,24 @@ export const deleteTemplateMessage = (queryParams: any, token: any) =>
     .delete(`/api/v1/notification-templates?ids=${queryParams.ids}`)
     .set("content-type", "application/json")
     .set("authorization", `Bearer ${token}`);
+
+// PUSH MESSAGE
+// Create Push Message
+export const createWorkflow = (token: any, bodyReq: any) =>
+  url
+    .post(`/api/v1/workflow`)
+    .set("content-type", "application/json")
+    .set("authorization", `Bearer ${token}`)
+    .send(bodyReq);
+// GET Push Message List
+export const getWorkflowList = (params: any, token: any) =>
+  url
+    .get(`/api/v1/workflow?limit=${params}`)
+    .set("content-type", "application/json")
+    .set("authorization", `Bearer ${token}`);
+// GET Push Message Detail
+export const getWorkflowDetail = (queryParams: any, token: any) =>
+  url
+    .get(`/api/v1/workflow?limit=${queryParams.limit}&ids=${queryParams.ids}`)
+    .set("content-type", "application/json")
+    .set("authorization", `Bearer ${token}`);
