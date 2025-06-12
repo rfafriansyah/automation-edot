@@ -14,7 +14,7 @@ describe.skip("CREATE Template Message", () => {
       title: "test AT API Rhama",
       body: "test AT API Rhama",
       deeplink: "",
-      name: "test AT API Rhama",
+      name: "test AT API Rhama Satu",
       image: "",
     };
 

@@ -83,3 +83,9 @@ export const editTemplateMessage = (params: any, token: any, bodyReq: any) =>
     .set("content-type", "application/json")
     .set("authorization", `Bearer ${token}`)
     .send(bodyReq);
+// DELETE Template Message
+export const deleteTemplateMessage = (queryParams: any, token: any) =>
+  url
+    .delete(`/api/v1/notification-templates?ids=${queryParams.ids}`)
+    .set("content-type", "application/json")
+    .set("authorization", `Bearer ${token}`);
