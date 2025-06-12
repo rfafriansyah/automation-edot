@@ -18,7 +18,7 @@ export const getListSegment = (limit: any, token: any, params: any) =>
   url
     .get(`/api/v1/segmentation?limit=${limit}`)
     .set("content-type", "application/json")
-    .auth("authorization", `Bearer ${token}`)
+    .set("authorization", `Bearer ${token}`)
     .send(params);
 
 // GET Detail Segmentation
@@ -26,7 +26,7 @@ export const getDetailSegment = (ids: any, token: any, payload: any) =>
   url
     .post(`/api/v1/segmentation?ids=${ids}`)
     .set("content-type", "application/json")
-    .auth("authorization", `Bearer ${token}`)
+    .set("authorization", `Bearer ${token}`)
     .send(payload);
 
 // EDIT Segmentation
@@ -34,7 +34,7 @@ export const editSegment = (id: any, token: any, payload: any) =>
   url
     .post(`/api/v1/segmentation/${id}`)
     .set("content-type", "application/json")
-    .auth("authorization", `Bearer ${token}`)
+    .set("authorization", `Bearer ${token}`)
     .send(payload);
 
 // DELETE Segmentation
@@ -42,5 +42,5 @@ export const deleteSegment = (ids: any, token: any, params: any) =>
   url
     .post(`/api/v1/segmentation?ids=${ids}`)
     .set("content-type", "application/json")
-    .auth("authorization", `Bearer ${token}`)
+    .set("authorization", `Bearer ${token}`)
     .send(params);
