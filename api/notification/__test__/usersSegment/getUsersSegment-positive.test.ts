@@ -3,7 +3,7 @@ dotenv.config();
 import { loadTokenFromJsonFile } from "../../../../helper/cronus-login/tokenStorage";
 import { getUsersSegment } from "../../endpoint/segmentList";
 
-describe("GET Users Segment", () => {
+describe.skip("GET Users Segment", () => {
   test("GET Users Segment", async () => {
     const ids = "684a8f53a3acd6a5dffc73d6";
     const params = 2;

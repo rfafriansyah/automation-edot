@@ -46,3 +46,10 @@ export const getUsersSegment = (ids: any, params: any, token: any) =>
     .get(`/api/v1/segmentation/${ids}/user?limit=${params}`)
     .set("content-type", "application/json")
     .set("authorization", `Bearer ${token}`);
+// DELETE Users Segment
+export const deleteUsersSegment = (ids: any, token: any, reqBody: any) =>
+  url
+    .delete(`/api/v1/segmentation/${ids}/remove-users`)
+    .set("content-type", "application/json")
+    .set("authorization", `Bearer ${token}`)
+    .send(reqBody);
