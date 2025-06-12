@@ -14,12 +14,11 @@ export const createSegment = (token: any, payload: any) =>
     .send(payload);
 
 // GET List Segmentation
-export const getListSegment = (limit: any, token: any, params: any) =>
+export const getListSegment = (limit: any, token: any) =>
   url
     .get(`/api/v1/segmentation?limit=${limit}`)
     .set("content-type", "application/json")
-    .set("authorization", `Bearer ${token}`)
-    .send(params);
+    .set("authorization", `Bearer ${token}`);
 
 // GET Detail Segmentation
 export const getDetailSegment = (ids: any, token: any, payload: any) =>
