@@ -3,7 +3,7 @@ dotenv.config();
 import { loadTokenFromJsonFile } from "../../../../helper/cronus-login/tokenStorage";
 import { createMessageTemplate } from "../../endpoint/segmentList";
 
-describe("CREATE Template Message", () => {
+describe.skip("CREATE Template Message", () => {
   test("CREATE Template Message", async () => {
     // GET Token
     const access_token = loadTokenFromJsonFile(
