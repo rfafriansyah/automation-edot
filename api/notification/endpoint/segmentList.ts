@@ -5,6 +5,7 @@ dotenv.config();
 const notification = process.env.NOTIFICATION_DEV;
 const url = supertest(notification!);
 
+// LIST SEGMENT
 // POST Segmentation
 export const createSegment = (token: any, payload: any) =>
   url
@@ -12,21 +13,18 @@ export const createSegment = (token: any, payload: any) =>
     .set("content-type", "application/json")
     .set("authorization", `Bearer ${token}`)
     .send(payload);
-
 // GET List Segmentation
 export const getListSegment = (limit: any, token: any) =>
   url
     .get(`/api/v1/segmentation?limit=${limit}`)
     .set("content-type", "application/json")
     .set("authorization", `Bearer ${token}`);
-
 // GET Detail Segmentation
 export const getDetailSegment = (ids: any, token: any) =>
   url
     .get(`/api/v1/segmentation?ids=${ids}`)
     .set("content-type", "application/json")
     .set("authorization", `Bearer ${token}`);
-
 // EDIT Segmentation
 export const editSegment = (id: any, token: any, payload: any) =>
   url
@@ -34,10 +32,17 @@ export const editSegment = (id: any, token: any, payload: any) =>
     .set("content-type", "application/json")
     .set("authorization", `Bearer ${token}`)
     .send(payload);
-
 // DELETE Segmentation
 export const deleteSegment = (ids: any, token: any) =>
   url
     .delete(`/api/v1/segmentation?ids=${ids}`)
+    .set("content-type", "application/json")
+    .set("authorization", `Bearer ${token}`);
+
+// USERS SEGMENT
+/// GET Users Segment
+export const getUsersSegment = (ids: any, params: any, token: any) =>
+  url
+    .get(`/api/v1/segmentation/${ids}/user?limit=${params}`)
     .set("content-type", "application/json")
     .set("authorization", `Bearer ${token}`);
