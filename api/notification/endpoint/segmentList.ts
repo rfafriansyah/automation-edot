@@ -21,25 +21,23 @@ export const getListSegment = (limit: any, token: any) =>
     .set("authorization", `Bearer ${token}`);
 
 // GET Detail Segmentation
-export const getDetailSegment = (ids: any, token: any, payload: any) =>
+export const getDetailSegment = (ids: any, token: any) =>
   url
-    .post(`/api/v1/segmentation?ids=${ids}`)
+    .get(`/api/v1/segmentation?ids=${ids}`)
     .set("content-type", "application/json")
-    .set("authorization", `Bearer ${token}`)
-    .send(payload);
+    .set("authorization", `Bearer ${token}`);
 
 // EDIT Segmentation
 export const editSegment = (id: any, token: any, payload: any) =>
   url
-    .post(`/api/v1/segmentation/${id}`)
+    .put(`/api/v1/segmentation/${id}`)
     .set("content-type", "application/json")
     .set("authorization", `Bearer ${token}`)
     .send(payload);
 
 // DELETE Segmentation
-export const deleteSegment = (ids: any, token: any, params: any) =>
+export const deleteSegment = (ids: any, token: any) =>
   url
-    .post(`/api/v1/segmentation?ids=${ids}`)
+    .delete(`/api/v1/segmentation?ids=${ids}`)
     .set("content-type", "application/json")
-    .set("authorization", `Bearer ${token}`)
-    .send(params);
+    .set("authorization", `Bearer ${token}`);
