@@ -68,3 +68,9 @@ export const getMessageTemplateList = (params: any, token: any) =>
     .get(`/api/v1/notification-templates?limit=${params}`)
     .set("content-type", "application/json")
     .set("authorization", `Bearer ${token}`);
+// GET Detail Template
+export const getMessageTemplateDetail = (limit: any, ids: any, token: any) =>
+  url
+    .get(`/api/v1/notification-templates?limit=${limit}&ids=${ids}`)
+    .set("content-type", "application/json")
+    .set("authorization", `Bearer ${token}`);
