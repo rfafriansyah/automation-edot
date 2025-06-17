@@ -11,10 +11,10 @@ describe.skip("CREATE Template Message", () => {
     )?.access_token;
 
     const bodyReq = {
-      title: "test AT API Rhama",
+      title: "test AT API Rhamaaaa",
       body: "test AT API Rhama",
       deeplink: "",
-      name: "test AT API Rhama Satu",
+      name: "test AT API Rhama Satuuuu",
       image: "",
     };
 

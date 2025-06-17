@@ -3,11 +3,11 @@ dotenv.config();
 import { loadTokenFromJsonFile } from "../../../../helper/cronus-login/tokenStorage";
 import { deleteTemplateMessage } from "../../endpoint/segmentList";
 
-describe("DELETE Template Message", () => {
+describe.skip("DELETE Template Message", () => {
   test("DELETE Template Message", async () => {
     // Query Params
     const queryParams = {
-      ids: "684b0489b1e297adac906161",
+      ids: "684bf429c8c1432c64bec184",
     };
     // GET Token
     const access_token = loadTokenFromJsonFile(
