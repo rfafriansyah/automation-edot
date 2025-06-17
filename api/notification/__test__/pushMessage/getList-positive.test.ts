@@ -1,6 +1,6 @@
 import dotenv from "dotenv";
 dotenv.config();
-import { loadTokenFromJsonFile } from "../../../../helper/cronus-login/tokenStorage";
+import { loadTokenFromJsonFile } from "../../../../helper/cronus-login/token/tokenStorage";
 import { getMessageTemplateList } from "../../endpoint/segmentList";
 
 describe.skip("GET Push Message List", () => {
