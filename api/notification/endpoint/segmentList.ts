@@ -2,7 +2,7 @@ import supertest from "supertest";
 import dotenv from "dotenv";
 import { SegmentPayload } from "../interfaces/segmentList";
 dotenv.config();
-const notification = process.env.NOTIFICATION_DEV;
+const notification = process.env.API_NOTIFICATION_DEV;
 const url = supertest(notification!);
 
 // LIST SEGMENT
