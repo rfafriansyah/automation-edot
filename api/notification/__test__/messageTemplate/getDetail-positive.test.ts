@@ -1,6 +1,6 @@
 import dotenv from "dotenv";
 dotenv.config();
-import { loadTokenFromJsonFile } from "../../../../helper/cronus-login/token/tokenStorage";
+import { loadTokenFromJsonFile } from "../../../../helper/cronus/token/tokenStorage";
 import { getMessageTemplateDetail } from "../../endpoint/segmentList";
 
 describe.skip("GET Template Message Detail", () => {
@@ -12,7 +12,7 @@ describe.skip("GET Template Message Detail", () => {
     };
     // GET Token
     const access_token = loadTokenFromJsonFile(
-      "auth_credentials.json"
+      "token_edot-miniprogram-mobileapp.json"
     )?.access_token;
 
     const resgetMessageTemplateDetail = await getMessageTemplateDetail(

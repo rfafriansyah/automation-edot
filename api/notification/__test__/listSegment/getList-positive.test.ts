@@ -1,6 +1,6 @@
 import dotenv from "dotenv";
 dotenv.config();
-import { loadTokenFromJsonFile } from "../../../../helper/cronus-login/token/tokenStorage";
+import { loadTokenFromJsonFile } from "../../../../helper/cronus/token/tokenStorage";
 import { getListSegment } from "../../endpoint/segmentList";
 
 describe.skip("User GET List Segment", () => {
@@ -11,7 +11,7 @@ describe.skip("User GET List Segment", () => {
 
     // GET Token
     const access_token = loadTokenFromJsonFile(
-      "auth_credentials.json"
+      "token_edot-miniprogram-mobileapp.json"
     )?.access_token;
 
     const resGetListSegment = await getListSegment(params, access_token);
