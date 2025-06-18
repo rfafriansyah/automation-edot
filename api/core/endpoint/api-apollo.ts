@@ -14,5 +14,5 @@ export const checkExistence = (token: any, payload: any) =>
     .send(payload)
     .expect(200);
 
-export const nabati_company = (token: any) =>
+export const nabatiCompany = (token: any) =>
   url.get(`/api/v1/nabati-company`).set("authorization", `Bearer ${token}`);

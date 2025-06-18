@@ -8,7 +8,7 @@
     "zeus-desktop": "npx playwright test --config ./web/desktop/zeus/zeus.config.ts web/desktop/zeus/scenarios",
     "apollo-desktop": "npx playwright test --config ./web/desktop/apollo/apollo.config.ts web/desktop/apollo/scenarios",
     "dashboard-desktop": "npx playwright test --config ./web/desktop/dashboard/dashboard.config.ts web/desktop/dashboard/scenarios",
-    "get-token": "jest cronus-login/__test__",
+    "get-token": "jest cronus/__test__",
     "notification-api": "jest --config ./api/jest.config.ts --selectProjects notification-engine",
     "api-apollo-api": "jest --config ./api/jest.config.ts --selectProjects core-api-apollo",
     "cronus-api": "jest --config ./api/jest.config.ts --selectProjects core-cronus",
