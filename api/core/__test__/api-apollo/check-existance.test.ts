@@ -1,6 +1,6 @@
 import dotenv from "dotenv";
 dotenv.config();
-import { loadTokenFromJsonFile } from "../../../../helper/cronus-login/token/tokenStorage";
+import { loadTokenFromJsonFile } from "../../../../helper/cronus/token/tokenStorage";
 import { checkExistence } from "../../endpoint/api-apollo";
 
 describe("Check Existence", () => {

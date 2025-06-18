@@ -13,3 +13,6 @@ export const checkExistence = (token: any, payload: any) =>
     .set("authorization", `Bearer ${token}`)
     .send(payload)
     .expect(200);
+
+export const nabati_company = (token: any) =>
+  url.get(`/api/v1/nabati-company`).set("authorization", `Bearer ${token}`);

@@ -15,14 +15,30 @@ const config: Config = {
     },
 
     {
-      displayName: "core",
-      testMatch: ["**/core/__test__/**/*.test.ts"],
+      displayName: "core-api-apollo",
+      testMatch: ["**/core/__test__/api-apollo/**/*.test.ts"],
       preset: "ts-jest",
       testEnvironment: "node",
       setupFilesAfterEnv: ["./jest.setup.ts"],
-      setupFiles: ["dotenv/config"], // atau './jest.setup.ts' jika ingin custom
-      // testMatch: ["**/?(*.)+(test).[tj]s?(x)"],
-      // testRegex: "(/__tests__/.*|(\\.|/)(test|spec))\\.[jt]sx?$",
+      setupFiles: ["dotenv/config"],
+    },
+
+    {
+      displayName: "core-cronus",
+      testMatch: ["**/core/__test__/cronus/**/*.test.ts"],
+      preset: "ts-jest",
+      testEnvironment: "node",
+      setupFilesAfterEnv: ["./jest.setup.ts"],
+      setupFiles: ["dotenv/config"],
+    },
+
+    {
+      displayName: "core-permission",
+      testMatch: ["**/core/__test__/permission/**/*.test.ts"],
+      preset: "ts-jest",
+      testEnvironment: "node",
+      setupFilesAfterEnv: ["./jest.setup.ts"],
+      setupFiles: ["dotenv/config"],
     },
   ],
   // preset: "ts-jest", // Agar Jest menggunakan ts-jest untuk mengonversi TypeScript
