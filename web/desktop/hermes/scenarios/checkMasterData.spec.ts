@@ -6,7 +6,7 @@ import {
 } from "../../../../helper/hermes/payloadHermes";
 import { credentialsLogin } from "../../../../helper/hermes/credentials";
 
-test.describe.only("Create New Company on Hermes - Positive", () => {
+test.describe("Create New Company on Hermes - Positive", () => {
   test.beforeEach(async ({ page, loginPage, navbarPage, companiesPage }) => {
     await loginPage.open();
     await loginPage.clickbuttonEmailUsername();

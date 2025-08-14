@@ -1,3 +1,3 @@
-const env = "STG"; // DEV / STG / PROD
+const env = "DEV"; // DEV / STG / PROD
 
 export { env };

@@ -43,11 +43,20 @@ test.describe.serial("Create Company User on Hermes - Positive", () => {
     }
   );
 
-  test("Create User Company User HQ", async ({ page, manageCompanyPage }) => {
+  test.only("Create User Company User HQ", async ({
+    page,
+    manageCompanyPage,
+  }) => {
     await manageCompanyPage.clickmenuCompanyUser();
     await manageCompanyPage.clickbuttonAddUser();
     await manageCompanyPage.verifyAddCompanyUser();
     await manageCompanyPage.fillGeneralInfo(payloadGeneralInfo());
     await manageCompanyPage.clicktabBranch();
+    await manageCompanyPage.fillBranch();
+    await manageCompanyPage.clickbuttonSubmit();
+    await page.waitForTimeout(1000);
+    await manageCompanyPage.validateSuccessCreateCompanyUser(
+      "Success Add Company User"
+    );
   });
 });

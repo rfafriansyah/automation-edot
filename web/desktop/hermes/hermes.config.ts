@@ -2,15 +2,15 @@ import { defineConfig, devices } from "@playwright/test";
 import { env } from "../../../environtment";
 require("dotenv").config();
 
-let envBaseURL: any;
+// let envBaseURL: any;
 
-if (env == "DEV") {
-  envBaseURL = process.env.HERMES_DEV;
-} else if (env == "STG") {
-  envBaseURL = process.env.HERMES_STG;
-} else if (env == "PROD") {
-  envBaseURL = process.env.HERMES_PROD;
-}
+// if (env == "DEV") {
+//   envBaseURL = process.env.HERMES_DEV;
+// } else if (env == "STG") {
+//   envBaseURL = process.env.HERMES_STG;
+// } else if (env == "PROD") {
+//   envBaseURL = process.env.HERMES_PROD;
+// }
 
 /**
  * Read environment variables from file.
@@ -31,7 +31,9 @@ export default defineConfig({
   /* Fail the build on CI if you accidentally left test.only in the source code. */
   forbidOnly: !!process.env.CI,
   /* Retry on CI only */
-  retries: process.env.CI ? 2 : 0,
+  // retries: process.env.CI ? 2 : 0,
+
+  repeatEach: 50, // Repeat Test
   /* Opt out of parallel tests on CI. */
   workers: process.env.CI ? 1 : 2,
   /* Reporter to use. See https://playwright.dev/docs/test-reporters */
@@ -46,7 +48,7 @@ export default defineConfig({
   use: {
     /* Base URL to use in actions like `await page.goto('/')`. */
 
-    baseURL: envBaseURL, // Dev
+    baseURL: "https://hermes-dashboard.edot-dev.com", //Dev
     // baseURL: "https://hermes-dashboard.edot-stg.com/", // Stg
 
     /* Collect trace when retrying the failed test. See https://playwright.dev/docs/trace-viewer */
