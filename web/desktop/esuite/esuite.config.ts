@@ -27,6 +27,7 @@ if (env == "DEV") {
 export default defineConfig({
   timeout: 3 * 30000,
   repeatEach: 0,
+  snapshotDir: "./snapshots-english",
   testDir: "./scenarios",
   /* Run tests in files in parallel */
   fullyParallel: true,
@@ -51,7 +52,7 @@ export default defineConfig({
 
     /* Collect trace when retrying the failed test. See https://playwright.dev/docs/trace-viewer */
     trace: "on",
-    video: "on",
+    // video: "on",
   },
 
   /* Configure projects for major browsers */
