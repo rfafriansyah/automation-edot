@@ -1,6 +1,6 @@
 import dotenv from "dotenv";
 dotenv.config();
-import { loadTokenFromJsonFile } from "../../../../helper/cronus/token/tokenStorage";
+import { loadTokenFromJsonFileToken } from "../../../../helper/cronus/token/tokenStorage";
 import { deleteTemplateMessage } from "../../endpoint/segmentList";
 
 describe.skip("DELETE Template Message", () => {
@@ -10,7 +10,7 @@ describe.skip("DELETE Template Message", () => {
       ids: "684bf429c8c1432c64bec184",
     };
     // GET Token
-    const access_token = loadTokenFromJsonFile(
+    const access_token = loadTokenFromJsonFileToken(
       "token_edot-miniprogram-mobileapp.json"
     )?.access_token;
 

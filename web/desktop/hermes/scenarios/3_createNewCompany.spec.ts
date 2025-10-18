@@ -6,7 +6,7 @@ import {
 } from "../../../../helper/hermes/payloadHermes";
 import { credentialsLogin } from "../../../../helper/hermes/credentials";
 
-test.describe("Create New Company on Hermes - Positive", () => {
+test.describe.only("Create New Company on Hermes - Positive", () => {
   test.beforeEach(async ({ page, loginPage, navbarPage, companiesPage }) => {
     await loginPage.open();
     await loginPage.clickbuttonEmailUsername();
@@ -18,7 +18,7 @@ test.describe("Create New Company on Hermes - Positive", () => {
     await companiesPage.clickbuttonAddCompany();
   });
 
-  test("Create new Company, Country: Indonesia", async ({
+  test.only("Create new Company, Country: Indonesia", async ({
     registerCompanyPage,
   }) => {
     await registerCompanyPage.filltxtCompanyName(
@@ -113,6 +113,7 @@ test.describe("Create New Company on Hermes - Positive", () => {
     async ({ page, companiesPage, registerCompanyPage, manageCompanyPage }) => {
       await registerCompanyPage.checkcheckboxPolicyAndTNC();
       await registerCompanyPage.clickbuttonRegister();
+      await page.waitForTimeout(5000);
       await registerCompanyPage.verifytoastStatus();
       // // Delete Company
       // await companiesPage.clickbuttonManageLast()

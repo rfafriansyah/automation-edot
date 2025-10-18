@@ -12,7 +12,8 @@
     "notification-api": "jest --config ./api/jest.config.ts --selectProjects notification-engine",
     "api-apollo-api": "jest --config ./api/jest.config.ts --selectProjects core-api-apollo",
     "cronus-api": "jest --config ./api/jest.config.ts --selectProjects core-cronus",
-    "permission-api": "jest --config ./api/jest.config.ts --selectProjects core-permission"
+    "permission-api": "jest --config ./api/jest.config.ts --selectProjects core-permission",
+    "esuite-sales-api": "jest --config ./api/jest.config.ts --selectProjects esuite-sales"
   },
   "author": "",
   "license": "ISC",

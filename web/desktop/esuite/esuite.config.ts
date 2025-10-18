@@ -1,7 +1,8 @@
 import { defineConfig, devices } from "@playwright/test";
-import { env } from "../../../environtment";
+// import { env } from "../../../environtment";
 require("dotenv").config();
 
+let env = "STG";
 let envBaseURL: any;
 
 if (env == "DEV") {
@@ -25,6 +26,7 @@ if (env == "DEV") {
  */
 export default defineConfig({
   timeout: 3 * 30000,
+  repeatEach: 0,
   testDir: "./scenarios",
   /* Run tests in files in parallel */
   fullyParallel: true,
@@ -33,7 +35,7 @@ export default defineConfig({
   /* Retry on CI only */
   retries: process.env.CI ? 2 : 0,
   /* Opt out of parallel tests on CI. */
-  workers: process.env.CI ? 1 : 2,
+  workers: process.env.CI ? 1 : 1,
   /* Reporter to use. See https://playwright.dev/docs/test-reporters */
   reporter: [
     ["html", { open: "always" }], // Or 'always'

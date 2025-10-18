@@ -2,7 +2,6 @@ import { Locator, Page, expect } from "@playwright/test";
 
 export class LoginPage {
   readonly page: Page;
-  readonly logoEdot: Locator;
   readonly formLogin: Locator;
 
   readonly txtCompanyID: Locator;
@@ -14,10 +13,13 @@ export class LoginPage {
     this.page = page;
     this.formLogin = page.locator("//form[@autocomplete='off']");
 
-    this.txtCompanyID = page.locator('div').filter({ hasText: /^Company ID$/ }).getByRole('textbox')
-    this.txtEmployeeIDUsername = page.locator('input[name="employee_id"]')
-    this.txtPassword = page.locator('input[name="password"]')
-    this.buttonLogin = page.getByRole('button', { name: 'Log In' })
+    this.txtCompanyID = page
+      .locator("div")
+      .filter({ hasText: /^Company ID$/ })
+      .getByRole("textbox");
+    this.txtEmployeeIDUsername = page.locator('input[name="employee_id"]');
+    this.txtPassword = page.locator('input[name="password"]');
+    this.buttonLogin = page.getByRole("button", { name: "Log In" });
   }
 
   async open() {
@@ -26,10 +28,6 @@ export class LoginPage {
     // let link = await this.formLogin.getAttribute("action");
 
     // return link;
-  }
-
-  async goto(link) {
-    console.log(link);
   }
 
   async filltxtCompanyID(input: any) {

@@ -40,6 +40,15 @@ const config: Config = {
       setupFilesAfterEnv: ["./jest.setup.ts"],
       setupFiles: ["dotenv/config"],
     },
+
+    {
+      displayName: "esuite-sales",
+      testMatch: ["**/esuite/__test__/sales/**/*.test.ts"],
+      preset: "ts-jest",
+      testEnvironment: "node",
+      setupFilesAfterEnv: ["./jest.setup.ts"],
+      setupFiles: ["dotenv/config"],
+    },
   ],
   // preset: "ts-jest", // Agar Jest menggunakan ts-jest untuk mengonversi TypeScript
   // testEnvironment: "node", // Gunakan lingkungan Node.js untuk pengujian

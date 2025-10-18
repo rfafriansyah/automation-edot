@@ -1,4 +1,3 @@
-import { setDefaultResultOrder } from "dns";
 import { test } from "../pageObjects/Base.page";
 
 const credentials = {
@@ -7,26 +6,30 @@ const credentials = {
   password: "Testing@123",
 };
 
-test.describe("Home Page Edot - Positive", () => {
+test.describe("LOGIN", () => {
   test("User ke halaman Login Esuitre", async ({
     page,
     loginPage,
     eworkPage,
+    emitraPage,
+    salesPage,
+    inventoryPage,
+    financePage,
+    marketingPage,
+    hrPage,
   }) => {
     await loginPage.open();
     await loginPage.filltxtCompanyID(credentials.companyId);
     await loginPage.filltxtEmployeeIDUsername(credentials.username);
     await loginPage.filltxtPassword(credentials.password);
     await loginPage.clickbuttonLogin();
-    await eworkPage.validateEworkPage();
-  });
-
-  test("Validate Submenu Overview", async ({ page, loginPage, eworkPage }) => {
-    await loginPage.open();
-    await loginPage.filltxtCompanyID(credentials.companyId);
-    await loginPage.filltxtEmployeeIDUsername(credentials.username);
-    await loginPage.filltxtPassword(credentials.password);
-    await loginPage.clickbuttonLogin();
-    await eworkPage.validateEworkPage();
+    // Validate Modul
+    await eworkPage.validatemenuDashbor("Dasbor");
+    await emitraPage.validatekmodulEmitra("emitra");
+    await salesPage.validatemodulPenjualan("Penjualan");
+    await inventoryPage.validatemodulInventaris("Inventaris");
+    await financePage.validatemodulFinance("Keuangan");
+    await marketingPage.validatemodulPemasaran("Pemasaran");
+    await hrPage.validatemodulHR("HR");
   });
 });
