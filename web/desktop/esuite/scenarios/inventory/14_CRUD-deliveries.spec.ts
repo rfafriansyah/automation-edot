@@ -6,7 +6,7 @@ const credentials = {
   password: "Testing1234!",
 };
 
-test.describe("Good Receipt", () => {
+test.describe("Deliveries", () => {
   test.beforeEach(
     async ({ page, loginPage, headerComponent, inventoryPage }) => {
       await loginPage.open();
@@ -17,14 +17,14 @@ test.describe("Good Receipt", () => {
       await headerComponent.validateAllModulesVisible();
       await headerComponent.clickmoduleInventory();
       await inventoryPage.validateMenuSubmenuInventory();
-      await inventoryPage.clickgoodReceiptSubmenu();
+      await inventoryPage.clickdeliveriesSubmenu();
     }
   );
 
-  test("As a user be able to access Good Receipt List Table", async ({
+  test("As a user be able to access Deliveries List Table", async ({
     page,
-    goodReceiptSubmenuPage,
+    deliveriesSubmenuPage,
   }) => {
-    await goodReceiptSubmenuPage.screenshotListPage();
+    await deliveriesSubmenuPage.screenshotListPage();
   });
 });

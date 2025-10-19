@@ -27,11 +27,11 @@ export class InventoryPage {
   // Perpindahan Stok
   readonly menuPerpindahanStok: Locator;
   readonly goodReceiptSubmenu: Locator;
-  readonly submenuPengiriman: Locator;
-  readonly submenuShipment: Locator;
-  readonly submenuInternalTransfer: Locator;
-  readonly submenuBadStock: Locator;
-  readonly submenuDisposal: Locator;
+  readonly deliveriesSubmenu: Locator;
+  readonly shipmentSubmenu: Locator;
+  readonly internalTransferSubmenu: Locator;
+  readonly badStockSubmenu: Locator;
+  readonly disposalSubmenu: Locator;
 
   // Canvassing
   readonly menuCanvassing: Locator;
@@ -101,19 +101,19 @@ export class InventoryPage {
     this.goodReceiptSubmenu = page.locator(
       "aside>div>div:nth-child(3)>div>ul>li:nth-child(1)"
     );
-    this.submenuPengiriman = page.locator(
+    this.deliveriesSubmenu = page.locator(
       "aside>div>div:nth-child(3)>div>ul>li:nth-child(2)"
     );
-    this.submenuShipment = page.locator(
+    this.shipmentSubmenu = page.locator(
       "aside>div>div:nth-child(3)>div>ul>li:nth-child(3)"
     );
-    this.submenuInternalTransfer = page.locator(
+    this.internalTransferSubmenu = page.locator(
       "aside>div>div:nth-child(3)>div>ul>li:nth-child(4)"
     );
-    this.submenuBadStock = page.locator(
+    this.badStockSubmenu = page.locator(
       "aside>div>div:nth-child(3)>div>ul>li:nth-child(5)"
     );
-    this.submenuDisposal = page.locator(
+    this.disposalSubmenu = page.locator(
       "aside>div>div:nth-child(3)>div>ul>li:nth-child(6)"
     );
 
@@ -169,11 +169,11 @@ export class InventoryPage {
     // Perpindahan Stok
     await this.menuPerpindahanStok.waitFor({ state: "visible" });
     await this.goodReceiptSubmenu.waitFor({ state: "visible" });
-    await this.submenuPengiriman.waitFor({ state: "visible" });
-    await this.submenuShipment.waitFor({ state: "visible" });
-    await this.submenuInternalTransfer.waitFor({ state: "visible" });
-    await this.submenuBadStock.waitFor({ state: "visible" });
-    await this.submenuDisposal.waitFor({ state: "visible" });
+    await this.deliveriesSubmenu.waitFor({ state: "visible" });
+    await this.shipmentSubmenu.waitFor({ state: "visible" });
+    await this.internalTransferSubmenu.waitFor({ state: "visible" });
+    await this.badStockSubmenu.waitFor({ state: "visible" });
+    await this.disposalSubmenu.waitFor({ state: "visible" });
 
     // Canvassing
     await this.menuCanvassing.waitFor({ state: "visible" });
@@ -191,5 +191,20 @@ export class InventoryPage {
 
   async clickgoodReceiptSubmenu() {
     await this.goodReceiptSubmenu.click();
+  }
+  async clickdeliveriesSubmenu() {
+    await this.deliveriesSubmenu.click();
+  }
+  async clickshipmentSubmenu() {
+    await this.shipmentSubmenu.click();
+  }
+  async clickinternalTransferSubmenu() {
+    await this.internalTransferSubmenu.click();
+  }
+  async clickbadStockSubmenu() {
+    await this.badStockSubmenu.click();
+  }
+  async clickdisposalSubmenu() {
+    await this.disposalSubmenu.click();
   }
 }

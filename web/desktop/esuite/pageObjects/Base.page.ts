@@ -18,6 +18,11 @@ import { MoveHistorySubmenuPage } from "./inventory/moveHistorySubmenu.page";
 import { StockBalanceReportSubmenuPage } from "./inventory/stockBalanceReport.page";
 import { InventoryPage } from "./inventory/Inventory.component";
 import { GoodReceiptSubmenuPage } from "./inventory/goodReceiptSubmenu.page";
+import { DeliveriesSubmenuPage } from "./inventory/deliveriesSubmenu.page";
+import { ShipmentSubmenuPage } from "./inventory/shipmentSubmenu.page";
+import { InternalTransferSubmenuPage } from "./inventory/internalTransferSubmenu.page";
+import { BadStockSubmenuPage } from "./inventory/badStockSubmenu.page";
+import { DisposalSubmenuPage } from "./inventory/disposalSubmenu.page";
 
 type MyFixtures = {
   loginPage: LoginPage;
@@ -45,6 +50,11 @@ type MyFixtures = {
   moveHistorySubmenuPage: MoveHistorySubmenuPage;
   stockBalanceReportSubmenuPage: StockBalanceReportSubmenuPage;
   goodReceiptSubmenuPage: GoodReceiptSubmenuPage;
+  deliveriesSubmenuPage: DeliveriesSubmenuPage;
+  shipmentSubmenuPage: ShipmentSubmenuPage;
+  internalTransferSubmenuPage: InternalTransferSubmenuPage;
+  badStockSubmenuPage: BadStockSubmenuPage;
+  disposalSubmenuPage: DisposalSubmenuPage;
 
   // Finance
   financePage: FinancePage;
@@ -108,6 +118,21 @@ export const test = base.extend<MyFixtures>({
   },
   goodReceiptSubmenuPage: async ({ page }, use) => {
     await use(new GoodReceiptSubmenuPage(page));
+  },
+  deliveriesSubmenuPage: async ({ page }, use) => {
+    await use(new DeliveriesSubmenuPage(page));
+  },
+  shipmentSubmenuPage: async ({ page }, use) => {
+    await use(new ShipmentSubmenuPage(page));
+  },
+  internalTransferSubmenuPage: async ({ page }, use) => {
+    await use(new InternalTransferSubmenuPage(page));
+  },
+  badStockSubmenuPage: async ({ page }, use) => {
+    await use(new BadStockSubmenuPage(page));
+  },
+  disposalSubmenuPage: async ({ page }, use) => {
+    await use(new DisposalSubmenuPage(page));
   },
 
   financePage: async ({ page }, use) => {
