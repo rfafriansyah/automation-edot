@@ -37,7 +37,7 @@ test.describe.serial("Create Push Message - Positive", () => {
     await pushMessagePage.clickbuttonSaveDraft();
   });
 
-  test.only("User be able to Create Push Message as Schedule", async ({
+  test("User be able to Create Push Message as Schedule", async ({
     page,
     pushMessagePage,
     toastComponents,

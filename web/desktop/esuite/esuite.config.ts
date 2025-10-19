@@ -25,7 +25,7 @@ if (env == "DEV") {
  * See https://playwright.dev/docs/test-configuration.
  */
 export default defineConfig({
-  timeout: 3 * 30000,
+  timeout: 1 * 30000,
   repeatEach: 0,
   snapshotDir: "./snapshots-english",
   testDir: "./scenarios",
@@ -43,7 +43,7 @@ export default defineConfig({
     // ... other reporters you might have
   ],
   expect: {
-    timeout: 20 * 1000, // Default timeout for expect assertions (in milliseconds)
+    timeout: 5 * 1000, // Default timeout for expect assertions (in milliseconds)
   },
   /* Shared settings for all the projects below. See https://playwright.dev/docs/api/class-testoptions. */
   use: {

@@ -41,8 +41,9 @@ export class LoginPage {
   }
   async clickbuttonLogin() {
     await this.buttonLogin.click();
-    await this.page.waitForLoadState("networkidle");
-    await this.page.waitForLoadState("domcontentloaded");
-    await this.page.waitForLoadState("load");
+    // await this.page.waitForLoadState("networkidle");
+    // await this.page.waitForLoadState("domcontentloaded");
+    // await this.page.waitForLoadState("load");
+    await this.page.waitForTimeout(3000);
   }
 }

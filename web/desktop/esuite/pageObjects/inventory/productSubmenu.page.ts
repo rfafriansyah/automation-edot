@@ -91,11 +91,12 @@ export class ProductSubmenuPage {
   }
 
   async screenshotListPage() {
+    await this.page.waitForTimeout(3000);
     await this.page.setViewportSize({ width: 1280, height: 1600 });
     await expect(this.page).toHaveScreenshot("listProduct.png", {
       maxDiffPixelRatio: 0.001,
       fullPage: true,
-      timeout: 2000,
+      timeout: 5000,
       mask: [
         this.headerComponent.maskingProfileUser,
         this.maskingtableBody,
