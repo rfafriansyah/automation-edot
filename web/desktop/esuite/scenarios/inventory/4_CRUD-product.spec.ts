@@ -31,15 +31,22 @@ test.describe("Product", () => {
     page,
     productSubmenuPage,
   }) => {
+    const payload = {
+      productName: "AT Rhama",
+      cost: "12000",
+      basePrice: "36000",
+      category: "All",
+    };
+
     await productSubmenuPage.clickbuttonAddNew();
-    await productSubmenuPage.inputfieldProductName("AT Rhama");
+    await productSubmenuPage.inputfieldProductName(payload.productName);
     await productSubmenuPage.inputfieldProductType("All");
-    await productSubmenuPage.inputfieldCategory("All");
+    await productSubmenuPage.inputfieldCategory(payload.category);
     await productSubmenuPage.inputfieldProductBrand();
     await productSubmenuPage.inputfieldIndustry();
     await productSubmenuPage.inputfieldExternalCode("123123123");
-    await productSubmenuPage.inputfieldCost("12000");
-    await productSubmenuPage.inputfieldBasePrice("36000");
+    await productSubmenuPage.inputfieldCost(payload.cost);
+    await productSubmenuPage.inputfieldBasePrice(payload.basePrice);
     await productSubmenuPage.inputfieldBaseUom("pcs");
     await productSubmenuPage.inputfieldLevel1("Kecil");
     await productSubmenuPage.clickbuttonAddNewLevel();
@@ -57,7 +64,11 @@ test.describe("Product", () => {
     await productSubmenuPage.inputfieldValueAttributeName("X");
     await productSubmenuPage.inputfieldValueAttributeName("Y");
     await productSubmenuPage.inputfieldValueAttributeName("Z");
-    // await productSubmenuPage.screenshotListPage();
+    await productSubmenuPage.clickbuttonSubmit();
+    await productSubmenuPage.validatetoastMessage();
+
+    await productSubmenuPage.inputsearchbar(payload.productName);
+    await productSubmenuPage.validateListCreatedProduct(payload);
     await page.waitForTimeout(3000);
   });
 });

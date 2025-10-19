@@ -9,9 +9,19 @@ export class ProductSubmenuPage {
   readonly titleProduct: Locator;
   readonly searchbar: Locator;
   readonly buttonAddNew: Locator;
+  readonly buttonSubmit: Locator;
+  readonly toastMessage: Locator;
 
   readonly maskingtableBody: Locator;
   readonly maskingpagination: Locator;
+
+  // Table List
+  readonly rowProductID1: Locator;
+  readonly rowProductName1: Locator;
+  readonly rowCost1: Locator;
+  readonly rowBasePrice1: Locator;
+  readonly rowCategory1: Locator;
+  readonly rowActions: Locator;
 
   // Panel Filter
   readonly dropdownPanelFilter: Locator;
@@ -42,7 +52,6 @@ export class ProductSubmenuPage {
   readonly fieldUomLevel3: Locator;
   readonly fieldConvertionLevel3: Locator;
   readonly buttonAddNewLevel: Locator;
-
   // Tab Attribute & Variant
   readonly tabAttributeVariant: Locator;
   readonly buttonAddNewAttribute: Locator;
@@ -57,6 +66,29 @@ export class ProductSubmenuPage {
     this.titleProduct = page.locator("main>header>div:nth-child(1)>h2");
     this.searchbar = page.locator("main>header>div:nth-child(2)>div>input");
     this.buttonAddNew = page.locator("main>header>div:nth-child(3)>a");
+    this.buttonSubmit = page.locator("div>main>header>div>button:nth-child(2)");
+    this.toastMessage = page.locator("body>section>ol>li>div:nth-child(2)");
+    this.searchbar = page.locator("main>header>div:nth-child(2)>div>input");
+
+    // Table List
+    this.rowProductID1 = page.locator(
+      "section>div:nth-child(1)>table>tbody>tr:nth-child(1)>td:nth-child(3)"
+    );
+    this.rowProductName1 = page.locator(
+      "section>div:nth-child(1)>table>tbody>tr:nth-child(1)>td:nth-child(4)"
+    );
+    this.rowCost1 = page.locator(
+      "section>div:nth-child(1)>table>tbody>tr:nth-child(1)>td:nth-child(5)"
+    );
+    this.rowBasePrice1 = page.locator(
+      "section>div:nth-child(1)>table>tbody>tr:nth-child(1)>td:nth-child(6)"
+    );
+    this.rowCategory1 = page.locator(
+      "section>div:nth-child(1)>table>tbody>tr:nth-child(1)>td:nth-child(7)"
+    );
+    this.rowActions = page.locator(
+      "section>div:nth-child(1)>table>tbody>tr:nth-child(1)>td:nth-child(8)"
+    );
 
     this.maskingtableBody = page.locator(
       "main>section:nth-child(2)>div>table>tbody"
@@ -158,6 +190,36 @@ export class ProductSubmenuPage {
   async clickbuttonAddNew() {
     await this.buttonAddNew.click();
   }
+  async inputsearchbar(text: any) {
+    await this.searchbar.waitFor({ state: "visible" });
+    await this.searchbar.fill(text);
+  }
+
+  // Table List
+  async validateListCreatedProduct(payload: any) {
+    await expect(this.rowProductID1).toContainText("MPD-");
+    await expect(this.rowProductName1).toContainText(payload.productName);
+
+    const receivedStringCost = await this.rowCost1.innerText();
+    const cleanedValueStringCost = receivedStringCost.replace(/[^0-9]/g, "");
+    const actualValueCost = parseInt(cleanedValueStringCost, 10).toString();
+    await expect(actualValueCost).toEqual(payload.cost);
+
+    const receivedStringBasePrice = await this.rowBasePrice1.innerText();
+    const cleanedValueStringBasePrice = receivedStringBasePrice.replace(
+      /[^0-9]/g,
+      ""
+    );
+    const actualValueBasePrice = parseInt(
+      cleanedValueStringBasePrice,
+      10
+    ).toString();
+    await expect(actualValueBasePrice).toEqual(payload.basePrice);
+
+    await expect(this.rowCategory1).toContainText(payload.category);
+    const textViewDetail = await this.rowActions.textContent();
+    await expect(textViewDetail).toMatchSnapshot("txtActionDetail.txt");
+  }
 
   async inputfieldProductName(text: any) {
     await this.fieldProductName.fill(text);
@@ -244,5 +306,13 @@ export class ProductSubmenuPage {
     await this.fieldValueAttributeName.click();
     await this.fieldValueAttributeName.fill(text);
     await this.page.keyboard.press("Enter");
+  }
+
+  async clickbuttonSubmit() {
+    await this.buttonSubmit.click();
+  }
+  async validatetoastMessage() {
+    const message = await this.toastMessage.textContent();
+    await expect(message).toMatchSnapshot("successMessageCreateProduct.txt");
   }
 }
