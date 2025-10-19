@@ -25,41 +25,29 @@ export class ProductSubmenuPage {
 
   // Form Create Product
   //   // Tab Basic Info
-  //   readonly inputProductType: Locator;
-  //   readonly inputCategory: Locator;
-  //   readonly inputProductBrand: Locator;
-  //   readonly inputIndustry: Locator;
-  //   readonly inputExternalCode: Locator;
-  //   readonly inputCost: Locator;
-  //   readonly inputBasePrice: Locator;
-  //   readonly inputPurchaseUoM: Locator;
-  //   readonly inputBaseUoM: Locator;
-  //   // product 1
-  //   readonly inputLevel1: Locator;
-  //   readonly inputQty1: Locator;
-  //   readonly inputUoM1: Locator;
-  //   readonly inputConversion1: Locator;
-  //   // product 2
-  //   readonly inputLevel2: Locator;
-  //   readonly inputQty2: Locator;
-  //   readonly inputUoM2: Locator;
-  //   readonly inputConversion2: Locator;
-  //   // product 3
-  //   readonly inputLevel3: Locator;
-  //   readonly inputQty3: Locator;
-  //   readonly inputUoM3: Locator;
-  //   readonly inputConversion3: Locator;
-  //   // button add new level
-  //   readonly buttonAddNewLevel: Locator;
+  readonly fieldProductName: Locator;
+  readonly fieldProductType: Locator;
+  readonly fieldCategory: Locator;
+  readonly fieldProductBrand: Locator;
+  readonly fieldIndustry: Locator;
+  readonly fieldExternalCode: Locator;
+  readonly fieldCost: Locator;
+  readonly fieldBasePrice: Locator;
+  readonly fieldBaseUom: Locator;
+  readonly fieldLevel1: Locator;
+  readonly fieldLevel2: Locator;
+  readonly fieldUomLevel2: Locator;
+  readonly fieldConvertionLevel2: Locator;
+  readonly fieldLevel3: Locator;
+  readonly fieldUomLevel3: Locator;
+  readonly fieldConvertionLevel3: Locator;
+  readonly buttonAddNewLevel: Locator;
 
-  //   // Tab Attribute & Variant
-  //   readonly buttonAddNewAttribute: Locator;
-  //   readonly inputAttributeName1: Locator;
-  //   readonly inputValue1: Locator;
-  //   readonly inputAttributeName2: Locator;
-  //   readonly inputValue3: Locator;
-  // Tab Availability
-  // Tab Inventory
+  // Tab Attribute & Variant
+  readonly tabAttributeVariant: Locator;
+  readonly buttonAddNewAttribute: Locator;
+  readonly fieldAttributeName: Locator;
+  readonly fieldValueAttributeName: Locator;
 
   constructor(page: Page) {
     this.page = page;
@@ -75,6 +63,65 @@ export class ProductSubmenuPage {
     );
     this.maskingpagination = page.locator(
       "main>header>div:nth-child(3)>div>div"
+    );
+
+    this.fieldProductName = page.locator("main>section>div>div>div>input");
+    this.fieldProductType = page.locator(
+      "main:nth-child(2)>div:nth-child(4)>section:nth-child(1)>div>div:nth-child(1)>div>div>div>div:nth-child(1)>input"
+    );
+    this.fieldCategory = page.locator(
+      "main:nth-child(2)>div:nth-child(4)>section:nth-child(1)>div>div:nth-child(2)>div>div>div>div>input"
+    );
+    this.fieldProductBrand = page.locator(
+      "main:nth-child(2)>div:nth-child(4)>section:nth-child(1)>div>div:nth-child(3)>div>div>div>div:nth-child(1)>input"
+    );
+    this.fieldIndustry = page.locator(
+      "main:nth-child(2)>div:nth-child(4)>section:nth-child(1)>div>div:nth-child(4)>div>div>div>div:nth-child(1)>input"
+    );
+    this.fieldExternalCode = page.locator(
+      "main:nth-child(2)>div:nth-child(4)>section:nth-child(1)>div>div:nth-child(5)>div>input"
+    );
+    this.fieldCost = page.locator(
+      "main:nth-child(2)>div:nth-child(4)>section:nth-child(2)>div:nth-child(2)>div:nth-child(1)>div>input"
+    );
+    this.fieldBasePrice = page.locator(
+      "main:nth-child(2)>div:nth-child(4)>section:nth-child(2)>div:nth-child(2)>div:nth-child(2)>div>input"
+    );
+    this.fieldBaseUom = page.locator(
+      "main:nth-child(2)>div:nth-child(4)>section:nth-child(2)>div:nth-child(2)>div:nth-child(4)>div>div>div>div:nth-child(1)>input"
+    );
+    this.fieldLevel1 = page.locator(
+      "div>section:nth-child(2)>div:nth-child(3)>div>table>tbody>tr>td:nth-child(1)>button"
+    );
+    this.fieldLevel2 = page.locator(
+      "div>section:nth-child(2)>div:nth-child(3)>div>table>tbody>tr:nth-child(2)>td:nth-child(1)>button"
+    );
+    this.fieldUomLevel2 = page.locator(
+      "div>section:nth-child(2)>div:nth-child(3)>div>table>tbody>tr:nth-child(2)>td:nth-child(3)>button"
+    );
+    this.fieldConvertionLevel2 = page.locator(
+      "div>section:nth-child(2)>div:nth-child(3)>div>table>tbody>tr:nth-child(2)>td:nth-child(4)>div>input"
+    );
+    this.fieldLevel3 = page.locator(
+      "div>section:nth-child(2)>div:nth-child(3)>div>table>tbody>tr:nth-child(3)>td:nth-child(1)>button"
+    );
+    this.fieldUomLevel3 = page.locator(
+      "div>section:nth-child(2)>div:nth-child(3)>div>table>tbody>tr:nth-child(3)>td:nth-child(3)>button"
+    );
+    this.fieldConvertionLevel3 = page.locator(
+      "div>section:nth-child(2)>div:nth-child(3)>div>table>tbody>tr:nth-child(3)>td:nth-child(4)>div>input"
+    );
+    this.buttonAddNewLevel = page.locator("tfoot>tr>td>div>button");
+
+    this.tabAttributeVariant = page.locator(
+      "main>div:nth-child(3)>button:nth-child(2)"
+    );
+    this.buttonAddNewAttribute = page.locator("tfoot>tr>td>div>button");
+    this.fieldAttributeName = page.locator(
+      "div>main>div:nth-child(4)>div:nth-child(1)>div>table>tbody>tr>td:nth-child(1)>button"
+    );
+    this.fieldValueAttributeName = page.locator(
+      "div>main>div:nth-child(4)>div:nth-child(1)>div>table>tbody>tr>td:nth-child(2)>form>ul>li>div>input"
     );
 
     // Panel Filter
@@ -106,5 +153,96 @@ export class ProductSubmenuPage {
     });
     const actualText = await this.titleProduct.textContent();
     await expect(actualText).toMatchSnapshot("titleProduct.txt");
+  }
+
+  async clickbuttonAddNew() {
+    await this.buttonAddNew.click();
+  }
+
+  async inputfieldProductName(text: any) {
+    await this.fieldProductName.fill(text);
+  }
+  async inputfieldProductType(text: any) {
+    await this.fieldProductType.fill(text);
+    await this.page.waitForTimeout(1000);
+    await this.page.getByTestId("option").first().click();
+  }
+  async inputfieldCategory(text: any) {
+    await this.fieldCategory.fill(text);
+    await this.page.waitForTimeout(1000);
+    await this.page.getByTestId("option").first().click();
+  }
+  async inputfieldProductBrand() {
+    await this.fieldProductBrand.click();
+    await this.page.getByTestId("option").first().click();
+  }
+  async inputfieldIndustry() {
+    await this.fieldIndustry.click();
+    await this.page.waitForTimeout(1000);
+    await this.page.getByTestId("option").first().click();
+  }
+  async inputfieldExternalCode(text: any) {
+    await this.fieldExternalCode.fill(text);
+  }
+  async inputfieldCost(text: any) {
+    await this.fieldCost.fill(text);
+  }
+  async inputfieldBasePrice(text: any) {
+    await this.fieldBasePrice.fill(text);
+  }
+  async inputfieldBaseUom(text: any) {
+    await this.fieldBaseUom.fill(text);
+    await this.page.waitForTimeout(1000);
+    await this.page.getByTestId("option").first().click();
+  }
+  async inputfieldLevel1(text: any) {
+    await this.fieldLevel1.click();
+    await this.page.waitForTimeout(1000);
+    await this.page.getByRole("option", { name: text }).first().click();
+  }
+  async inputfieldLevel2(text: any) {
+    await this.fieldLevel2.click();
+    await this.page.waitForTimeout(1000);
+    await this.page.getByRole("option", { name: text }).first().click();
+  }
+  async inputfieldUomLevel2(text: any) {
+    await this.fieldUomLevel2.click();
+    await this.page.waitForTimeout(1000);
+    await this.page.getByRole("option", { name: text }).first().click();
+  }
+  async inputfieldConvertionLevel2(text: any) {
+    await this.fieldConvertionLevel2.fill(text);
+  }
+  async inputfieldLevel3(text: any) {
+    await this.fieldLevel3.click();
+    await this.page.waitForTimeout(1000);
+    await this.page.getByRole("option", { name: text }).first().click();
+  }
+  async inputfieldUomLevel3(text: any) {
+    await this.fieldUomLevel3.click();
+    await this.page.waitForTimeout(1000);
+    await this.page.getByRole("option", { name: text }).first().click();
+  }
+  async inputfieldConvertionLevel3(text: any) {
+    await this.fieldConvertionLevel3.fill(text);
+  }
+  async clickbuttonAddNewLevel() {
+    await this.buttonAddNewLevel.click();
+  }
+
+  async clicktabAttributeVariant() {
+    await this.tabAttributeVariant.click();
+  }
+  async clickbuttonAddNewAttribute() {
+    await this.buttonAddNewAttribute.click();
+  }
+  async inputfieldAttributeName(text: any) {
+    await this.fieldAttributeName.click();
+    await this.page.getByRole("option", { name: text }).click();
+  }
+  async inputfieldValueAttributeName(text: any) {
+    await this.fieldValueAttributeName.click();
+    await this.fieldValueAttributeName.fill(text);
+    await this.page.keyboard.press("Enter");
   }
 }
