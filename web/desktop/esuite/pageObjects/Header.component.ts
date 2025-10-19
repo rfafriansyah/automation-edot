@@ -55,6 +55,16 @@ export class HeaderComponent {
     await expect(this.moduleEwork).toMatchAriaSnapshot("modulInventory.txt");
   }
 
+  async validateAllModulesVisible() {
+    await this.moduleEwork.waitFor({ state: "visible" });
+    await this.moduleEmitra.waitFor({ state: "visible" });
+    await this.moduleSales.waitFor({ state: "visible" });
+    await this.moduleInventory.waitFor({ state: "visible" });
+    await this.moduleFinance.waitFor({ state: "visible" });
+    await this.moduleMarketing.waitFor({ state: "visible" });
+    await this.moduleHR.waitFor({ state: "visible" });
+  }
+
   async clickmoduleInventory() {
     await this.moduleInventory.click();
   }

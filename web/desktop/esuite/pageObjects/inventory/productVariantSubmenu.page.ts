@@ -39,8 +39,9 @@ export class ProductVariantSubmenuPage {
   }
 
   async screenshotListPage() {
-    await this.page.waitForTimeout(3000)
-await this.page.setViewportSize({ width: 1280, height: 1600 });
+    await this.page.waitForLoadState("networkidle");
+    await this.maskingtableBody.waitFor({ state: "visible" });
+    await this.page.setViewportSize({ width: 1280, height: 1600 });
     await expect(this.page).toHaveScreenshot("listProductVariant.png", {
       timeout: 5000,
       maxDiffPixelRatio: 0.001,

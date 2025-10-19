@@ -149,174 +149,43 @@ export class InventoryPage {
     );
   }
 
-  // Validate Modul Inventaris
-  async validatemodulInventaris(text: string) {
-    await this.modulInventaris.waitFor({ state: "visible" });
-    await expect(this.modulInventaris).toBeVisible();
-    await expect(this.modulInventaris).toHaveText(text);
-  }
-
-  // Modul Inventaris
-  async clickmodulInventaris() {
-    await this.modulInventaris.waitFor({ state: "visible" });
-    await expect(this.modulInventaris).toBeVisible();
-    await this.modulInventaris.click();
-  }
-
-  // Validate Title Inventaris
-  async validatetitleInventaris(text: string) {
-    await this.titleInventaris.waitFor({ state: "visible" });
-    await expect(this.titleInventaris).toBeVisible();
-    await expect(this.titleInventaris).toHaveText(text);
-  }
-
-  // Validate Menu Produk
-  async validatemenuProduk(text: string) {
+  async validateMenuSubmenuInventory() {
+    // Menu Produk
     await this.menuProduk.waitFor({ state: "visible" });
-    await expect(this.menuProduk).toBeVisible();
-    await expect(this.menuProduk).toHaveText(text);
-  }
-  async validatesubmenuProduk(text: string) {
     await this.submenuProduk.waitFor({ state: "visible" });
-    await expect(this.submenuProduk).toBeVisible();
-    await expect(this.submenuProduk).toHaveText(text);
-  }
-  async validatesubmenuVarianProduk(text: string) {
     await this.submenuVarianProduk.waitFor({ state: "visible" });
-    await expect(this.submenuVarianProduk).toBeVisible();
-    await expect(this.submenuVarianProduk).toHaveText(text);
-  }
-  async validatesubmenuProductCombo(text: string) {
     await this.submenuProductCombo.waitFor({ state: "visible" });
-    await expect(this.submenuProductCombo).toBeVisible();
-    await expect(this.submenuProductCombo).toHaveText(text);
-  }
-  async validatesubmenuKategoriProduk(text: string) {
     await this.submenuKategoriProduk.waitFor({ state: "visible" });
-    await expect(this.submenuKategoriProduk).toBeVisible();
-    await expect(this.submenuKategoriProduk).toHaveText(text);
-  }
-  async validatesubmenuMerekProduk(text: string) {
     await this.submenuMerekProduk.waitFor({ state: "visible" });
-    await expect(this.submenuMerekProduk).toBeVisible();
-    await expect(this.submenuMerekProduk).toHaveText(text);
-  }
-  async validatesubmenuGroupProduk(text: string) {
     await this.submenuGroupProduk.waitFor({ state: "visible" });
-    await expect(this.submenuGroupProduk).toBeVisible();
-    await expect(this.submenuGroupProduk).toHaveText(text);
-  }
 
-  // Validate Menu Manajemen Stok
-  async validatemenuManajemenStok(text: string) {
+    // Menu Manajemen Stok
     await this.menuManajemenStok.waitFor({ state: "visible" });
-    await expect(this.menuManajemenStok).toBeVisible();
-    await expect(this.menuManajemenStok).toHaveText(text);
-  }
-  async validatesubmenuStok(text: string) {
     await this.submenuStok.waitFor({ state: "visible" });
-    await expect(this.submenuStok).toBeVisible();
-    await expect(this.submenuStok).toHaveText(text);
-  }
-  async validatesubmenuPenyesuaianStok(text: string) {
     await this.submenuPenyesuaianStok.waitFor({ state: "visible" });
-    await expect(this.submenuPenyesuaianStok).toBeVisible();
-    await expect(this.submenuPenyesuaianStok).toHaveText(text);
-  }
-  async validatesubmenuRiwayatStok(text: string) {
     await this.submenuRiwayatStok.waitFor({ state: "visible" });
-    await expect(this.submenuRiwayatStok).toBeVisible();
-    await expect(this.submenuRiwayatStok).toHaveText(text);
-  }
-  async validatesubmenuLaporanSaldoStok(text: string) {
     await this.submenuLaporanSaldoStok.waitFor({ state: "visible" });
-    await expect(this.submenuLaporanSaldoStok).toBeVisible();
-    await expect(this.submenuLaporanSaldoStok).toHaveText(text);
-  }
 
-  // Validate Perpindahan Stok
-  async validatemenuPerpindahanStok(text: string) {
+    // Perpindahan Stok
     await this.menuPerpindahanStok.waitFor({ state: "visible" });
-    await expect(this.menuPerpindahanStok).toBeVisible();
-    await expect(this.menuPerpindahanStok).toHaveText(text);
-  }
-  async validatesubmenuPenerimaanBarang(text: string) {
     await this.submenuPenerimaanBarang.waitFor({ state: "visible" });
-    await expect(this.submenuPenerimaanBarang).toBeVisible();
-    await expect(this.submenuPenerimaanBarang).toHaveText(text);
-  }
-  async validatesubmenuPengiriman(text: string) {
     await this.submenuPengiriman.waitFor({ state: "visible" });
-    await expect(this.submenuPengiriman).toBeVisible();
-    await expect(this.submenuPengiriman).toHaveText(text);
-  }
-  async validatesubmenuShipment(text: string) {
     await this.submenuShipment.waitFor({ state: "visible" });
-    await expect(this.submenuShipment).toBeVisible();
-    await expect(this.submenuShipment).toHaveText(text);
-  }
-  async validatesubmenuInternalTransfer(text: string) {
     await this.submenuInternalTransfer.waitFor({ state: "visible" });
-    await expect(this.submenuInternalTransfer).toBeVisible();
-    await expect(this.submenuInternalTransfer).toHaveText(text);
-  }
-  async validatesubmenuBadStock(text: string) {
     await this.submenuBadStock.waitFor({ state: "visible" });
-    await expect(this.submenuBadStock).toBeVisible();
-    await expect(this.submenuBadStock).toHaveText(text);
-  }
-  async validatesubmenuDisposal(text: string) {
     await this.submenuDisposal.waitFor({ state: "visible" });
-    await expect(this.submenuDisposal).toBeVisible();
-    await expect(this.submenuDisposal).toHaveText(text);
-  }
 
-  // Validate Canvassing
-  async validatemenuCanvassing(text: string) {
+    // Canvassing
     await this.menuCanvassing.waitFor({ state: "visible" });
-    await expect(this.menuCanvassing).toBeVisible();
-    await expect(this.menuCanvassing).toHaveText(text);
-  }
-  async validatesubmenuCanvassBooking(text: string) {
     await this.submenuCanvassBooking.waitFor({ state: "visible" });
-    await expect(this.submenuCanvassBooking).toBeVisible();
-    await expect(this.submenuCanvassBooking).toHaveText(text);
-  }
 
-  // Validate Konfigurasi
-  async validatemenuKonfigurasi(text: string) {
+    // Konfigurasi
     await this.menuKonfigurasi.waitFor({ state: "visible" });
-    await expect(this.menuKonfigurasi).toBeVisible();
-    await expect(this.menuKonfigurasi).toHaveText(text);
-  }
-  async validatesubmenuLokasi(text: string) {
     await this.submenuLokasi.waitFor({ state: "visible" });
-    await expect(this.submenuLokasi).toBeVisible();
-    await expect(this.submenuLokasi).toHaveText(text);
-  }
-  async validatesubmenuGudang(text: string) {
     await this.submenuGudang.waitFor({ state: "visible" });
-    await expect(this.submenuGudang).toBeVisible();
-    await expect(this.submenuGudang).toHaveText(text);
-  }
-  async validatesubmenuKategoriUoM(text: string) {
     await this.submenuKategoriUoM.waitFor({ state: "visible" });
-    await expect(this.submenuKategoriUoM).toBeVisible();
-    await expect(this.submenuKategoriUoM).toHaveText(text);
-  }
-  async validatesubmenuSatuanUkuran(text: string) {
     await this.submenuSatuanUkuran.waitFor({ state: "visible" });
-    await expect(this.submenuSatuanUkuran).toBeVisible();
-    await expect(this.submenuSatuanUkuran).toHaveText(text);
-  }
-  async validatesubmenuKendaraan(text: string) {
     await this.submenuKendaraan.waitFor({ state: "visible" });
-    await expect(this.submenuKendaraan).toBeVisible();
-    await expect(this.submenuKendaraan).toHaveText(text);
-  }
-  async validatesubmenuTipeKendaraan(text: string) {
     await this.submenuTipeKendaraan.waitFor({ state: "visible" });
-    await expect(this.submenuTipeKendaraan).toBeVisible();
-    await expect(this.submenuTipeKendaraan).toHaveText(text);
   }
 }

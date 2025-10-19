@@ -37,7 +37,8 @@ export class MoveHistorySubmenuPage {
   }
 
   async screenshotListPage() {
-    await this.page.waitForTimeout(3000);
+    await this.page.waitForLoadState('networkidle')
+    await this.maskingtableBody.waitFor({ state: "visible" });
     await this.page.setViewportSize({ width: 2100, height: 1550 });
     await expect(this.page).toHaveScreenshot("listMoveHistoryList.png", {
       timeout: 5000,

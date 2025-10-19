@@ -41,7 +41,8 @@ export class StocksSubmenuPage {
   }
 
   async screenshotListPage() {
-    await this.page.waitForTimeout(3000);
+    await this.page.waitForLoadState("networkidle");
+    await this.maskingtableBody.waitFor({ state: "visible" });
     await this.page.setViewportSize({ width: 2300, height: 1550 });
     await expect(this.page).toHaveScreenshot("listStocks.png", {
       timeout: 5000,

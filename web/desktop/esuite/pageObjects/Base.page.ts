@@ -16,11 +16,13 @@ import { StocksSubmenuPage } from "./inventory/stocksSubmenu.page";
 import { StocksAdjustmentSubmenuPage } from "./inventory/stocksAdjusmentSubmenu.page";
 import { MoveHistorySubmenuPage } from "./inventory/moveHistorySubmenu.page";
 import { StockBalanceReportSubmenuPage } from "./inventory/stockBalanceReport.page";
+import { InventoryPage } from "./inventory/Inventory.component";
 
 type MyFixtures = {
   loginPage: LoginPage;
 
   headerComponent: HeaderComponent;
+  inventoryPage: InventoryPage;
 
   // Ework
   eworkPage: EworkPage;
@@ -59,6 +61,9 @@ export const test = base.extend<MyFixtures>({
 
   headerComponent: async ({ page }, use) => {
     await use(new HeaderComponent(page));
+  },
+  inventoryPage: async ({ page }, use) => {
+    await use(new InventoryPage(page));
   },
 
   eworkPage: async ({ page }, use) => {
