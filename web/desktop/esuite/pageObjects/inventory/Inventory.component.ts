@@ -35,16 +35,16 @@ export class InventoryPage {
 
   // Canvassing
   readonly menuCanvassing: Locator;
-  readonly submenuCanvassBooking: Locator;
+  readonly canvassBookingSubmenu: Locator;
 
   // Konfigurasi
   readonly menuKonfigurasi: Locator;
-  readonly submenuLokasi: Locator;
-  readonly submenuGudang: Locator;
-  readonly submenuKategoriUoM: Locator;
-  readonly submenuSatuanUkuran: Locator;
-  readonly submenuKendaraan: Locator;
-  readonly submenuTipeKendaraan: Locator;
+  readonly locationSubmenu: Locator;
+  readonly warehouseSubmenu: Locator;
+  readonly uomCategorySubmenu: Locator;
+  readonly uomSubmenu: Locator;
+  readonly vehicleSubmenu: Locator;
+  readonly vehicleTypeSubmenu: Locator;
 
   constructor(page: Page) {
     this.page = page;
@@ -121,7 +121,7 @@ export class InventoryPage {
     this.menuCanvassing = page.locator(
       "aside>div>div:nth-child(4)>h3>button>h5"
     );
-    this.submenuCanvassBooking = page.locator(
+    this.canvassBookingSubmenu = page.locator(
       "aside>div>div:nth-child(4)>div>ul>li:nth-child(1)"
     );
 
@@ -129,22 +129,22 @@ export class InventoryPage {
     this.menuKonfigurasi = page.locator(
       "aside>div>div:nth-child(5)>h3>button>h5"
     );
-    this.submenuLokasi = page.locator(
+    this.locationSubmenu = page.locator(
       "aside>div>div:nth-child(5)>div>ul>li:nth-child(1)"
     );
-    this.submenuGudang = page.locator(
+    this.warehouseSubmenu = page.locator(
       "aside>div>div:nth-child(5)>div>ul>li:nth-child(2)"
     );
-    this.submenuKategoriUoM = page.locator(
+    this.uomCategorySubmenu = page.locator(
       "aside>div>div:nth-child(5)>div>ul>li:nth-child(3)"
     );
-    this.submenuSatuanUkuran = page.locator(
+    this.uomSubmenu = page.locator(
       "aside>div>div:nth-child(5)>div>ul>li:nth-child(4)"
     );
-    this.submenuKendaraan = page.locator(
+    this.vehicleSubmenu = page.locator(
       "aside>div>div:nth-child(5)>div>ul>li:nth-child(5)"
     );
-    this.submenuTipeKendaraan = page.locator(
+    this.vehicleTypeSubmenu = page.locator(
       "aside>div>div:nth-child(5)>div>ul>li:nth-child(6)"
     );
   }
@@ -177,16 +177,16 @@ export class InventoryPage {
 
     // Canvassing
     await this.menuCanvassing.waitFor({ state: "visible" });
-    await this.submenuCanvassBooking.waitFor({ state: "visible" });
+    await this.canvassBookingSubmenu.waitFor({ state: "visible" });
 
     // Konfigurasi
     await this.menuKonfigurasi.waitFor({ state: "visible" });
-    await this.submenuLokasi.waitFor({ state: "visible" });
-    await this.submenuGudang.waitFor({ state: "visible" });
-    await this.submenuKategoriUoM.waitFor({ state: "visible" });
-    await this.submenuSatuanUkuran.waitFor({ state: "visible" });
-    await this.submenuKendaraan.waitFor({ state: "visible" });
-    await this.submenuTipeKendaraan.waitFor({ state: "visible" });
+    await this.locationSubmenu.waitFor({ state: "visible" });
+    await this.warehouseSubmenu.waitFor({ state: "visible" });
+    await this.uomCategorySubmenu.waitFor({ state: "visible" });
+    await this.uomSubmenu.waitFor({ state: "visible" });
+    await this.vehicleSubmenu.waitFor({ state: "visible" });
+    await this.vehicleTypeSubmenu.waitFor({ state: "visible" });
   }
 
   async clickgoodReceiptSubmenu() {
@@ -206,5 +206,26 @@ export class InventoryPage {
   }
   async clickdisposalSubmenu() {
     await this.disposalSubmenu.click();
+  }
+  async clickcanvassBookingSubmenu() {
+    await this.canvassBookingSubmenu.click();
+  }
+  async clicklocationSubmenu() {
+    await this.locationSubmenu.click();
+  }
+  async clickwarehouseSubmenu() {
+    await this.warehouseSubmenu.click();
+  }
+  async clickuomCategorySubmenu() {
+    await this.uomCategorySubmenu.click();
+  }
+  async clickuomSubmenu() {
+    await this.uomSubmenu.click();
+  }
+  async clickvehicleSubmenu() {
+    await this.vehicleSubmenu.click();
+  }
+  async clickvehicleTypeSubmenu() {
+    await this.vehicleTypeSubmenu.click();
   }
 }

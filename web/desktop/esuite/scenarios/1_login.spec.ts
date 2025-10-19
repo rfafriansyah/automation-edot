@@ -17,6 +17,6 @@ test.describe("LOGIN", () => {
     await loginPage.filltxtEmployeeIDUsername(credentials.username);
     await loginPage.filltxtPassword(credentials.password);
     await loginPage.clickbuttonLogin();
-    await eworkPage.screenshotListPage();
+    // await eworkPage.screenshotListPage();
   });
 });

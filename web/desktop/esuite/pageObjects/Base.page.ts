@@ -23,6 +23,13 @@ import { ShipmentSubmenuPage } from "./inventory/shipmentSubmenu.page";
 import { InternalTransferSubmenuPage } from "./inventory/internalTransferSubmenu.page";
 import { BadStockSubmenuPage } from "./inventory/badStockSubmenu.page";
 import { DisposalSubmenuPage } from "./inventory/disposalSubmenu.page";
+import { CanvassBookingSubmenuPage } from "./inventory/canvassBookingSubmenu.page";
+import { LocationSubmenuPage } from "./inventory/locationSubmenu.page";
+import { WarehouseSubmenuPage } from "./inventory/warehouseSubmenu.page";
+import { UomCategorySubmenuPage } from "./inventory/uomCategorySubmenu.page";
+import { UomSubmenuPage } from "./inventory/uom.page";
+import { VehicleSubmenuPage } from "./inventory/vehicleSubmenu.page";
+import { VehicleTypeSubmenuPage } from "./inventory/vehicleTypeSubmenu.page";
 
 type MyFixtures = {
   loginPage: LoginPage;
@@ -55,6 +62,13 @@ type MyFixtures = {
   internalTransferSubmenuPage: InternalTransferSubmenuPage;
   badStockSubmenuPage: BadStockSubmenuPage;
   disposalSubmenuPage: DisposalSubmenuPage;
+  canvassBookingSubmenuPage: CanvassBookingSubmenuPage;
+  locationSubmenuPage: LocationSubmenuPage;
+  warehouseSubmenuPage: WarehouseSubmenuPage;
+  uomCategorySubmenuPage: UomCategorySubmenuPage;
+  uomSubmenuPage: UomSubmenuPage;
+  vehicleSubmenuPage: VehicleSubmenuPage;
+  vehicleTypeSubmenuPage: VehicleTypeSubmenuPage;
 
   // Finance
   financePage: FinancePage;
@@ -133,6 +147,27 @@ export const test = base.extend<MyFixtures>({
   },
   disposalSubmenuPage: async ({ page }, use) => {
     await use(new DisposalSubmenuPage(page));
+  },
+  canvassBookingSubmenuPage: async ({ page }, use) => {
+    await use(new CanvassBookingSubmenuPage(page));
+  },
+  locationSubmenuPage: async ({ page }, use) => {
+    await use(new LocationSubmenuPage(page));
+  },
+  warehouseSubmenuPage: async ({ page }, use) => {
+    await use(new WarehouseSubmenuPage(page));
+  },
+  uomCategorySubmenuPage: async ({ page }, use) => {
+    await use(new UomCategorySubmenuPage(page));
+  },
+  uomSubmenuPage: async ({ page }, use) => {
+    await use(new UomSubmenuPage(page));
+  },
+  vehicleSubmenuPage: async ({ page }, use) => {
+    await use(new VehicleSubmenuPage(page));
+  },
+  vehicleTypeSubmenuPage: async ({ page }, use) => {
+    await use(new VehicleTypeSubmenuPage(page));
   },
 
   financePage: async ({ page }, use) => {
