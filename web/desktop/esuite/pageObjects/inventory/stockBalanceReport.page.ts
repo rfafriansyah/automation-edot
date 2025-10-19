@@ -37,9 +37,9 @@ export class StockBalanceReportSubmenuPage {
   }
 
   async screenshotListPage() {
-    await this.page.waitForLoadState("networkidle");
     await this.buttonSetFilter.waitFor({ state: "visible" });
     await this.page.setViewportSize({ width: 1280, height: 1600 });
+    await this.page.waitForLoadState("networkidle");
     await expect(this.page).toHaveScreenshot("listStockBalanceReport.png", {
       timeout: 5000,
       maxDiffPixelRatio: 0.001,

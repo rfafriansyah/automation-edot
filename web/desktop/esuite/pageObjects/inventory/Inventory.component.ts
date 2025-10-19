@@ -26,7 +26,7 @@ export class InventoryPage {
 
   // Perpindahan Stok
   readonly menuPerpindahanStok: Locator;
-  readonly submenuPenerimaanBarang: Locator;
+  readonly goodReceiptSubmenu: Locator;
   readonly submenuPengiriman: Locator;
   readonly submenuShipment: Locator;
   readonly submenuInternalTransfer: Locator;
@@ -98,7 +98,7 @@ export class InventoryPage {
     this.menuPerpindahanStok = page.locator(
       "aside>div>div:nth-child(3)>h3>button>h5"
     );
-    this.submenuPenerimaanBarang = page.locator(
+    this.goodReceiptSubmenu = page.locator(
       "aside>div>div:nth-child(3)>div>ul>li:nth-child(1)"
     );
     this.submenuPengiriman = page.locator(
@@ -168,7 +168,7 @@ export class InventoryPage {
 
     // Perpindahan Stok
     await this.menuPerpindahanStok.waitFor({ state: "visible" });
-    await this.submenuPenerimaanBarang.waitFor({ state: "visible" });
+    await this.goodReceiptSubmenu.waitFor({ state: "visible" });
     await this.submenuPengiriman.waitFor({ state: "visible" });
     await this.submenuShipment.waitFor({ state: "visible" });
     await this.submenuInternalTransfer.waitFor({ state: "visible" });
@@ -187,5 +187,9 @@ export class InventoryPage {
     await this.submenuSatuanUkuran.waitFor({ state: "visible" });
     await this.submenuKendaraan.waitFor({ state: "visible" });
     await this.submenuTipeKendaraan.waitFor({ state: "visible" });
+  }
+
+  async clickgoodReceiptSubmenu() {
+    await this.goodReceiptSubmenu.click();
   }
 }

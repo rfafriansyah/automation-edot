@@ -17,6 +17,7 @@ import { StocksAdjustmentSubmenuPage } from "./inventory/stocksAdjusmentSubmenu.
 import { MoveHistorySubmenuPage } from "./inventory/moveHistorySubmenu.page";
 import { StockBalanceReportSubmenuPage } from "./inventory/stockBalanceReport.page";
 import { InventoryPage } from "./inventory/Inventory.component";
+import { GoodReceiptSubmenuPage } from "./inventory/goodReceiptSubmenu.page";
 
 type MyFixtures = {
   loginPage: LoginPage;
@@ -43,6 +44,7 @@ type MyFixtures = {
   stocksAdjustmentSubmenuPage: StocksAdjustmentSubmenuPage;
   moveHistorySubmenuPage: MoveHistorySubmenuPage;
   stockBalanceReportSubmenuPage: StockBalanceReportSubmenuPage;
+  goodReceiptSubmenuPage: GoodReceiptSubmenuPage;
 
   // Finance
   financePage: FinancePage;
@@ -103,6 +105,9 @@ export const test = base.extend<MyFixtures>({
   },
   stockBalanceReportSubmenuPage: async ({ page }, use) => {
     await use(new StockBalanceReportSubmenuPage(page));
+  },
+  goodReceiptSubmenuPage: async ({ page }, use) => {
+    await use(new GoodReceiptSubmenuPage(page));
   },
 
   financePage: async ({ page }, use) => {
