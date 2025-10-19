@@ -37,11 +37,10 @@ export class ProductBrandSubmenuPage {
   }
 
   async screenshotListPage() {
-    await expect(this.titleProductBrand).toBeVisible();
-    await expect(this.maskingtableBody).toBeVisible();
     await this.page.setViewportSize({ width: 1280, height: 1600 });
     await expect(this.page).toHaveScreenshot("listProductBrand.png", {
       maxDiffPixelRatio: 0.001,
+      timeout: 2000,
       fullPage: true,
       mask: [
         this.headerComponent.maskingProfileUser,
@@ -49,5 +48,7 @@ export class ProductBrandSubmenuPage {
         this.maskingpagination,
       ],
     });
+    const actualText = await this.titleProductBrand.textContent();
+    await expect(actualText).toMatchSnapshot("titleProductBrand.txt");
   }
 }

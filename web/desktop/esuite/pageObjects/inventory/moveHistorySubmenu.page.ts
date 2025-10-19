@@ -37,10 +37,8 @@ export class MoveHistorySubmenuPage {
   }
 
   async screenshotListPage() {
-    await expect(this.titleMoveHistory).toBeVisible();
-    await expect(this.maskingtableBody).toBeVisible();
     await this.page.setViewportSize({ width: 1280, height: 1600 });
-    await expect(this.page).toHaveScreenshot("moveHistoryList.png", {
+    await expect(this.page).toHaveScreenshot("listMoveHistoryList.png", {
       maxDiffPixelRatio: 0.001,
       fullPage: true,
       mask: [
@@ -49,5 +47,7 @@ export class MoveHistorySubmenuPage {
         this.maskingpagination,
       ],
     });
+    const actualText = await this.titleMoveHistory.textContent();
+    await expect(actualText).toMatchSnapshot("titleMoveHistory.txt");
   }
 }

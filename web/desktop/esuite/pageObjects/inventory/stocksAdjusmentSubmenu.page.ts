@@ -37,14 +37,9 @@ export class StocksAdjustmentSubmenuPage {
   }
 
   async screenshotListPage() {
-    await this.page.waitForTimeout(5000);
     await expect(this.titleStocksAdjustment).toBeVisible();
-    await expect(this.titleStocksAdjustment).toMatchAriaSnapshot(
-      "main-heading.txt"
-    );
-    await expect(this.maskingtableBody).toBeVisible();
     await this.page.setViewportSize({ width: 1280, height: 1600 });
-    await expect(this.page).toHaveScreenshot("stocksAdjustmentList.png", {
+    await expect(this.page).toHaveScreenshot("listStocksAdjustmentList.png", {
       maxDiffPixelRatio: 0.001,
       fullPage: true,
       mask: [
@@ -53,5 +48,7 @@ export class StocksAdjustmentSubmenuPage {
         this.maskingpagination,
       ],
     });
+    const actualText = await this.titleStocksAdjustment.textContent();
+    await expect(actualText).toMatchSnapshot("titleStockAdjustment.txt");
   }
 }

@@ -37,8 +37,6 @@ export class productCategorySubmenuPage {
   }
 
   async screenshotListPage() {
-    await expect(this.titleProductCategory).toBeVisible();
-    await expect(this.maskingtableBody).toBeVisible();
     await this.page.setViewportSize({ width: 1280, height: 1600 });
     await expect(this.page).toHaveScreenshot("listProductCategory.png", {
       maxDiffPixelRatio: 0.001,
@@ -49,5 +47,7 @@ export class productCategorySubmenuPage {
         this.maskingpagination,
       ],
     });
+    const actualText = await this.titleProductCategory.textContent();
+    await expect(actualText).toMatchSnapshot("titleProductCategory.txt");
   }
 }

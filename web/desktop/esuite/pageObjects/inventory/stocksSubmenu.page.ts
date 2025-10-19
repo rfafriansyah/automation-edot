@@ -36,10 +36,8 @@ export class StocksSubmenuPage {
   }
 
   async screenshotListPage() {
-    await expect(this.titleStocks).toBeVisible();
-    await expect(this.maskingtableBody).toBeVisible();
     await this.page.setViewportSize({ width: 1280, height: 1600 });
-    await expect(this.page).toHaveScreenshot("stocksList.png", {
+    await expect(this.page).toHaveScreenshot("listStocks.png", {
       maxDiffPixelRatio: 0.001,
       fullPage: true,
       mask: [
@@ -48,5 +46,7 @@ export class StocksSubmenuPage {
         this.maskingpagination,
       ],
     });
+    const actualText = await this.titleStocks.textContent();
+    await expect(actualText).toMatchSnapshot("titleStocks.txt");
   }
 }

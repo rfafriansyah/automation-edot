@@ -17,7 +17,7 @@ test.describe("Stocks Adjustment", () => {
     await headerComponent.clickmoduleInventory();
   });
 
-  test.only("As a user be able to access Stocks Adjustment List Table", async ({
+  test("As a user be able to access Stocks Adjustment List Table", async ({
     page,
     stocksAdjustmentSubmenuPage,
   }) => {
