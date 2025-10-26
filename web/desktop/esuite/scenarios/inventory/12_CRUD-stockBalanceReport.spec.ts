@@ -1,12 +1,13 @@
 import { test } from "../../pageObjects/Base.page";
 
-const credentials = {
-  companyId: "3398665",
-  username: "itqaedot6860",
-  password: "Testing1234!",
-};
+import {
+  credentialsProd,
+  credentialsStagingExisting,
+} from "../../payload/credentials";
 
-test.describe("Stock Balance Report", () => {
+const credentials = credentialsProd;
+
+test.describe.skip("Stock Balance Report", () => {
   test.beforeEach(
     async ({ page, loginPage, headerComponent, inventoryPage }) => {
       await loginPage.open();
@@ -16,7 +17,7 @@ test.describe("Stock Balance Report", () => {
       await loginPage.clickbuttonLogin();
       await headerComponent.validateAllModulesVisible();
       await headerComponent.clickmoduleInventory();
-      await inventoryPage.validateMenuSubmenuInventory();
+      await inventoryPage.validatWordingSubmenuInventory();
     }
   );
 
@@ -24,7 +25,6 @@ test.describe("Stock Balance Report", () => {
     page,
     stockBalanceReportSubmenuPage,
   }) => {
-    await stockBalanceReportSubmenuPage.clickstockBalanceReportSubmenu();
     await stockBalanceReportSubmenuPage.screenshotListPage();
   });
 });

@@ -1,10 +1,11 @@
 import { test } from "../../pageObjects/Base.page";
 
-const credentials = {
-  companyId: "3398665",
-  username: "itqaedot6860",
-  password: "Testing1234!",
-};
+import {
+  credentialsProd,
+  credentialsStagingExisting,
+} from "../../payload/credentials";
+
+const credentials = credentialsProd;
 
 test.describe("Module Ework", () => {
   test.beforeEach(async ({ loginPage, headerComponent }) => {

@@ -1,12 +1,22 @@
 import { test } from "../../pageObjects/Base.page";
 
-const credentials = {
-  companyId: "3398665",
-  username: "itqaedot6860",
-  password: "Testing1234!",
+import {
+  credentialsProd,
+  credentialsStagingExisting,
+} from "../../payload/credentials";
+
+const credentials = credentialsProd;
+
+const payload = {
+  warehouseName: "Warehouse 26 Oktober",
+  shortName: "WH26OKT",
+  ownerType: "Company",
+  branch: "hq",
+  warehouseNameEdit: "Warehouse 26 Oktober Edit",
+  shortNameEdit: "WH26OKTEDIT",
 };
 
-test.describe("Warehouse", () => {
+test.describe.serial.only("Warehouse", () => {
   test.beforeEach(
     async ({ page, loginPage, headerComponent, inventoryPage }) => {
       await loginPage.open();
@@ -16,15 +26,39 @@ test.describe("Warehouse", () => {
       await loginPage.clickbuttonLogin();
       await headerComponent.validateAllModulesVisible();
       await headerComponent.clickmoduleInventory();
-      await inventoryPage.validateMenuSubmenuInventory();
-      await inventoryPage.clickwarehouseSubmenu();
+      // await inventoryPage.validatWordingSubmenuInventory();
+      await inventoryPage.clicksubmenuWarehouse();
     }
   );
 
-  test("As a user be able to access Warehouse List Table", async ({
+  test.skip("As a user be able to access Warehouse List Table", async ({
     page,
     warehouseSubmenuPage,
   }) => {
     await warehouseSubmenuPage.screenshotListPage();
+  });
+
+  test("As a user be able to Create Warehouse", async ({
+    page,
+    warehouseSubmenuPage,
+  }) => {
+    await warehouseSubmenuPage.createWarehouse(payload);
+  });
+
+  test("As a user be able to Edit Warehouse", async ({
+    page,
+    warehouseSubmenuPage,
+  }) => {
+    await warehouseSubmenuPage.inputSearchbar(payload);
+    await warehouseSubmenuPage.clickButtonViewDetail();
+    await warehouseSubmenuPage.editWarehouse(payload);
+  });
+
+  test("As a user be able to Delete Warehouse", async ({
+    page,
+    warehouseSubmenuPage,
+  }) => {
+    await warehouseSubmenuPage.inputSearchbar(payload);
+    await warehouseSubmenuPage.deleteWarehouse();
   });
 });

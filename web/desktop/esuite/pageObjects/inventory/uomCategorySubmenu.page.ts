@@ -38,4 +38,45 @@ export class UomCategorySubmenuPage {
     const actualText = await this.titleUomCaregory.textContent();
     await expect(actualText).toMatchSnapshot("titleUomCaregory.txt");
   }
+
+  async clickButtonAddNew() {
+    await this.page.getByRole("button", { name: "Add New" }).click();
+  }
+
+  async inputFieldName(text: any) {
+    await this.page.getByRole("textbox", { name: "Name*" }).fill(text);
+  }
+
+  async clickButtonSubmit() {
+    await this.page.getByRole("button", { name: "Submit" }).click();
+  }
+
+  async validateToastMessage(text: any) {
+    await this.page.getByText(text).click();
+  }
+
+  async inputFieldSearchbar(text: any) {
+    await this.page.getByRole("textbox", { name: "Search Data" }).fill(text);
+    await this.page.waitForTimeout(1000);
+  }
+
+  async clickButtonViewDetail() {
+    await this.page
+      .getByRole("button", { name: "View Detail" })
+      .first()
+      .click();
+  }
+  async clickButtonSaveChanges() {
+    await this.page.getByRole("button", { name: "Save Changes" }).click();
+  }
+
+  async deleteUomCategory() {
+    await this.page
+      .getByRole("checkbox", { name: "Select row" })
+      .first()
+      .click();
+    await this.page.getByRole("button", { name: "Delete" }).click();
+    await this.page.getByRole("button", { name: "Confirm" }).click();
+    await this.page.getByText("Success delete uom category").click();
+  }
 }

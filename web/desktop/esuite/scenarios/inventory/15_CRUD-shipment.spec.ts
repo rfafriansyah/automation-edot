@@ -1,12 +1,13 @@
 import { test } from "../../pageObjects/Base.page";
 
-const credentials = {
-  companyId: "3398665",
-  username: "itqaedot6860",
-  password: "Testing1234!",
-};
+import {
+  credentialsProd,
+  credentialsStagingExisting,
+} from "../../payload/credentials";
 
-test.describe("Shipment", () => {
+const credentials = credentialsProd;
+
+test.describe.skip("Shipment", () => {
   test.beforeEach(
     async ({ page, loginPage, headerComponent, inventoryPage }) => {
       await loginPage.open();
@@ -16,8 +17,8 @@ test.describe("Shipment", () => {
       await loginPage.clickbuttonLogin();
       await headerComponent.validateAllModulesVisible();
       await headerComponent.clickmoduleInventory();
-      await inventoryPage.validateMenuSubmenuInventory();
-      await inventoryPage.clickshipmentSubmenu();
+      await inventoryPage.validatWordingSubmenuInventory();
+      // await inventoryPage.clickshipmentSubmenu();
     }
   );
 

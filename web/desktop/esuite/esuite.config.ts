@@ -1,8 +1,8 @@
 import { defineConfig, devices } from "@playwright/test";
-// import { env } from "../../../environtment";
+import { environment } from "../../../environtment";
 require("dotenv").config();
 
-let env = "STG";
+let env = "PROD";
 let envBaseURL: any;
 
 if (env == "DEV") {

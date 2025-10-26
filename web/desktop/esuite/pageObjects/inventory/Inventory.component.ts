@@ -3,229 +3,253 @@ import { Locator, Page, expect } from "@playwright/test";
 export class InventoryPage {
   readonly page: Page;
 
-  // Modul Inventaris
-  readonly modulInventaris: Locator;
-  // Title Inventaris
-  readonly titleInventaris: Locator;
+  // Menu Product
+  readonly submenuProduct: Locator;
+  readonly submenuProductVariant: Locator;
+  readonly submenuProductCategory: Locator;
+  readonly submenuProductBrand: Locator;
+  readonly submenuProductGroup: Locator;
 
-  // Menu Produk
-  readonly menuProduk: Locator;
-  readonly submenuProduk: Locator;
-  readonly submenuVarianProduk: Locator;
-  readonly submenuProductCombo: Locator;
-  readonly submenuKategoriProduk: Locator;
-  readonly submenuMerekProduk: Locator;
-  readonly submenuGroupProduk: Locator;
+  // Menu Stock Management
+  readonly submenuStocks: Locator;
+  readonly submenuStocksAdjustment: Locator;
+  readonly submenuMoveHistory: Locator;
 
-  // Menu Manajemen Stok
-  readonly menuManajemenStok: Locator;
-  readonly submenuStok: Locator;
-  readonly submenuPenyesuaianStok: Locator;
-  readonly submenuRiwayatStok: Locator;
-  readonly submenuLaporanSaldoStok: Locator;
+  // Menu Stock Moves
+  readonly submenuGoodReceipt: Locator;
+  readonly submenuDeliveries: Locator;
+  readonly submenuInternalTransfer: Locator;
+  readonly submenuBadStock: Locator;
 
-  // Perpindahan Stok
-  readonly menuPerpindahanStok: Locator;
-  readonly goodReceiptSubmenu: Locator;
-  readonly deliveriesSubmenu: Locator;
-  readonly shipmentSubmenu: Locator;
-  readonly internalTransferSubmenu: Locator;
-  readonly badStockSubmenu: Locator;
-  readonly disposalSubmenu: Locator;
+  // Menu Canvassing
+  readonly submenuCanvassBooking: Locator;
 
-  // Canvassing
-  readonly menuCanvassing: Locator;
-  readonly canvassBookingSubmenu: Locator;
-
-  // Konfigurasi
-  readonly menuKonfigurasi: Locator;
-  readonly locationSubmenu: Locator;
-  readonly warehouseSubmenu: Locator;
-  readonly uomCategorySubmenu: Locator;
-  readonly uomSubmenu: Locator;
-  readonly vehicleSubmenu: Locator;
-  readonly vehicleTypeSubmenu: Locator;
+  // Menu Configuration
+  readonly submenuLocation: Locator;
+  readonly submenuWarehouse: Locator;
+  readonly submenuUoMCategory: Locator;
+  readonly submenuUoM: Locator;
 
   constructor(page: Page) {
     this.page = page;
 
-    // Modul Inventaris
-    this.modulInventaris = page.locator(
-      "body>header>section:nth-child(2)>ul>a:nth-child(4)"
-    );
-    // Title Inventaris
-    this.titleInventaris = page.locator("aside>h1");
+    // Menu Product
+    this.submenuProduct = page.getByRole("link", { name: "Products" });
+    this.submenuProductVariant = page.getByRole("link", {
+      name: "Product Variant",
+    });
+    this.submenuProductCategory = page.getByRole("link", {
+      name: "Product Category",
+    });
+    this.submenuProductBrand = page.getByRole("link", {
+      name: "Product Brand",
+    });
+    this.submenuProductGroup = page.getByRole("link", {
+      name: "Product Group",
+    });
 
-    // Menu Produk
-    this.menuProduk = page.locator("aside>div>div:nth-child(1)>h3>button>h5");
-    this.submenuProduk = page.locator(
-      "aside>div>div:nth-child(1)>div>ul>li:nth-child(1)"
-    );
-    this.submenuVarianProduk = page.locator(
-      "aside>div>div:nth-child(1)>div>ul>li:nth-child(2)"
-    );
-    this.submenuProductCombo = page.locator(
-      "aside>div>div:nth-child(1)>div>ul>li:nth-child(3)"
-    );
-    this.submenuKategoriProduk = page.locator(
-      "aside>div>div:nth-child(1)>div>ul>li:nth-child(4)"
-    );
-    this.submenuMerekProduk = page.locator(
-      "aside>div>div:nth-child(1)>div>ul>li:nth-child(5)"
-    );
-    this.submenuGroupProduk = page.locator(
-      "aside>div>div:nth-child(1)>div>ul>li:nth-child(6)"
-    );
+    // Menu Stock Management
+    this.submenuStocks = page.getByRole("link", {
+      name: "Stocks",
+      exact: true,
+    });
+    this.submenuStocksAdjustment = page.getByRole("link", {
+      name: "Stocks Adjustment",
+    });
+    this.submenuMoveHistory = page.getByRole("link", { name: "Moves History" });
 
-    // Menu Manajemen Stok
-    this.menuManajemenStok = page.locator(
-      "aside>div>div:nth-child(2)>h3>button>h5"
-    );
-    this.submenuStok = page.locator(
-      "aside>div>div:nth-child(2)>div>ul>li:nth-child(1)"
-    );
-    this.submenuPenyesuaianStok = page.locator(
-      "aside>div>div:nth-child(2)>div>ul>li:nth-child(2)"
-    );
-    this.submenuRiwayatStok = page.locator(
-      "aside>div>div:nth-child(2)>div>ul>li:nth-child(3)"
-    );
-    this.submenuLaporanSaldoStok = page.locator(
-      "aside>div>div:nth-child(2)>div>ul>li:nth-child(4)"
-    );
+    // Menu Stock Moves
+    this.submenuGoodReceipt = page.getByRole("link", { name: "Good Receipt" });
+    this.submenuDeliveries = page.getByRole("link", { name: "Deliveries" });
+    this.submenuInternalTransfer = page.getByRole("link", {
+      name: "Internal Transfer",
+    });
+    this.submenuBadStock = page.getByRole("link", { name: "Bad Stock" });
 
-    // Perpindahan Stok
-    this.menuPerpindahanStok = page.locator(
-      "aside>div>div:nth-child(3)>h3>button>h5"
-    );
-    this.goodReceiptSubmenu = page.locator(
-      "aside>div>div:nth-child(3)>div>ul>li:nth-child(1)"
-    );
-    this.deliveriesSubmenu = page.locator(
-      "aside>div>div:nth-child(3)>div>ul>li:nth-child(2)"
-    );
-    this.shipmentSubmenu = page.locator(
-      "aside>div>div:nth-child(3)>div>ul>li:nth-child(3)"
-    );
-    this.internalTransferSubmenu = page.locator(
-      "aside>div>div:nth-child(3)>div>ul>li:nth-child(4)"
-    );
-    this.badStockSubmenu = page.locator(
-      "aside>div>div:nth-child(3)>div>ul>li:nth-child(5)"
-    );
-    this.disposalSubmenu = page.locator(
-      "aside>div>div:nth-child(3)>div>ul>li:nth-child(6)"
-    );
+    // Menu Canvassing
+    this.submenuCanvassBooking = page.getByRole("link", {
+      name: "Canvass Booking",
+    });
 
-    // Canvassing
-    this.menuCanvassing = page.locator(
-      "aside>div>div:nth-child(4)>h3>button>h5"
-    );
-    this.canvassBookingSubmenu = page.locator(
-      "aside>div>div:nth-child(4)>div>ul>li:nth-child(1)"
-    );
-
-    // Konfigurasi
-    this.menuKonfigurasi = page.locator(
-      "aside>div>div:nth-child(5)>h3>button>h5"
-    );
-    this.locationSubmenu = page.locator(
-      "aside>div>div:nth-child(5)>div>ul>li:nth-child(1)"
-    );
-    this.warehouseSubmenu = page.locator(
-      "aside>div>div:nth-child(5)>div>ul>li:nth-child(2)"
-    );
-    this.uomCategorySubmenu = page.locator(
-      "aside>div>div:nth-child(5)>div>ul>li:nth-child(3)"
-    );
-    this.uomSubmenu = page.locator(
-      "aside>div>div:nth-child(5)>div>ul>li:nth-child(4)"
-    );
-    this.vehicleSubmenu = page.locator(
-      "aside>div>div:nth-child(5)>div>ul>li:nth-child(5)"
-    );
-    this.vehicleTypeSubmenu = page.locator(
-      "aside>div>div:nth-child(5)>div>ul>li:nth-child(6)"
-    );
+    // Menu Configuration
+    this.submenuLocation = page.getByRole("link", { name: "Location" });
+    this.submenuWarehouse = page.getByRole("link", { name: "Warehouse" });
+    this.submenuUoMCategory = page.getByRole("link", { name: "UoM Category" });
+    this.submenuUoM = page.getByRole("link", { name: "Unit of Measure" });
   }
 
-  async validateMenuSubmenuInventory() {
-    // Menu Produk
-    await this.menuProduk.waitFor({ state: "visible" });
-    await this.submenuProduk.waitFor({ state: "visible" });
-    await this.submenuVarianProduk.waitFor({ state: "visible" });
-    await this.submenuProductCombo.waitFor({ state: "visible" });
-    await this.submenuKategoriProduk.waitFor({ state: "visible" });
-    await this.submenuMerekProduk.waitFor({ state: "visible" });
-    await this.submenuGroupProduk.waitFor({ state: "visible" });
+  async validateVisibleSubmenuInventory() {
+    // Menu Product
+    await this.submenuProduct.waitFor({ state: "visible" });
+    await this.submenuProductVariant.waitFor({ state: "visible" });
+    await this.submenuProductCategory.waitFor({ state: "visible" });
+    await this.submenuProductBrand.waitFor({ state: "visible" });
+    await this.submenuProductGroup.waitFor({ state: "visible" });
 
-    // Menu Manajemen Stok
-    await this.menuManajemenStok.waitFor({ state: "visible" });
-    await this.submenuStok.waitFor({ state: "visible" });
-    await this.submenuPenyesuaianStok.waitFor({ state: "visible" });
-    await this.submenuRiwayatStok.waitFor({ state: "visible" });
-    await this.submenuLaporanSaldoStok.waitFor({ state: "visible" });
+    // Menu Stock Management
+    await this.submenuStocks.waitFor({ state: "visible" });
+    await this.submenuStocksAdjustment.waitFor({ state: "visible" });
+    await this.submenuMoveHistory.waitFor({ state: "visible" });
 
-    // Perpindahan Stok
-    await this.menuPerpindahanStok.waitFor({ state: "visible" });
-    await this.goodReceiptSubmenu.waitFor({ state: "visible" });
-    await this.deliveriesSubmenu.waitFor({ state: "visible" });
-    await this.shipmentSubmenu.waitFor({ state: "visible" });
-    await this.internalTransferSubmenu.waitFor({ state: "visible" });
-    await this.badStockSubmenu.waitFor({ state: "visible" });
-    await this.disposalSubmenu.waitFor({ state: "visible" });
+    // Menu Stock Moves
+    await this.submenuGoodReceipt.waitFor({ state: "visible" });
+    await this.submenuDeliveries.waitFor({ state: "visible" });
+    await this.submenuInternalTransfer.waitFor({ state: "visible" });
+    await this.submenuBadStock.waitFor({ state: "visible" });
 
-    // Canvassing
-    await this.menuCanvassing.waitFor({ state: "visible" });
-    await this.canvassBookingSubmenu.waitFor({ state: "visible" });
+    // Menu Canvassing
+    await this.submenuCanvassBooking.waitFor({ state: "visible" });
 
-    // Konfigurasi
-    await this.menuKonfigurasi.waitFor({ state: "visible" });
-    await this.locationSubmenu.waitFor({ state: "visible" });
-    await this.warehouseSubmenu.waitFor({ state: "visible" });
-    await this.uomCategorySubmenu.waitFor({ state: "visible" });
-    await this.uomSubmenu.waitFor({ state: "visible" });
-    await this.vehicleSubmenu.waitFor({ state: "visible" });
-    await this.vehicleTypeSubmenu.waitFor({ state: "visible" });
+    // Menu Configuration
+    await this.submenuLocation.waitFor({ state: "visible" });
+    await this.submenuWarehouse.waitFor({ state: "visible" });
+    await this.submenuUoMCategory.waitFor({ state: "visible" });
+    await this.submenuUoM.waitFor({ state: "visible" });
   }
 
-  async clickgoodReceiptSubmenu() {
-    await this.goodReceiptSubmenu.click();
+  async validatWordingSubmenuInventory() {
+    await this.validateVisibleSubmenuInventory();
+    // Menu Product
+    const actualTextsubmenuProduct = await this.submenuProduct.textContent();
+    await expect(actualTextsubmenuProduct).toMatchSnapshot(
+      "actualTextsubmenuProduct.txt"
+    );
+    const actualTextsubmenuProductVariant =
+      await this.submenuProductVariant.textContent();
+    await expect(actualTextsubmenuProductVariant).toMatchSnapshot(
+      "actualTextsubmenuProductVariant.txt"
+    );
+    const actualTextsubmenuProductCategory =
+      await this.submenuProductCategory.textContent();
+    await expect(actualTextsubmenuProductCategory).toMatchSnapshot(
+      "actualTextsubmenuProductCategory.txt"
+    );
+    const actualTextsubmenuProductBrand =
+      await this.submenuProductBrand.textContent();
+    await expect(actualTextsubmenuProductBrand).toMatchSnapshot(
+      "actualTextsubmenuProductBrand.txt"
+    );
+    const actualTextsubmenuProductGroup =
+      await this.submenuProductGroup.textContent();
+    await expect(actualTextsubmenuProductGroup).toMatchSnapshot(
+      "actualTextsubmenuProductGroup.txt"
+    );
+    // Menu Stock Management
+    const actualTextsubmenuStocks = await this.submenuStocks.textContent();
+    await expect(actualTextsubmenuStocks).toMatchSnapshot(
+      "actualTextsubmenuStocks.txt"
+    );
+    const actualTextsubmenuStocksAdjustment =
+      await this.submenuStocksAdjustment.textContent();
+    await expect(actualTextsubmenuStocksAdjustment).toMatchSnapshot(
+      "actualTextsubmenuStocksAdjustment.txt"
+    );
+    const actualTextsubmenuMoveHistory =
+      await this.submenuMoveHistory.textContent();
+    await expect(actualTextsubmenuMoveHistory).toMatchSnapshot(
+      "actualTextsubmenuMoveHistory.txt"
+    );
+    // Menu Stock Moves
+    const actualTextsubmenuGoodReceipt =
+      await this.submenuGoodReceipt.textContent();
+    await expect(actualTextsubmenuGoodReceipt).toMatchSnapshot(
+      "actualTextsubmenuGoodReceipt.txt"
+    );
+    const actualTextsubmenuDeliveries =
+      await this.submenuDeliveries.textContent();
+    await expect(actualTextsubmenuDeliveries).toMatchSnapshot(
+      "actualTextsubmenuDeliveries.txt"
+    );
+    const actualTextsubmenuInternalTransfer =
+      await this.submenuInternalTransfer.textContent();
+    await expect(actualTextsubmenuInternalTransfer).toMatchSnapshot(
+      "actualTextsubmenuInternalTransfer.txt"
+    );
+    const actualTextSubmenuBadStock = await this.submenuBadStock.textContent();
+    await expect(actualTextSubmenuBadStock).toMatchSnapshot();
+    // Menu Canvassing
+    const actualTextsubmenuCanvassBooking =
+      await this.submenuCanvassBooking.textContent();
+    await expect(actualTextsubmenuCanvassBooking).toMatchSnapshot(
+      "actualTextsubmenuCanvassBooking.txt"
+    );
+    // Menu Configuration
+    const actualTextsubmenuLocation = await this.submenuLocation.textContent();
+    await expect(actualTextsubmenuLocation).toMatchSnapshot(
+      "actualTextsubmenuLocation.txt"
+    );
+    const actualTextsubmenuWarehouse =
+      await this.submenuWarehouse.textContent();
+    await expect(actualTextsubmenuWarehouse).toMatchSnapshot(
+      "actualTextsubmenuWarehouse.txt"
+    );
+    const actualTextsubmenuUoMCategory =
+      await this.submenuUoMCategory.textContent();
+    await expect(actualTextsubmenuUoMCategory).toMatchSnapshot(
+      "actualTextsubmenuUoMCategory.txt"
+    );
+    const actualTextsubmenuUoM = await this.submenuUoM.textContent();
+    await expect(actualTextsubmenuUoM).toMatchSnapshot(
+      "actualTextsubmenuUoM.txt"
+    );
   }
-  async clickdeliveriesSubmenu() {
-    await this.deliveriesSubmenu.click();
+
+  // Menu Product
+  async clicksubmenuProduct() {
+    await this.submenuProduct.click();
   }
-  async clickshipmentSubmenu() {
-    await this.shipmentSubmenu.click();
+  async clicksubmenuProductVariant() {
+    await this.submenuProductVariant.click();
   }
-  async clickinternalTransferSubmenu() {
-    await this.internalTransferSubmenu.click();
+  async clicksubmenuProductCategory() {
+    await this.submenuProductCategory.click();
   }
-  async clickbadStockSubmenu() {
-    await this.badStockSubmenu.click();
+  async clicksubmenuProductBrand() {
+    await this.submenuProductBrand.click();
   }
-  async clickdisposalSubmenu() {
-    await this.disposalSubmenu.click();
+  async clicksubmenuProductGroup() {
+    await this.submenuProductGroup.click();
   }
-  async clickcanvassBookingSubmenu() {
-    await this.canvassBookingSubmenu.click();
+
+  // Menu Stock Management
+  async clicksubmenuStocks() {
+    await this.submenuStocks.click();
   }
-  async clicklocationSubmenu() {
-    await this.locationSubmenu.click();
+  async clicksubmenuStocksAdjustment() {
+    await this.submenuStocksAdjustment.click();
   }
-  async clickwarehouseSubmenu() {
-    await this.warehouseSubmenu.click();
+  async clicksubmenuMoveHistory() {
+    await this.submenuMoveHistory.click();
   }
-  async clickuomCategorySubmenu() {
-    await this.uomCategorySubmenu.click();
+
+  // Menu Stock Moves
+  async clicksubmenuGoodReceipt() {
+    await this.submenuGoodReceipt.click();
   }
-  async clickuomSubmenu() {
-    await this.uomSubmenu.click();
+  async clicksubmenuDeliveries() {
+    await this.submenuDeliveries.click();
   }
-  async clickvehicleSubmenu() {
-    await this.vehicleSubmenu.click();
+  async clicksubmenuInternalTransfer() {
+    await this.submenuInternalTransfer.click();
   }
-  async clickvehicleTypeSubmenu() {
-    await this.vehicleTypeSubmenu.click();
+
+  // Menu Canvassing
+  async clicksubmenuCanvassBooking() {
+    await this.submenuCanvassBooking.click();
+  }
+
+  // Menu Configuration
+  async clicksubmenuLocation() {
+    await this.submenuLocation.click();
+  }
+  async clicksubmenuWarehouse() {
+    await this.submenuWarehouse.click();
+    await this.page.waitForTimeout(1000);
+  }
+  async clicksubmenuUoMCategory() {
+    await this.submenuUoMCategory.click();
+  }
+  async clicksubmenuUoM() {
+    await this.submenuUoM.click();
   }
 }

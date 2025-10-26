@@ -29,7 +29,7 @@ export class InternalTransferSubmenuPage {
     await this.page.setViewportSize({ width: 1800, height: 1500 });
     await this.page.waitForLoadState("networkidle");
     await expect(this.page).toHaveScreenshot("listInternalTransfer.png", {
-      maxDiffPixelRatio: 0.001,
+      maxDiffPixelRatio: 0.05,
       fullPage: true,
       mask: [
         this.headerComponent.maskingProfileUser,

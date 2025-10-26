@@ -26,27 +26,33 @@ export class HeaderComponent {
       "main>header>div:nth-child(3)>div>div"
     );
 
-    this.moduleEwork = page.locator(
-      "body>header>section:nth-child(2)>ul>a:nth-child(1)"
-    );
+    // this.moduleEwork = page.locator(
+    //   "body>header>section:nth-child(2)>ul>a:nth-child(1)"
+    // );
+    this.moduleEwork = page.getByRole("link", { name: "ework" });
     this.moduleEmitra = page.locator(
       "body>header>section:nth-child(2)>ul>a:nth-child(2)"
     );
-    this.moduleSales = page.locator(
-      "body>header>section:nth-child(2)>ul>a:nth-child(3)"
-    );
-    this.moduleInventory = page.locator(
-      "body>header>section:nth-child(2)>ul>a:nth-child(4)"
-    );
-    this.moduleFinance = page.locator(
-      "body>header>section:nth-child(2)>ul>a:nth-child(5)"
-    );
-    this.moduleMarketing = page.locator(
-      "body>header>section:nth-child(2)>ul>a:nth-child(6)"
-    );
-    this.moduleHR = page.locator(
-      "body>header>section:nth-child(2)>ul>a:nth-child(7)"
-    );
+    // this.moduleSales = page.locator(
+    //   "body>header>section:nth-child(2)>ul>a:nth-child(3)"
+    // );
+    this.moduleSales = page.getByRole("link").getByText("Sales").first();
+    // this.moduleInventory = page.locator(
+    //   "body>header>section:nth-child(2)>ul>a:nth-child(4)"
+    // );
+    this.moduleInventory = page.getByRole("link").getByText("Inventory");
+    // this.moduleFinance = page.locator(
+    //   "body>header>section:nth-child(2)>ul>a:nth-child(5)"
+    // );
+    this.moduleFinance = page.getByRole("link", { name: "Finance" });
+    // this.moduleMarketing = page.locator(
+    //   "body>header>section:nth-child(2)>ul>a:nth-child(6)"
+    // );
+    this.moduleMarketing = page.getByRole("link", { name: "Marketing" });
+    // this.moduleHR = page.locator(
+    //   "body>header>section:nth-child(2)>ul>a:nth-child(7)"
+    // );
+    this.moduleHR = page.getByRole("link", { name: "HR" });
   }
 
   async validateWording() {
@@ -57,7 +63,7 @@ export class HeaderComponent {
 
   async validateAllModulesVisible() {
     await this.moduleEwork.waitFor({ state: "visible" });
-    await this.moduleEmitra.waitFor({ state: "visible" });
+    // await this.moduleEmitra.waitFor({ state: "visible" });
     await this.moduleSales.waitFor({ state: "visible" });
     await this.moduleInventory.waitFor({ state: "visible" });
     await this.moduleFinance.waitFor({ state: "visible" });

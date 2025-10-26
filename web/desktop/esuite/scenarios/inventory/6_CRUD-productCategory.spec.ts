@@ -1,10 +1,11 @@
 import { test } from "../../pageObjects/Base.page";
 
-const credentials = {
-  companyId: "3398665",
-  username: "itqaedot6860",
-  password: "Testing1234!",
-};
+import {
+  credentialsProd,
+  credentialsStagingExisting,
+} from "../../payload/credentials";
+
+const credentials = credentialsProd;
 
 test.describe("Product Category", () => {
   test.beforeEach(
@@ -16,7 +17,8 @@ test.describe("Product Category", () => {
       await loginPage.clickbuttonLogin();
       await headerComponent.validateAllModulesVisible();
       await headerComponent.clickmoduleInventory();
-      await inventoryPage.validateMenuSubmenuInventory();
+      await inventoryPage.validatWordingSubmenuInventory();
+      await inventoryPage.clicksubmenuProductCategory();
     }
   );
 
@@ -24,7 +26,6 @@ test.describe("Product Category", () => {
     page,
     productCategorySubmenuPage,
   }) => {
-    await productCategorySubmenuPage.clickproductCategorySubmenu();
     await productCategorySubmenuPage.screenshotListPage();
   });
 });
