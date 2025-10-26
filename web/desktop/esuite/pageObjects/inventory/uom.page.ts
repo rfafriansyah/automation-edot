@@ -73,8 +73,9 @@ export class UomSubmenuPage {
   }
 
   async inputSearchbar(text: any) {
+    await this.page.getByRole("textbox", { name: "Search Data" }).click();
     await this.page.getByRole("textbox", { name: "Search Data" }).fill(text);
-    await this.page.waitForTimeout(500);
+    await this.page.waitForTimeout(1000);
   }
 
   async clickButtonDetail() {

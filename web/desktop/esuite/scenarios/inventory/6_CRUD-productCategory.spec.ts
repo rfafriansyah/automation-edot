@@ -7,7 +7,12 @@ import {
 
 const credentials = credentialsProd;
 
-test.describe("Product Category", () => {
+const payload = {
+  productCategoryName: "Category 27 asdsadsa",
+  productCategoryNameEdit: "Category 27 Oktober asdsads",
+};
+
+test.describe.serial("Product Category", () => {
   test.beforeEach(
     async ({ page, loginPage, headerComponent, inventoryPage }) => {
       await loginPage.open();
@@ -22,10 +27,38 @@ test.describe("Product Category", () => {
     }
   );
 
-  test("As a user be able to access Product Category List Table", async ({
+  test.skip("As a user be able to access Product Category List Table", async ({
     page,
     productCategorySubmenuPage,
   }) => {
     await productCategorySubmenuPage.screenshotListPage();
+  });
+
+  test("As a user be able to Create Product Category", async ({
+    page,
+    productCategorySubmenuPage,
+  }) => {
+    await productCategorySubmenuPage.createProductCategory(payload);
+  });
+
+  test("As a user be able to Edit Product Category", async ({
+    page,
+    productCategorySubmenuPage,
+  }) => {
+    await productCategorySubmenuPage.inputSearchbar(
+      payload.productCategoryName
+    );
+    await productCategorySubmenuPage.editProductCategory(payload);
+  });
+
+  test("As a user be able to Delete Product Category", async ({
+    page,
+    productCategorySubmenuPage,
+  }) => {
+    await productCategorySubmenuPage.inputSearchbar(
+      payload.productCategoryNameEdit
+    );
+    await productCategorySubmenuPage.deleteProductCategory();
+    await page.pause();
   });
 });

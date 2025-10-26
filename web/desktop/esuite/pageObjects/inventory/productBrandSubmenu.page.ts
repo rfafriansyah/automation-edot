@@ -53,4 +53,43 @@ export class ProductBrandSubmenuPage {
     const actualText = await this.titleProductBrand.textContent();
     await expect(actualText).toMatchSnapshot("titleProductBrand.txt");
   }
+
+  async createProductBrand(payload: any) {
+    await this.page.getByRole("button", { name: "Add New" }).click();
+    await this.page
+      .getByRole("textbox", { name: "Name*" })
+      .fill(payload.productBrandName);
+    await this.page.getByRole("button", { name: "Submit" }).click();
+    await this.page.getByText("Success add product brand").click();
+  }
+
+  async inputFieldSearchbar(payload: any) {
+    await this.page.getByRole("textbox", { name: "Search Data" }).click();
+    await this.page.getByRole("textbox", { name: "Search Data" }).fill(payload);
+    await this.page.waitForTimeout(1000);
+  }
+
+  async editProductBrand(payload: any) {
+    await this.page
+      .getByRole("button", { name: "View Detail" })
+      .first()
+      .click();
+    await this.page
+      .getByRole("textbox", { name: "Name*" })
+      .fill(payload.productBrandNameEdit);
+    await this.page.getByTestId("combobox").click();
+    await this.page.getByRole("option", { name: "Nabati" }).click();
+    await this.page.getByRole("button", { name: "Save Changes" }).click();
+    await this.page.getByText("Success update product brand").click();
+  }
+
+  async deleteProductBrand() {
+    await this.page
+      .getByRole("checkbox", { name: "Select row" })
+      .first()
+      .click();
+    await this.page.getByRole("button", { name: "Delete" }).click();
+    await this.page.getByRole("button", { name: "Confirm" }).click();
+    await this.page.getByText("Success delete product").click();
+  }
 }

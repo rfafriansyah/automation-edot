@@ -1,7 +1,7 @@
 import { Locator, Page, expect } from "@playwright/test";
 import { HeaderComponent } from "../Header.component";
 
-export class productCategorySubmenuPage {
+export class ProductCategorySubmenuPage {
   readonly page: Page;
   readonly headerComponent: HeaderComponent;
 
@@ -52,5 +52,59 @@ export class productCategorySubmenuPage {
     });
     const actualText = await this.titleProductCategory.textContent();
     await expect(actualText).toMatchSnapshot("titleProductCategory.txt");
+  }
+
+  async createProductCategory(payload: any) {
+    await this.page.getByRole("button", { name: "Add New" }).click();
+    await this.page
+      .getByRole("textbox", { name: "Name*" })
+      .fill(payload.productCategoryName);
+    await this.page.getByRole("button", { name: "Submit" }).click();
+    await this.page.getByText("Success add product category").click();
+  }
+
+  async inputSearchbar(payload: any) {
+    await this.page.waitForTimeout(1000);
+    await this.page.getByRole("textbox", { name: "Search Data" }).click();
+    await this.page.getByRole("textbox", { name: "Search Data" }).fill(payload);
+    await this.page.waitForTimeout(1000);
+  }
+
+  async editProductCategory(payload: any) {
+    await this.page
+      .getByRole("button", { name: "View Detail" })
+      .first()
+      .click();
+    await this.page
+      .getByRole("textbox", { name: "Name*" })
+      .fill(payload.productCategoryNameEdit);
+    await this.page.getByTestId("combobox").click();
+    await this.page.getByRole("option", { name: "All" }).click();
+    await this.page
+      .getByRole("combobox")
+      .filter({ hasText: "Choose Income Account" })
+      .click();
+    await this.page
+      .getByRole("option", { name: "11120001 - Bank Suspense" })
+      .click();
+    await this.page
+      .getByRole("combobox")
+      .filter({ hasText: "Choose Expense Account" })
+      .click();
+    await this.page
+      .getByRole("option", { name: "- Bank Suspense Account" })
+      .click();
+    await this.page.getByRole("button", { name: "Save Changes" }).click();
+    await this.page.getByText("Success edit product category").click();
+  }
+
+  async deleteProductCategory() {
+    await this.page
+      .getByRole("checkbox", { name: "Select row" })
+      .first()
+      .click();
+    await this.page.getByRole("button", { name: "Delete" }).click();
+    await this.page.getByRole("button", { name: "Confirm" }).click();
+    await this.page.getByText("Success delete product").click();
   }
 }

@@ -9,7 +9,7 @@ import { HRPage } from "./HR.page";
 import { ProductSubmenuPage } from "./inventory/ProductSubmenu.page";
 import { ProductVariantSubmenuPage } from "./inventory/productVariantSubmenu.page";
 import { HeaderComponent } from "./Header.component";
-import { productCategorySubmenuPage } from "./inventory/productCategorySubmenu.page";
+import { ProductCategorySubmenuPage } from "./inventory/productCategorySubmenu.page";
 import { ProductBrandSubmenuPage } from "./inventory/productBrandSubmenu.page";
 import { ProductGroupSubmenuPage } from "./inventory/productGroupSubmenu.page";
 import { StocksSubmenuPage } from "./inventory/stocksSubmenu.page";
@@ -49,7 +49,7 @@ type MyFixtures = {
   // Inventory
   productSubmenuPage: ProductSubmenuPage;
   productVariantSubmenuPage: ProductVariantSubmenuPage;
-  productCategorySubmenuPage: productCategorySubmenuPage;
+  productCategorySubmenuPage: ProductCategorySubmenuPage;
   productBrandSubmenuPage: ProductBrandSubmenuPage;
   productGroupSubmenuPage: ProductGroupSubmenuPage;
   stocksSubmenuPage: StocksSubmenuPage;
@@ -110,7 +110,7 @@ export const test = base.extend<MyFixtures>({
     await use(new ProductVariantSubmenuPage(page));
   },
   productCategorySubmenuPage: async ({ page }, use) => {
-    await use(new productCategorySubmenuPage(page));
+    await use(new ProductCategorySubmenuPage(page));
   },
   productBrandSubmenuPage: async ({ page }, use) => {
     await use(new ProductBrandSubmenuPage(page));

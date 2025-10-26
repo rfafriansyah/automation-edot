@@ -16,7 +16,7 @@ const payload = {
   shortNameEdit: "WH26OKTEDIT",
 };
 
-test.describe.serial.only("Warehouse", () => {
+test.describe.serial("Warehouse", () => {
   test.beforeEach(
     async ({ page, loginPage, headerComponent, inventoryPage }) => {
       await loginPage.open();
