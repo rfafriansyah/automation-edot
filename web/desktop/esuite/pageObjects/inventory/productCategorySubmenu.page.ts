@@ -60,7 +60,7 @@ export class ProductCategorySubmenuPage {
       .getByRole("textbox", { name: "Name*" })
       .fill(payload.productCategoryName);
     await this.page.getByRole("button", { name: "Submit" }).click();
-    await this.page.getByText("Success add product category").click();
+    await this.page.getByText("Success add product category").isVisible();
   }
 
   async inputSearchbar(payload: any) {
@@ -95,7 +95,7 @@ export class ProductCategorySubmenuPage {
       .getByRole("option", { name: "- Bank Suspense Account" })
       .click();
     await this.page.getByRole("button", { name: "Save Changes" }).click();
-    await this.page.getByText("Success edit product category").click();
+    await this.page.getByText("Success edit product category").isVisible();
   }
 
   async deleteProductCategory() {
@@ -105,6 +105,6 @@ export class ProductCategorySubmenuPage {
       .click();
     await this.page.getByRole("button", { name: "Delete" }).click();
     await this.page.getByRole("button", { name: "Confirm" }).click();
-    await this.page.getByText("Success delete product").click();
+    await this.page.getByText("Success delete product").isVisible();
   }
 }

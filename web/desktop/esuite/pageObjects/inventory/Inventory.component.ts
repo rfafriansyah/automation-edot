@@ -209,6 +209,7 @@ export class InventoryPage {
   }
   async clicksubmenuProductGroup() {
     await this.submenuProductGroup.click();
+    await this.page.waitForTimeout(1000);
   }
 
   // Menu Stock Management

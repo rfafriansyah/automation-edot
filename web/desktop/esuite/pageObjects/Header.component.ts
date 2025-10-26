@@ -74,4 +74,7 @@ export class HeaderComponent {
   async clickmoduleInventory() {
     await this.moduleInventory.click();
   }
+  async clickmoduleSales() {
+    await this.page.pause();
+  }
 }

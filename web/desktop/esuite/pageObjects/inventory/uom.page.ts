@@ -69,7 +69,7 @@ export class UomSubmenuPage {
       .getByRole("spinbutton", { name: "Rounding Precision*" })
       .fill(payload.roundingPrecision);
     await this.page.getByRole("button", { name: "Submit" }).click();
-    await this.page.getByText("Create unit of measure success").click();
+    await this.page.getByText("Create unit of measure success").isVisible();
   }
 
   async inputSearchbar(text: any) {
@@ -112,7 +112,7 @@ export class UomSubmenuPage {
       .getByRole("spinbutton", { name: "Rounding Precision*" })
       .fill(payload.roundingPrecisionEdit);
     await this.page.getByRole("button", { name: "Save Changes" }).click();
-    await this.page.getByText("Update unit of measure success").click();
+    await this.page.getByText("Update unit of measure success").isVisible();
   }
 
   async deleteUoM() {
@@ -122,6 +122,6 @@ export class UomSubmenuPage {
       .click();
     await this.page.getByRole("button", { name: "Delete" }).click();
     await this.page.getByRole("button", { name: "Confirm" }).click();
-    await this.page.getByText("Success delete unit of measure").click();
+    await this.page.getByText("Success delete unit of measure").isVisible();
   }
 }

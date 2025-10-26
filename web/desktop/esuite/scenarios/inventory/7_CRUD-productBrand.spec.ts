@@ -12,7 +12,7 @@ const payload = {
   productBrandNameEdit: "Brand 27 Oktober Edit",
 };
 
-test.describe.serial.only("Product Brand", () => {
+test.describe.serial("Product Brand", () => {
   test.beforeEach(
     async ({ page, loginPage, headerComponent, inventoryPage }) => {
       await loginPage.open();

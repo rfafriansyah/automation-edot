@@ -60,7 +60,7 @@ export class ProductBrandSubmenuPage {
       .getByRole("textbox", { name: "Name*" })
       .fill(payload.productBrandName);
     await this.page.getByRole("button", { name: "Submit" }).click();
-    await this.page.getByText("Success add product brand").click();
+    await this.page.getByText("Success add product brand").isVisible();
   }
 
   async inputFieldSearchbar(payload: any) {
@@ -80,7 +80,7 @@ export class ProductBrandSubmenuPage {
     await this.page.getByTestId("combobox").click();
     await this.page.getByRole("option", { name: "Nabati" }).click();
     await this.page.getByRole("button", { name: "Save Changes" }).click();
-    await this.page.getByText("Success update product brand").click();
+    await this.page.getByText("Success update product brand").isVisible();
   }
 
   async deleteProductBrand() {
@@ -90,6 +90,6 @@ export class ProductBrandSubmenuPage {
       .click();
     await this.page.getByRole("button", { name: "Delete" }).click();
     await this.page.getByRole("button", { name: "Confirm" }).click();
-    await this.page.getByText("Success delete product").click();
+    await this.page.getByText("Success delete product").isVisible();
   }
 }

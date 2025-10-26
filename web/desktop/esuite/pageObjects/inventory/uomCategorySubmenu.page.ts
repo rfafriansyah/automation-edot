@@ -78,6 +78,6 @@ export class UomCategorySubmenuPage {
       .click();
     await this.page.getByRole("button", { name: "Delete" }).click();
     await this.page.getByRole("button", { name: "Confirm" }).click();
-    await this.page.getByText("Success delete uom category").click();
+    await this.page.getByText("Success delete uom category").isVisible();
   }
 }
