@@ -2,7 +2,6 @@ import { test as base } from "@playwright/test";
 import { LoginPage } from "./Login.page";
 import { EworkPage } from "./Ework.page";
 import { EmitraPage } from "./Emitra.page";
-import { SalesPage } from "./Sales.page";
 import { FinancePage } from "./Finance.page";
 import { MarketingPage } from "./Marketing.page";
 import { HRPage } from "./HR.page";
@@ -30,6 +29,9 @@ import { UomCategorySubmenuPage } from "./inventory/uomCategorySubmenu.page";
 import { UomSubmenuPage } from "./inventory/uom.page";
 import { VehicleSubmenuPage } from "./inventory/vehicleSubmenu.page";
 import { VehicleTypeSubmenuPage } from "./inventory/vehicleTypeSubmenu.page";
+import { SalesPage } from "./sales/Sales.component";
+import { BranchPage } from "./sales/branch.page";
+import { CustomersPage } from "./sales/customers.page";
 
 type MyFixtures = {
   loginPage: LoginPage;
@@ -45,6 +47,8 @@ type MyFixtures = {
 
   // Sales
   salesPage: SalesPage;
+  branchPage: BranchPage;
+  customersPage: CustomersPage;
 
   // Inventory
   productSubmenuPage: ProductSubmenuPage;
@@ -98,8 +102,16 @@ export const test = base.extend<MyFixtures>({
   emitraPage: async ({ page }, use) => {
     await use(new EmitraPage(page));
   },
+
+  // Sales
   salesPage: async ({ page }, use) => {
     await use(new SalesPage(page));
+  },
+  branchPage: async ({ page }, use) => {
+    await use(new BranchPage(page));
+  },
+  customersPage: async ({ page }, use) => {
+    await use(new CustomersPage(page));
   },
 
   // Product

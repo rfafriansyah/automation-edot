@@ -75,6 +75,9 @@ export class HeaderComponent {
     await this.moduleInventory.click();
   }
   async clickmoduleSales() {
-    await this.page.pause();
+    await this.page
+      .getByRole("link", { name: "Sales", exact: true })
+      .waitFor({ state: "visible" });
+    await this.page.getByRole("link", { name: "Sales", exact: true }).click();
   }
 }

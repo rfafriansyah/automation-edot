@@ -8,13 +8,7 @@ import {
 const credentials = credentialsProd;
 
 const payload = {
-  branchName: "Djakarta",
-  streetAddress: "Address Testing",
-  province: "DKI JAKARTA",
-  city: "JAKARTA SELATAN",
-  district: "PESANGGRAHAN",
-  subdistrict: "BINTARO",
-  postalCode: "12330",
+  customerName: "Customer Djakarta",
 };
 
 test.describe.serial("Branch", () => {
@@ -26,10 +20,13 @@ test.describe.serial("Branch", () => {
     await loginPage.clickbuttonLogin();
     await headerComponent.validateAllModulesVisible();
     await headerComponent.clickmoduleSales();
-    await salesPage.clickSubmenuBranch();
+    await salesPage.clickSubmenuCustomers();
   });
 
-  test("As a user be able to Create Branch", async ({ page, branchPage }) => {
-    await branchPage.createBranch(payload);
+  test.only("As a user be able to Create Customers", async ({
+    page,
+    customersPage,
+  }) => {
+    await customersPage.createCustomers(payload);
   });
 });
