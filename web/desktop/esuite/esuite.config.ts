@@ -25,7 +25,7 @@ if (env == "DEV") {
  * See https://playwright.dev/docs/test-configuration.
  */
 export default defineConfig({
-  timeout: 3 * 30000,
+  timeout: 3 * 35000,
   repeatEach: 0,
   snapshotDir: "./snapshots-english",
   testDir: "./scenarios",

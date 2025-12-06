@@ -59,4 +59,145 @@ export class StocksAdjustmentSubmenuPage {
     const actualText = await this.titleStocksAdjustment.textContent();
     await expect(actualText).toMatchSnapshot("titleStockAdjustment.txt");
   }
+
+  async createStockVariantX(payload: any) {
+    // click add new
+    await this.page.getByRole("button", { name: "Add New" }).click();
+    // choose product
+    await this.page
+      .getByRole("combobox")
+      .filter({ hasText: /^Choose Product$/ })
+      .click();
+    await this.page
+      .getByRole("textbox", { name: "Search Data" })
+      .fill(`${payload.product} (X)`);
+    await this.page
+      .getByRole("option", { name: `${payload.product} (X)` })
+      .first()
+      .click();
+    // chose uom
+    await this.page
+      .getByRole("combobox")
+      .filter({ hasText: "Choose Unit (UoM)" })
+      .click();
+    await this.page.getByRole("option", { name: "Units" }).click();
+    // fill quantity
+    await this.page.getByRole("spinbutton", { name: "Quantity" }).click();
+    await this.page
+      .getByRole("spinbutton", { name: "Quantity" })
+      .fill(payload.quantity);
+    // choose warehouse
+    await this.page
+      .getByRole("combobox")
+      .filter({ hasText: "Choose Warehouse" })
+      .click();
+    // await this.page
+    //   .getByRole("textbox", { name: "Search Data" })
+    //   .fill(payload.warehouse);
+    await this.page
+      .getByRole("option", { name: payload.warehouse, exact: true })
+      .first()
+      .click();
+    // click submit
+    await this.page.getByRole("button", { name: "Submit" }).click();
+    await this.page.getByRole("button", { name: "Confirm" }).click();
+    await this.page
+      .getByText("Success add stock adjustment")
+      .first()
+      .isVisible();
+  }
+
+  async createStockVariantY(payload: any) {
+    // click add new
+    await this.page.getByRole("button", { name: "Add New" }).click();
+    // choose product
+    await this.page
+      .getByRole("combobox")
+      .filter({ hasText: /^Choose Product$/ })
+      .click();
+    await this.page
+      .getByRole("textbox", { name: "Search Data" })
+      .fill(`${payload.product} (Y)`);
+    await this.page
+      .getByRole("option", { name: `${payload.product} (Y)` })
+      .first()
+      .click();
+    // chose uom
+    await this.page
+      .getByRole("combobox")
+      .filter({ hasText: "Choose Unit (UoM)" })
+      .click();
+    await this.page.getByRole("option", { name: "Units" }).click();
+    // fill quantity
+    await this.page.getByRole("spinbutton", { name: "Quantity" }).click();
+    await this.page
+      .getByRole("spinbutton", { name: "Quantity" })
+      .fill(payload.quantity);
+    // choose warehouse
+    await this.page
+      .getByRole("combobox")
+      .filter({ hasText: "Choose Warehouse" })
+      .click();
+    // await this.page
+    //   .getByRole("textbox", { name: "Search Data" })
+    //   .fill(payload.warehouse);
+    await this.page
+      .getByRole("option", { name: payload.warehouse, exact: true })
+      .first()
+      .click();
+    // click submit
+    await this.page.getByRole("button", { name: "Submit" }).click();
+    await this.page.getByRole("button", { name: "Confirm" }).click();
+    await this.page
+      .getByText("Success add stock adjustment")
+      .first()
+      .isVisible();
+  }
+
+  async createStockVariantZ(payload: any) {
+    // click add new
+    await this.page.getByRole("button", { name: "Add New" }).click();
+    // choose product
+    await this.page
+      .getByRole("combobox")
+      .filter({ hasText: /^Choose Product$/ })
+      .click();
+    await this.page
+      .getByRole("textbox", { name: "Search Data" })
+      .fill(`${payload.product} (Z)`);
+    await this.page
+      .getByRole("option", { name: `${payload.product} (Z)` })
+      .first()
+      .click();
+    // chose uom
+    await this.page
+      .getByRole("combobox")
+      .filter({ hasText: "Choose Unit (UoM)" })
+      .click();
+    await this.page.getByRole("option", { name: "Units" }).click();
+    // fill quantity
+    await this.page.getByRole("spinbutton", { name: "Quantity" }).click();
+    await this.page
+      .getByRole("spinbutton", { name: "Quantity" })
+      .fill(payload.quantity);
+    // choose warehouse
+    await this.page
+      .getByRole("combobox")
+      .filter({ hasText: "Choose Warehouse" })
+      .click();
+    // await this.page
+    //   .getByRole("textbox", { name: "Search Data" })
+    //   .fill(payload.warehouse);
+    await this.page
+      .getByRole("option", { name: payload.warehouse, exact: true })
+      .first()
+      .click();
+    // click submit
+    await this.page.getByRole("button", { name: "Submit" }).click();
+    await this.page.getByRole("button", { name: "Confirm" }).click();
+    await this.page
+      .getByText("Success add stock adjustment")
+      .first()
+      .isVisible();
+  }
 }

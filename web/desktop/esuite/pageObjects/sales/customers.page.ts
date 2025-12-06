@@ -64,6 +64,6 @@ export class CustomersPage {
     await this.page.getByRole("option", { name: "BINTARO" }).click();
     // submit
     await this.page.getByRole("button", { name: "Submit" }).click();
-    await this.page.getByText("Create customers success").isVisible();
+    await this.page.getByText("Create customers success").first().isVisible();
   }
 }

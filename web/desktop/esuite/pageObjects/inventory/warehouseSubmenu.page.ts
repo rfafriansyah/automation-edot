@@ -59,10 +59,13 @@ export class WarehouseSubmenuPage {
     await this.page
       .getByRole("textbox", { name: "Search Branch" })
       .fill(payload.branch);
-    await this.page.getByRole("checkbox", { name: "Select list" }).click();
+    await this.page
+      .getByRole("checkbox", { name: "Select list" })
+      .first()
+      .click();
     await this.page.getByRole("button", { name: "Add" }).click();
     await this.page.getByRole("button", { name: "Submit" }).click();
-    await this.page.getByText("Create warehouse success").isVisible();
+    await this.page.getByText("Create warehouse success").first().isVisible();
   }
 
   async inputSearchbar(payload: any) {

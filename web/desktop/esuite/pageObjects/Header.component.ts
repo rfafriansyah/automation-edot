@@ -73,6 +73,7 @@ export class HeaderComponent {
 
   async clickmoduleInventory() {
     await this.moduleInventory.click();
+    await this.page.waitForTimeout(1000);
   }
   async clickmoduleSales() {
     await this.page

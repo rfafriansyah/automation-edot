@@ -1,6 +1,6 @@
 export const credentialsProd = {
-  companyId: "5114704",
-  username: "duaenamregress1240",
+  companyId: "5114788",
+  username: "regressduadelapanoktober6428",
   password: "Testing@123",
 };
 

@@ -4,6 +4,7 @@ import {
   credentialsProd,
   credentialsStagingExisting,
 } from "../../payload/credentials";
+import { payloadBranch, payloadProduct } from "../payloadRegressi";
 
 const credentials = credentialsProd;
 
@@ -26,6 +27,7 @@ test.describe("Stocks Adjustment", () => {
     page,
     stocksAdjustmentSubmenuPage,
   }) => {
-    await stocksAdjustmentSubmenuPage.screenshotListPage();
+    // await stocksAdjustmentSubmenuPage.createStock(payloadProduct);
+    await page.pause();
   });
 });

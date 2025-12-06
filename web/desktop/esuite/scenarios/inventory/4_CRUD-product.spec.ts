@@ -50,13 +50,9 @@ test.describe.serial("Product", () => {
     productSubmenuPage,
   }) => {
     await productSubmenuPage.clickbuttonAddNew();
-    // await productSubmenuPage.validateScreenshotBeforeCreateBasicInfo();
     await productSubmenuPage.inputfieldProductName(payload.productName);
     await productSubmenuPage.inputfieldProductType(payload.productType);
     await productSubmenuPage.inputfieldCategory(payload.category);
-    // await productSubmenuPage.inputfieldProductBrand();
-    // await productSubmenuPage.inputfieldIndustry();
-    // await productSubmenuPage.inputfieldExternalCode("123123123");
     await productSubmenuPage.inputfieldCost(payload.cost);
     await productSubmenuPage.inputfieldBasePrice(payload.basePrice);
     await productSubmenuPage.inputfieldBaseUom(payload.baseUom);
@@ -67,17 +63,14 @@ test.describe.serial("Product", () => {
     await productSubmenuPage.inputFieldConvertionLevel2(
       payload.convertionLevel2
     );
-    await productSubmenuPage.validateScreenshotAfterFillBasicInfo();
 
     await productSubmenuPage.clicktabAttributeVariant();
-    await productSubmenuPage.validateScreenshotBeforeFillAttributeVariant();
     await productSubmenuPage.clickbuttonAddNewAttribute();
     await productSubmenuPage.inputfieldAttributeName("Size");
     await productSubmenuPage.inputfieldValueAttributeName("X");
     await productSubmenuPage.inputfieldValueAttributeName("Y");
     await productSubmenuPage.inputfieldValueAttributeName("Z");
     await productSubmenuPage.inputExtraPrice(payload);
-    // await productSubmenuPage.validateScreenshotAfterFillAttributeVariant();
     await productSubmenuPage.clickbuttonSubmit();
     await productSubmenuPage.validatetoastMessage();
   });

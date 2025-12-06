@@ -226,9 +226,11 @@ export class InventoryPage {
   // Menu Stock Moves
   async clicksubmenuGoodReceipt() {
     await this.submenuGoodReceipt.click();
+    await this.page.waitForTimeout(1000);
   }
   async clicksubmenuDeliveries() {
     await this.submenuDeliveries.click();
+    await this.page.waitForTimeout(1000);
   }
   async clicksubmenuInternalTransfer() {
     await this.submenuInternalTransfer.click();

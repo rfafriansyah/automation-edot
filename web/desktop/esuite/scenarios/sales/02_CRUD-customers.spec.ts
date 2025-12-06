@@ -23,7 +23,7 @@ test.describe.serial("Branch", () => {
     await salesPage.clickSubmenuCustomers();
   });
 
-  test.only("As a user be able to Create Customers", async ({
+  test("As a user be able to Create Customers", async ({
     page,
     customersPage,
   }) => {

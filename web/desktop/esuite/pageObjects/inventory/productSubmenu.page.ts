@@ -357,7 +357,11 @@ export class ProductSubmenuPage {
   async inputfieldBaseUom(text: any) {
     await this.fieldBaseUom.click();
     await this.page.getByRole("textbox", { name: "Search Data" }).fill(text);
-    await this.page.getByRole("option", { name: text, exact: true }).click();
+    await this.page.waitForTimeout(1000);
+    await this.page
+      .getByRole("option", { name: text, exact: true })
+      .first()
+      .click();
   }
   async inputfieldLevel1(text: any) {
     await this.fieldLevel1.click();
@@ -421,9 +425,6 @@ export class ProductSubmenuPage {
       await this.page.getByRole("option", { name: text, exact: true }).click();
     }
   }
-  // async inputfieldConvertionLevel3(text: any) {
-  //   await this.fieldConvertionLevel3.fill(text);
-  // }
   async clickbuttonAddNewLevel() {
     await this.buttonAddNewLevel.click();
   }
@@ -451,7 +452,6 @@ export class ProductSubmenuPage {
   }
   async clickbuttonAddNewAttribute() {
     await this.buttonAddNewAttribute.click();
-    await this.page.pause();
   }
   async inputfieldAttributeName(text: any) {
     await this.page.getByTestId("combobox").click();
@@ -480,6 +480,32 @@ export class ProductSubmenuPage {
     await this.fieldExtraPrice2.fill(payload.extraPrice2);
     await this.fieldExtraPrice3.fill(payload.extraPrice3);
   }
+
+  async createProduct(payload: any) {
+    await this.clickbuttonAddNew();
+    await this.inputfieldProductName(payload.productName);
+    await this.inputfieldProductType(payload.productType);
+    await this.inputfieldCategory(payload.category);
+    await this.inputfieldCost(payload.cost);
+    await this.inputfieldBasePrice(payload.basePrice);
+    await this.inputfieldBaseUom(payload.baseUom);
+    await this.inputfieldLevel1(payload.level1);
+    await this.clickbuttonAddNewLevel();
+    await this.inputfieldLevel2(payload.level2);
+    await this.inputFieldUoMLevel2(payload.uomLevel2);
+    await this.inputFieldConvertionLevel2(payload.convertionLevel2);
+
+    await this.clicktabAttributeVariant();
+    await this.clickbuttonAddNewAttribute();
+    await this.inputfieldAttributeName("Size");
+    await this.inputfieldValueAttributeName("X");
+    await this.inputfieldValueAttributeName("Y");
+    await this.inputfieldValueAttributeName("Z");
+    await this.inputExtraPrice(payload);
+    await this.clickbuttonSubmit();
+    await this.validatetoastMessage();
+  }
+
   async validateScreenshotAfterFillAttributeVariant() {
     await this.page.waitForLoadState("networkidle");
     await this.page.setViewportSize({ width: 2000, height: 1600 });

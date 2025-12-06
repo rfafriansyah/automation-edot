@@ -74,7 +74,7 @@ export class BranchPage {
 
     // Submit
     await this.page.getByRole("button", { name: "Submit" }).click();
-    await this.page.getByText("Create branch success").isVisible();
+    await this.page.getByText("Create branch success").first().isVisible();
   }
 
   async inputSearchbar(payload: any) {
