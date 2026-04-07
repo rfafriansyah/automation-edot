@@ -274,4 +274,38 @@ header {
   font-size: 1rem;
   padding: 0 0.5rem;
 }
-</style></head><body><main class="jesthtml-content"><header><h1 id="title">Test Report</h1></header><section id="metadata-container"><div id="timestamp">Started: 2025-09-24 07:06:36</div><div id="summary"><div id="suite-summary"><div class="summary-total">Suites (1)</div><div class="summary-passed ">1 passed</div><div class="summary-failed  summary-empty">0 failed</div><div class="summary-pending  summary-empty">0 pending</div></div><div id="test-summary"><div class="summary-total">Tests (1)</div><div class="summary-passed ">1 passed</div><div class="summary-failed  summary-empty">0 failed</div><div class="summary-pending  summary-empty">0 pending</div></div></div></section><details id="suite-1" class="suite-container" open=""><summary class="suite-info"><div class="suite-path">C:\Users\rhama.RHAMAFAHRI-PC\project\automation-edot\api\esuite\__test__\sales\createCustomerNOO.test.ts</div><div class="suite-time">3.254s</div></summary><div class="suite-tests"><div class="test-result passed"><div class="test-info"><div class="test-suitename">API Read</div><div class="test-title">Create Customer NOO</div><div class="test-status">passed</div><div class="test-duration">1.655s</div></div></div></div></details></main></body></html>
+</style></head><body><main class="jesthtml-content"><header><h1 id="title">Test Report</h1></header><section id="metadata-container"><div id="timestamp">Started: 2026-04-07 10:30:54</div><div id="summary"><div id="suite-summary"><div class="summary-total">Suites (1)</div><div class="summary-passed  summary-empty">0 passed</div><div class="summary-failed ">1 failed</div><div class="summary-pending  summary-empty">0 pending</div></div><div id="test-summary"><div class="summary-total">Tests (2)</div><div class="summary-passed ">1 passed</div><div class="summary-failed ">1 failed</div><div class="summary-pending  summary-empty">0 pending</div></div></div></section><details id="suite-1" class="suite-container" open=""><summary class="suite-info"><div class="suite-path">C:\Users\rhama.RHAMAFAHRI-PC\project\automation-edot\api\core\__test__\cronus\jwt.test.ts</div><div class="suite-time warn">7.516s</div></summary><div class="suite-tests"><div class="test-result passed"><div class="test-info"><div class="test-suitename">JWT Hermes</div><div class="test-title">JWT Hermes</div><div class="test-status">passed</div><div class="test-duration">0.31s</div></div></div><div class="test-result failed"><div class="test-info"><div class="test-suitename">JWT Hermes</div><div class="test-title">JWT Esuite</div><div class="test-status">failed</div><div class="test-duration">0.112s</div></div><div class="failureMessages"> <pre class="failureMsg">Error: expected 200 "OK", got 401 "Unauthorized"
+    at jwt (C:\Users\rhama.RHAMAFAHRI-PC\project\automation-edot\api\core\endpoint\cronus.ts:13:6)
+    at C:\Users\rhama.RHAMAFAHRI-PC\project\automation-edot\api\core\__test__\cronus\jwt.test.ts:23:29
+    at Generator.next (&lt;anonymous&gt;)
+    at C:\Users\rhama.RHAMAFAHRI-PC\project\automation-edot\api\core\__test__\cronus\jwt.test.ts:8:71
+    at new Promise (&lt;anonymous&gt;)
+    at Object.&lt;anonymous&gt;.__awaiter (C:\Users\rhama.RHAMAFAHRI-PC\project\automation-edot\api\core\__test__\cronus\jwt.test.ts:4:12)
+    at Object.&lt;anonymous&gt; (C:\Users\rhama.RHAMAFAHRI-PC\project\automation-edot\api\core\__test__\cronus\jwt.test.ts:17:33)
+    at Promise.then.completed (C:\Users\rhama.RHAMAFAHRI-PC\project\automation-edot\node_modules\jest-circus\build\utils.js:298:28)
+    at new Promise (&lt;anonymous&gt;)
+    at callAsyncCircusFn (C:\Users\rhama.RHAMAFAHRI-PC\project\automation-edot\node_modules\jest-circus\build\utils.js:231:10)
+    at _callCircusTest (C:\Users\rhama.RHAMAFAHRI-PC\project\automation-edot\node_modules\jest-circus\build\run.js:316:40)
+    at processTicksAndRejections (node:internal/process/task_queues:105:5)
+    at async _runTest (C:\Users\rhama.RHAMAFAHRI-PC\project\automation-edot\node_modules\jest-circus\build\run.js:252:3)
+    at async _runTestsForDescribeBlock (C:\Users\rhama.RHAMAFAHRI-PC\project\automation-edot\node_modules\jest-circus\build\run.js:126:9)
+    at async _runTestsForDescribeBlock (C:\Users\rhama.RHAMAFAHRI-PC\project\automation-edot\node_modules\jest-circus\build\run.js:121:9)
+    at async run (C:\Users\rhama.RHAMAFAHRI-PC\project\automation-edot\node_modules\jest-circus\build\run.js:71:3)
+    at async runAndTransformResultsToJestFormat (C:\Users\rhama.RHAMAFAHRI-PC\project\automation-edot\node_modules\jest-circus\build\legacy-code-todo-rewrite\jestAdapterInit.js:122:21)
+    at async jestAdapter (C:\Users\rhama.RHAMAFAHRI-PC\project\automation-edot\node_modules\jest-circus\build\legacy-code-todo-rewrite\jestAdapter.js:79:19)
+    at async runTestInternal (C:\Users\rhama.RHAMAFAHRI-PC\project\automation-edot\node_modules\jest-runner\build\runTest.js:367:16)
+    at async runTest (C:\Users\rhama.RHAMAFAHRI-PC\project\automation-edot\node_modules\jest-runner\build\runTest.js:444:34)
+----
+    at Test._assertStatus (C:\Users\rhama.RHAMAFAHRI-PC\project\automation-edot\node_modules\supertest\lib\test.js:267:14)
+    at C:\Users\rhama.RHAMAFAHRI-PC\project\automation-edot\node_modules\supertest\lib\test.js:323:13
+    at Test._assertFunction (C:\Users\rhama.RHAMAFAHRI-PC\project\automation-edot\node_modules\supertest\lib\test.js:300:13)
+    at Test.assert (C:\Users\rhama.RHAMAFAHRI-PC\project\automation-edot\node_modules\supertest\lib\test.js:179:23)
+    at localAssert (C:\Users\rhama.RHAMAFAHRI-PC\project\automation-edot\node_modules\supertest\lib\test.js:135:14)
+    at fn (C:\Users\rhama.RHAMAFAHRI-PC\project\automation-edot\node_modules\supertest\lib\test.js:140:7)
+    at Test.callback (C:\Users\rhama.RHAMAFAHRI-PC\project\automation-edot\node_modules\superagent\src\node\index.js:899:3)
+    at fn (C:\Users\rhama.RHAMAFAHRI-PC\project\automation-edot\node_modules\superagent\src\node\index.js:1165:18)
+    at IncomingMessage.&lt;anonymous&gt; (C:\Users\rhama.RHAMAFAHRI-PC\project\automation-edot\node_modules\superagent\src\node\parsers\json.js:19:7)
+    at IncomingMessage.emit (node:events:530:35)
+    at IncomingMessage.emit (node:domain:489:12)
+    at endReadableNT (node:internal/streams/readable:1698:12)
+    at processTicksAndRejections (node:internal/process/task_queues:90:21)</pre></div></div></div></details></main></body></html>

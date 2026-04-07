@@ -1,7 +1,7 @@
 export const credentialsProd = {
-  companyId: "5114788",
-  username: "regressduadelapanoktober6428",
-  password: "Testing@123",
+  companyId: "5013105",
+  username: "ptberuangabadijaya8441",
+  password: "Edot1234!",
 };
 
 export const credentialsStagingExisting = {

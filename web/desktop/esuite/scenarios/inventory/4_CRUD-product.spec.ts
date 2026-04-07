@@ -38,7 +38,7 @@ test.describe.serial("Product", () => {
     }
   );
 
-  test("As a user be able to access Product List Table", async ({
+  test.only("As a user be able to access Product List Table", async ({
     page,
     productSubmenuPage,
   }) => {

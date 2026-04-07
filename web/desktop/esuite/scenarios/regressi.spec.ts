@@ -16,7 +16,7 @@ import {
 
 const credentials = credentialsProd;
 
-test.describe.serial.only("Regressi Testing esuite", () => {
+test.describe.serial("Regressi Testing esuite", () => {
   test.beforeEach(async ({ page, loginPage, headerComponent, salesPage }) => {
     await loginPage.open();
     await loginPage.filltxtCompanyID(credentials.companyId);

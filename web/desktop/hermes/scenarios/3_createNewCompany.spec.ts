@@ -18,7 +18,7 @@ test.describe.only("Create New Company on Hermes - Positive", () => {
     await companiesPage.clickbuttonAddCompany();
   });
 
-  test.only("Create new Company, Country: Indonesia", async ({
+  test("Create new Company, Country: Indonesia", async ({
     registerCompanyPage,
   }) => {
     await registerCompanyPage.filltxtCompanyName(

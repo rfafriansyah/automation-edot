@@ -23,7 +23,7 @@ export class LoginPage {
   }
 
   async open() {
-    await this.page.goto("");
+    await this.page.goto("https://trial.edot.id/");
 
     // let link = await this.formLogin.getAttribute("action");
 
