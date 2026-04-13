@@ -32,6 +32,7 @@ import { VehicleTypeSubmenuPage } from "./inventory/vehicleTypeSubmenu.page";
 import { SalesPage } from "./sales/Sales.component";
 import { BranchPage } from "./sales/branch.page";
 import { CustomersPage } from "./sales/customers.page";
+import { QuotationPage } from "./sales/quotation.page";
 
 type MyFixtures = {
   loginPage: LoginPage;
@@ -49,6 +50,7 @@ type MyFixtures = {
   salesPage: SalesPage;
   branchPage: BranchPage;
   customersPage: CustomersPage;
+  quotationPage: QuotationPage;
 
   // Inventory
   productSubmenuPage: ProductSubmenuPage;
@@ -112,6 +114,9 @@ export const test = base.extend<MyFixtures>({
   },
   customersPage: async ({ page }, use) => {
     await use(new CustomersPage(page));
+  },
+  quotationPage: async ({ page }, use) => {
+    await use(new QuotationPage(page));
   },
 
   // Product
