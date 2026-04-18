@@ -96,7 +96,7 @@ jobs:
   report:
     name: 📊 Generate Report
     runs-on: ubuntu-latest
-    # needs: [test-login, test-sales, test-dashboard] # ← tunggu stage 2 selesai
+    needs: [test-login, test-sales, test-dashboard] # ← tunggu stage 2 selesai
     if: always()
     steps:
       - uses: actions/checkout@v4
@@ -122,11 +122,11 @@ jobs:
   # ============================================
   # STAGE 4 - DEPLOY (hanya jika semua lulus)
   # ============================================
-  deploy:
-    name: 🚀 Deploy
-    runs-on: ubuntu-latest
-    needs: [report] # ← tunggu stage 3 selesai
-    if: success() # ← hanya jalan jika semua sukses
-    steps:
-      - name: Deploy to production
-        run: echo "Deploying to production..."
+  # deploy:
+  #   name: 🚀 Deploy
+  #   runs-on: ubuntu-latest
+  #   needs: [report] # ← tunggu stage 3 selesai
+  #   if: success() # ← hanya jalan jika semua sukses
+  #   steps:
+  #     - name: Deploy to production
+  #       run: echo "Deploying to production..."
