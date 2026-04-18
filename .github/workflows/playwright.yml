@@ -18,7 +18,7 @@ jobs:
       - name: Install Playwright Browsers
         run: npx playwright install --with-deps
       - name: Run Playwright tests
-        run: npm run dashboard-quotation
+        run: npm run run-quotation
       - uses: actions/upload-artifact@v5
         if: ${{ !cancelled() }}
         with:
