@@ -33,6 +33,7 @@ import { SalesPage } from "./sales/Sales.component";
 import { BranchPage } from "./sales/branch.page";
 import { CustomersPage } from "./sales/customers.page";
 import { QuotationPage } from "./sales/quotation.page";
+import { PromotionPage } from "./marketing/promotion.page";
 
 type MyFixtures = {
   loginPage: LoginPage;
@@ -81,6 +82,7 @@ type MyFixtures = {
 
   // Marketing
   marketingPage: MarketingPage;
+  promotionPage: PromotionPage;
 
   // HR
   hrPage: HRPage;
@@ -117,6 +119,11 @@ export const test = base.extend<MyFixtures>({
   },
   quotationPage: async ({ page }, use) => {
     await use(new QuotationPage(page));
+  },
+
+  // Marketing
+  promotionPage: async ({ page }, use) => {
+    await use(new PromotionPage(page));
   },
 
   // Product

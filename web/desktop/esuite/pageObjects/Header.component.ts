@@ -20,10 +20,10 @@ export class HeaderComponent {
 
     this.maskingProfileUser = page.locator("header>section:nth-child(2)>div");
     this.maskingtableBody = page.locator(
-      "main>section:nth-child(2)>div>table>tbody"
+      "main>section:nth-child(2)>div>table>tbody",
     );
     this.maskingpagination = page.locator(
-      "main>header>div:nth-child(3)>div>div"
+      "main>header>div:nth-child(3)>div>div",
     );
 
     // this.moduleEwork = page.locator(
@@ -31,7 +31,7 @@ export class HeaderComponent {
     // );
     this.moduleEwork = page.getByRole("link", { name: "ework" });
     this.moduleEmitra = page.locator(
-      "body>header>section:nth-child(2)>ul>a:nth-child(2)"
+      "body>header>section:nth-child(2)>ul>a:nth-child(2)",
     );
     // this.moduleSales = page.locator(
     //   "body>header>section:nth-child(2)>ul>a:nth-child(3)"
@@ -48,7 +48,7 @@ export class HeaderComponent {
     // this.moduleMarketing = page.locator(
     //   "body>header>section:nth-child(2)>ul>a:nth-child(6)"
     // );
-    this.moduleMarketing = page.getByRole("link", { name: "Marketing" });
+    this.moduleMarketing = page.getByTestId("menuMarketing");
     // this.moduleHR = page.locator(
     //   "body>header>section:nth-child(2)>ul>a:nth-child(7)"
     // );
@@ -80,5 +80,9 @@ export class HeaderComponent {
       .getByRole("link", { name: "Sales", exact: true })
       .waitFor({ state: "visible" });
     await this.page.getByRole("link", { name: "Sales", exact: true }).click();
+  }
+
+  async clickmoduleMarketing() {
+    await this.moduleMarketing.click();
   }
 }
