@@ -2,7 +2,7 @@ name: Playwright Pipeline with Stages
 
 on:
   push:
-    branches: [ main, master ]
+    branches: [main, master]
   workflow_dispatch:
 
 jobs:
@@ -34,7 +34,7 @@ jobs:
   test-login:
     name: 🧪 Test Login
     runs-on: ubuntu-latest
-    needs: install          # ← tunggu stage 1 selesai
+    needs: install # ← tunggu stage 1 selesai
     steps:
       - uses: actions/checkout@v4
       - uses: actions/setup-node@v4
@@ -49,11 +49,12 @@ jobs:
           name: report-login
           path: playwright-report/
           retention-days: 30
+      - run: manual
 
   test-sales:
     name: 🧪 Test Sales
     runs-on: ubuntu-latest
-    needs: test-login          # ← tunggu stage 1 selesai
+    needs: install # ← tunggu stage 1 selesai
     steps:
       - uses: actions/checkout@v4
       - uses: actions/setup-node@v4
@@ -72,7 +73,7 @@ jobs:
   test-dashboard:
     name: 🧪 Test Dashboard
     runs-on: ubuntu-latest
-    needs: test-sales          # ← tunggu stage 1 selesai
+    needs: install # ← tunggu stage 1 selesai
     steps:
       - uses: actions/checkout@v4
       - uses: actions/setup-node@v4
@@ -91,40 +92,40 @@ jobs:
   # ============================================
   # STAGE 3 - REPORT (tunggu semua test selesai)
   # ============================================
-  # report:
-  #   name: 📊 Generate Report
-  #   runs-on: ubuntu-latest
-  #   needs: [test-login, test-sales, test-dashboard]  # ← tunggu stage 2 selesai
-  #   if: always()
-  #   steps:
-  #     - uses: actions/checkout@v4
+  report:
+    name: 📊 Generate Report
+    runs-on: ubuntu-latest
+    needs: [test-login, test-sales, test-dashboard] # ← tunggu stage 2 selesai
+    if: always()
+    steps:
+      - uses: actions/checkout@v4
 
-  #     - name: Download all reports
-  #       uses: actions/download-artifact@v4
-  #       with:
-  #         path: all-reports/
+      - name: Download all reports
+        uses: actions/download-artifact@v4
+        with:
+          path: all-reports/
 
-  #     - name: Display report summary
-  #       run: |
-  #         echo "===== TEST SUMMARY ====="
-  #         echo "Login   : ${{ needs.test-login.result }}"
-  #         echo "Sales   : ${{ needs.test-sales.result }}"
-  #         echo "Dashboard: ${{ needs.test-dashboard.result }}"
+      - name: Display report summary
+        run: |
+          echo "===== TEST SUMMARY ====="
+          echo "Login   : ${{ needs.test-login.result }}"
+          echo "Sales   : ${{ needs.test-sales.result }}"
+          echo "Dashboard: ${{ needs.test-dashboard.result }}"
 
-  #     - uses: actions/upload-artifact@v4
-  #       with:
-  #         name: all-reports-combined
-  #         path: all-reports/
-  #         retention-days: 30
+      - uses: actions/upload-artifact@v4
+        with:
+          name: all-reports-combined
+          path: all-reports/
+          retention-days: 30
 
   # ============================================
   # STAGE 4 - DEPLOY (hanya jika semua lulus)
   # ============================================
-  # deploy:
-  #   name: 🚀 Deploy
-  #   runs-on: ubuntu-latest
-  #   needs: [report]         # ← tunggu stage 3 selesai
-  #   if: success()           # ← hanya jalan jika semua sukses
-  #   steps:
-  #     - name: Deploy to production
-  #       run: echo "Deploying to production..."
+  deploy:
+    name: 🚀 Deploy
+    runs-on: ubuntu-latest
+    needs: [report] # ← tunggu stage 3 selesai
+    if: success() # ← hanya jalan jika semua sukses
+    steps:
+      - name: Deploy to production
+        run: echo "Deploying to production..."
