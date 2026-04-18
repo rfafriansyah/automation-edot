@@ -26,8 +26,9 @@ jobs:
           name: playwright-report
           path: playwright-report/
           retention-days: 30
-
-    test-sales:
+          
+jobs:
+   test-sales:
     timeout-minutes: 60
     runs-on: ubuntu-latest
     steps:
