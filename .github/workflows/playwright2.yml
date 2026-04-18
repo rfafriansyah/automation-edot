@@ -7,6 +7,7 @@ on:
 
 jobs:
   test-login:
+    name: 🔧 Install Dependencies
     timeout-minutes: 60
     runs-on: ubuntu-latest
     steps:
@@ -28,6 +29,7 @@ jobs:
           retention-days: 30
           
   test-sales:
+    name: 🧪 Test Login
     timeout-minutes: 60
     runs-on: ubuntu-latest
     steps:
