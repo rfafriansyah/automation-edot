@@ -5,7 +5,7 @@ import { EmitraPage } from "./Emitra.page";
 import { FinancePage } from "./Finance.page";
 import { MarketingPage } from "./Marketing.page";
 import { HRPage } from "./HR.page";
-import { ProductSubmenuPage } from "./inventory/ProductSubmenu.page";
+import { ProductSubmenuPage } from "./inventory/productSubmenu.page";
 import { ProductVariantSubmenuPage } from "./inventory/productVariantSubmenu.page";
 import { HeaderComponent } from "./Header.component";
 import { ProductCategorySubmenuPage } from "./inventory/productCategorySubmenu.page";
