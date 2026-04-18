@@ -40,7 +40,7 @@ jobs:
       - uses: actions/setup-node@v4
         with:
           node-version: lts/*
-      - run: npm ci
+      # - run: npm ci
       # - run: npx playwright install --with-deps
       - run: npm run run-sales
       - uses: actions/upload-artifact@v4
@@ -59,7 +59,7 @@ jobs:
       - uses: actions/setup-node@v4
         with:
           node-version: lts/*
-      - run: npm ci
+      # - run: npm ci
       # - run: npx playwright install --with-deps
       - run: npm run run-sales
       - uses: actions/upload-artifact@v4
@@ -78,7 +78,7 @@ jobs:
       - uses: actions/setup-node@v4
         with:
           node-version: lts/*
-      - run: npm ci
+      # - run: npm ci
       # - run: npx playwright install --with-deps
       - run: npm run run-sales
       - uses: actions/upload-artifact@v4
