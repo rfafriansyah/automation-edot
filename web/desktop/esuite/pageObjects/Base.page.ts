@@ -29,7 +29,7 @@ import { UomCategorySubmenuPage } from "./inventory/uomCategorySubmenu.page";
 import { UomSubmenuPage } from "./inventory/uom.page";
 import { VehicleSubmenuPage } from "./inventory/vehicleSubmenu.page";
 import { VehicleTypeSubmenuPage } from "./inventory/vehicleTypeSubmenu.page";
-import { SalesPage } from "./sales/Sales.component";
+import { SalesPage } from "./sales/sales.component";
 import { BranchPage } from "./sales/branch.page";
 import { CustomersPage } from "./sales/customers.page";
 import { QuotationPage } from "./sales/quotation.page";
