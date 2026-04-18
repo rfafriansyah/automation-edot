@@ -28,7 +28,7 @@ jobs:
           retention-days: 30
           
 jobs:
-   test-sales:
+  test-sales:
     timeout-minutes: 60
     runs-on: ubuntu-latest
     steps:
