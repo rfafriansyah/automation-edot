@@ -43,7 +43,7 @@ jobs:
         with:
           node-version: lts/*
       - run: npm ci
-      # - run: npx playwright install --with-deps
+      - run: npx playwright install --with-deps
       - run: npm run run-sales
       - uses: actions/upload-artifact@v4
         if: ${{ !cancelled() }}
@@ -62,7 +62,7 @@ jobs:
         with:
           node-version: lts/*
       - run: npm ci
-      # - run: npx playwright install --with-deps
+      - run: npx playwright install --with-deps
       - run: npm run run-sales
       - uses: actions/upload-artifact@v4
         if: ${{ !cancelled() }}
@@ -81,7 +81,7 @@ jobs:
         with:
           node-version: lts/*
       - run: npm ci
-      # - run: npx playwright install --with-deps
+      - run: npx playwright install --with-deps
       - run: npm run run-sales
       - uses: actions/upload-artifact@v4
         if: ${{ !cancelled() }}
