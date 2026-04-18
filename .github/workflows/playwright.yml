@@ -19,6 +19,8 @@ jobs:
           node-version: lts/*
       - name: Install dependencies
         run: npm ci
+      - name: install playwright
+        run: npx playwright install --with-deps
 
       - name: Cache node_modules
         uses: actions/cache@v4
@@ -32,14 +34,14 @@ jobs:
   test-login:
     name: 🧪 Test Login
     runs-on: ubuntu-latest
-    # needs: install # ← tunggu stage 1 selesai
+    needs: install # ← tunggu stage 1 selesai
     steps:
       - uses: actions/checkout@v4
       - uses: actions/setup-node@v4
         with:
           node-version: lts/*
       - run: npm ci
-      - run: npx playwright install --with-deps
+      # - run: npx playwright install --with-deps
       - run: npm run run-sales
       - uses: actions/upload-artifact@v4
         if: ${{ !cancelled() }}
@@ -51,14 +53,14 @@ jobs:
   test-sales:
     name: 🧪 Test Sales
     runs-on: ubuntu-latest
-    # needs: install # ← tunggu stage 1 selesai
+    needs: install # ← tunggu stage 1 selesai
     steps:
       - uses: actions/checkout@v4
       - uses: actions/setup-node@v4
         with:
           node-version: lts/*
       - run: npm ci
-      - run: npx playwright install --with-deps
+      # - run: npx playwright install --with-deps
       - run: npm run run-sales
       - uses: actions/upload-artifact@v4
         if: ${{ !cancelled() }}
@@ -70,14 +72,14 @@ jobs:
   dashboard:
     name: 🧪 Test Dashboard
     runs-on: ubuntu-latest
-    # needs: install # ← tunggu stage 1 selesai
+    needs: install # ← tunggu stage 1 selesai
     steps:
       - uses: actions/checkout@v4
       - uses: actions/setup-node@v4
         with:
           node-version: lts/*
       - run: npm ci
-      - run: npx playwright install --with-deps
+      # - run: npx playwright install --with-deps
       - run: npm run run-sales
       - uses: actions/upload-artifact@v4
         if: ${{ !cancelled() }}
